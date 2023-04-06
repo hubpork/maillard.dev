@@ -1,0 +1,148 @@
+---
+interface Item {
+    title: string;
+    business?: string;
+    time?: string;
+    description: string;
+}
+
+export interface Props {
+    title?: string;
+    subtitle?: string;
+    items: Array<Array<Item>>;
+}
+
+const {
+    title = await Astro.slots.render('title'),
+    subtitle = await Astro.slots.render('subtitle'),
+    items = [],
+} = Astro.props;
+---
+
+<section class="timeline pt-8 md:py-8 xl:pt-16 bg-white" id="timeline">
+    <div class="grid mx-auto lg:grid-cols-2 lg:space-y-0 timeline__section relative">
+        {
+            (title || subtitle) && (
+                <div class="md:px-12 timeline__parent">
+                {title && (
+                        <h2 class="timeline__title !mb-1 !font-leadFont !font-normal !text-2xl !lg:text-3xl" set:html={title}/>
+                    )}
+                </div>
+
+                <div class="md:px-12 timeline__parent timeline__parent--last md:relative lg:static mt-10 lg:mt-0">
+                {subtitle && (
+                        <h2 class="timeline__title !mb-1 !font-leadFont !font-normal !text-2xl !lg:text-3xl" set:html={subtitle}/>
+                    )}
+                </div>
+            )
+        }
+
+        {
+            items.map((subitems) => (
+                <div class="md:px-12 timeline__block">
+                    {subitems.map(({ title, business, time, description }) => (
+                        <div class="py-5 flex flex-row max-w-md">
+                            <div>
+                                <h2 class="mb-2 font-headingFont !text-2xl timeline__bullet relative">{title}</h2>
+                                {business && (
+                                    <h3 class="text-xl font-bold">{business}</h3>
+                                )}
+                                {time && (
+                                    <h4 class="mb-3 !font-leadFont !font-normal">{time}</h4>
+                                )}
+                                <p class="text-muted dark:text-slate-400" set:html={description} />
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+
+
+<style>
+.timeline {
+    --timeline-vertical-border-pos: 16px;
+    --timeline-top-adjust: 24px;
+    --timeline-bullet-adjust: -49px;
+    --tw-prose-headings: #111827;
+
+    --posMediumLine: 500px;
+    --posMediumLineLast: 400px;
+}
+
+
+@media (min-width: 768px) { 
+    .timeline__title::before {
+        color: var(--colors-fog-500);
+        content: "";
+        display: block;
+        height: 1px;
+        width: 1.5rem;
+        background-color: var(--colors-fog-200);
+        position: absolute;
+        top: var(--timeline-vertical-border-pos);
+        left: 0;
+    }
+    
+    .timeline__parent::after {
+        content: "";
+        width: 1px;
+        height: calc(100% - var(--posMediumLine));
+        background-color: var(--colors-fog-200);
+        position: absolute;
+        top: var(--timeline-vertical-border-pos);
+        left: 0;
+    }
+
+
+    .timeline__parent--last::after {
+        height: var(--posMediumLineLast);
+    }
+
+    .timeline__bullet::before {
+        content: "";
+        display: block;
+        height: 2.75rem;
+        width: 3px;
+        background-color: var(--tw-prose-headings);
+        position: absolute;
+        top: 0;
+        left: var(--timeline-bullet-adjust);
+    }
+}
+
+
+@media (min-width: 1024px) { 
+
+    .timeline__parent--last .timeline__title::before,
+    .timeline__parent--last::after {
+        left: 50%;
+        
+    }
+
+    .timeline__parent--last::after,
+    .timeline__parent::after  {
+        height: calc(100% - var(--timeline-top-adjust));
+    }
+}
+
+
+.timeline__parent--last {
+    order: 1;
+}
+
+.timeline__block:last-child {
+    order: 2;
+}
+
+@media (min-width: 1024px) { 
+    .timeline__parent--last,
+    .timeline__block:last-child {
+        order: initial;
+    }
+}
+
+</style>

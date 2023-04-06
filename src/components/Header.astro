@@ -1,0 +1,72 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import GitHub from '@/components/icons/GitHub.astro';
+import Twitter from '@/components/icons/Twitter.astro';
+import Codepen from '@/components/icons/Codepen.astro';
+import { SITE_DESCRIPTION, HANDLE_GITHUB, HANDLE_TWITTER, HANDLE_CODEPEN } from '../consts';
+const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
+---
+
+<header class:list={[ headerClass ]} data-fix={headerFixClass}>
+	<div class="flex flex-col md:flex-row items-center md:justify-between mx-auto header-max-width">
+
+		<!-- HeaderLink href="/" class="mb-4 md:mb-0 mt-[-15px]" title={title}>
+			<div class="text-5xl md:text-4xl xl:text-5xl font-headingFont">maillard<span class:list={[ headerDotClass ]}>.</span>dev</div>
+			<div class="text-center md:text-right text-base font-leadFont">{SITE_DESCRIPTION}</div>
+		</HeaderLink -->
+
+		<HeaderLink href="/" class="mb-4 md:mb-0 mt-[-5px]" title={title}>
+			<div class="text-5xl md:text-4xl xl:text-5xl font-headingFont">Astro<span class:list={[ headerDotClass ]}>.</span>project</div>
+			<div class="text-center md:text-right text-base font-leadFont mt-1">{SITE_DESCRIPTION}</div>
+		</HeaderLink>
+	
+		
+		<nav class="nav flex gap-3 lg:gap-6 text-xl lg:text-3xl lowercase mb-4 md:mb-0 font-headingFont">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/about">About</HeaderLink>
+		</nav>
+	
+	
+		<div class="flex space-x-3 lg:text-3xl">
+			<a
+				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
+				href={`https://github.com/${HANDLE_GITHUB}`}
+				target="_blank"
+				rel="noopener"
+			>
+				<GitHub />
+			</a>
+			<a
+				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
+				href={`https://twitter.com/${HANDLE_TWITTER}`}
+				target="_blank"
+				rel="noopener"
+			>
+				<Twitter />
+			</a>
+			<a
+				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
+				href={`https://codepen.io/${HANDLE_CODEPEN}`}
+				target="_blank"
+				rel="noopener"
+			>
+				<Codepen />
+			</a>
+		</div>
+	</div>
+</header>
+
+
+<style>
+	a {
+		display: inline-block;
+		text-decoration: none;
+	}
+	a:hover {
+		opacity: 0.7;
+	}
+	.nav > a.active {
+		color: var(--colors-fog-600);
+	}
+</style>

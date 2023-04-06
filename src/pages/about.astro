@@ -1,0 +1,165 @@
+---
+import { Picture } from '@astrojs/image/components';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import placeHolder from '/public/photo-index.jpg';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title="About" description={SITE_DESCRIPTION} />
+	</head>
+	<body class="flex flex-col bg-fog-100 dark:bg-primary-dark text-gray-800 dark:text-primary-light">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 dark:bg-primary-dark py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="descriptive text" />
+					<div class="prose lg:prose-2xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">about me</h2>
+						<p>
+							Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
+							template serves as a lightweight, minimally-styled starting point for anyone looking to build
+							a personal website, blog, or portfolio with Astro.
+						</p>
+
+					</div>
+				</article>
+			</section>
+
+			<section id="timeline" class="py-8 xl:pt-16 bg-white dark:bg-primary-dark">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">resume</h2>
+						<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-gray-800">
+							Here is my education, work experience, & some skills I've got.
+						</p>
+					</div>
+
+					<Timeline
+						title="experienced"
+						subtitle="education"
+						items={[
+							[
+								{
+									title: 'MySign AG',
+									business:'Front-end developer',
+									time:'August 2012 - Present',
+									description:'Lorem ipsum Occaecat do esse ex et dolor culpa nisi ex in magna consectetur nisi cupidatat laboris esse eiusmod deserunt aute do quis velit esse sed Ut proident cupidatat nulla esse cillum laborum occaecat nostrud sit dolor incididunt amet est occaecat nisi.'
+								},
+								{
+									title: 'Insign AG',
+									business:'Web-Publisher & Designer',
+									time:'August 2012 - Present',
+									description:'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
+								},
+								{
+									title: 'Best Practices',
+									description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
+								}
+							],
+							[
+								{
+									title: 'Excellent Page Speed',
+									description:'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
+								},
+								{
+									title: 'Search Engine Optimization (SEO)',
+									description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
+								},
+								{
+									title: 'Open to new ideas and contributions',
+									description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
+								}
+							]
+						]}
+					/>
+				</article>
+			</section>
+
+
+
+			<section id="stats" class="pb-10 xl:pb-16 bg-white dark:bg-primary-dark">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<div class="md:px-12">
+							<h2 class="!mt-0 !mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Skills & Expertise </h2>
+						</div>
+							
+					</div>
+
+					<Stats
+						items={[
+						{ name: 'Downloads', value: '100' },
+						{ name: 'Stars', value: '24' },
+						{ name: 'Forks', value: '10' },
+						{ name: 'Users', value: '48' },
+						]}
+					/>
+				</article>
+			</section>
+
+
+
+			<section id="clients" class="pb-10 xl:pb-16 bg-white dark:bg-primary-dark">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mt-0 !mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Selected Clients</h2>
+					</div>
+
+					<ul class="clients__list flex flex-wrap">
+						<li class="inline-block"><a href="#0" class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Microsoft</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Amazon</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Solana</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Nike</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Adidas</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Polkadot</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Google</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Atom</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Square</a></li>
+						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Brave</a></li>
+					</ul>
+				</article>
+			</section>
+
+			<section id="works" class="pt-8 pb-20 xl:pt-16 xl:pb-28  bg-stone-800 dark:bg-primary-dark relative">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Selected Projects</h2>
+						<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-white">
+							I love the Funk! Get some Bootsie & James Brown!
+						</p>
+
+
+
+						Bilder
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+		</main>
+		<Footer footerClass="bg-white dark:bg-primary-dark flex justify-center py-10" />
+	</body>
+</html>
+
+
+<style>
+
+
+.skill-bars {
+	--bar-padding: var(--timeline-left-padding);
+	margin-top: var(--vspace-2_5);
+	display: flex;
+	flex-flow: row wrap;
+}
+
+</style>

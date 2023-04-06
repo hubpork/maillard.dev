@@ -1,0 +1,78 @@
+---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import { Picture } from '@astrojs/image/components';
+import { getCollection } from 'astro:content';
+
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import placeHolder from '/public/photo-index.jpg';
+
+import FormattedDate from '@/components/FormattedDate.astro';
+
+const blogEntries = (await getCollection('blog')).sort(
+	(a, b) => new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf()
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title="Home" description={SITE_DESCRIPTION} />
+	</head>
+	<body class="flex flex-col bg-fog-100 dark:bg-primary-dark text-gray-800 dark:text-primary-light">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 dark:bg-primary-dark py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="descriptive text" />
+					<div class="prose lg:prose-2xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">philosophy</h2>
+						<p>
+							Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
+							template serves as a lightweight, minimally-styled starting point for anyone looking to build
+							a personal website, blog, or portfolio with Astro.
+						</p>
+
+					</div>
+				</article>
+			</section>
+
+			<!-- Renders an <article> for the latest 2 blog posts -->
+			<section id="blogpost" class="py-8 xl:py-16 bg-white dark:bg-primary-dark">
+				<h2 class="max-width mx-auto !mb-4 !lg:mb-6 !font-leadFont !font-normal !text-2xl !lg:text-3xl">what I blog...</h2>
+				<ul class="max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+					{blogEntries.slice(0, 2).map(blogPostEntry => (
+						<li class="flex flex-col lg:text-xl">
+							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`} class="block"><Picture class="mb-5" src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  fit={'cover'}  alt="{blogPostEntry.data.title}" /></a>}
+							<h3 class="!font-headingFont !text-2xl font-bold !mb-2">{blogPostEntry.data.title}</h3>
+							<FormattedDate date={blogPostEntry.data.pubDate} />
+							<p>{blogPostEntry.data.description}</p>
+							<a href={`/blog/${blogPostEntry.slug}`} class="mt-4 underline decoration-1 hover:no-underline">Read more</a>
+						</li>
+					))}
+				</ul>
+			</section>
+
+			<section id="about" class="pt-8 pb-20 xl:pt-16 xl:pb-28 bg-servette dark:bg-primary-dark relative">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto text-fog-100">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl !text-fog-100">what i like, besides coding</h2>
+						<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">
+							I love the Funk! Get some Bootsie & James Brown!
+						</p>
+						<p class="!text-fog-100">
+							<a href="https://www.funkologie.com" class="!text-fog-100">funkologie.com</a>
+						</p>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+		</main>
+		<Footer footerClass="bg-white dark:bg-primary-dark flex justify-center py-10" />
+	</body>
+</html>

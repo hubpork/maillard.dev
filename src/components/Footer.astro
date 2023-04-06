@@ -1,0 +1,51 @@
+---
+const today = new Date();
+const { footerClass } = Astro.props;
+import { SITE_TITLE, SITE_DESCRIPTION, EMAIL } from '../consts';
+---
+
+<footer class:list={[ footerClass ]}>
+	<article class="max-width mx-auto">
+	
+		
+		<h2 class="!mb-4 !lg:mb-6 !font-leadFont !font-normal !text-2xl !lg:text-3xl">get in touch</h2>
+		<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight extra-tight my-4">
+			Feel free to reach out if you wanna collaborate with me, or simply have a chat.
+		</p>
+	
+		<div class="max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mt-5 lg:mt-10 lg:mb-20">
+
+			<div class="column">
+				<p class="lg:text-xl">
+					Dolorum est et corporis. Unde nobis quo rerum aspernatur cum dolorem 
+					tempore et.
+				</p>
+				
+				
+				<div class="mt-10 grid gap-5">
+					<a href={`mailto:${EMAIL}`} 
+						class="flex justify-center font-headingFont !text-3xl font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 rounded-sm px-10 py-5 focus:outline-none transition duration-150 ease-out hover:ease-in">
+						Say Hello
+					</a>
+
+					<a href="#" 
+						class="flex justify-center font-headingFont !text-3xl font-semibold text-servette border-2 border-servette bg-white hover:text-white hover:bg-black hover:border-black focus:ring-4 focus:ring-red-300 rounded-sm px-10 py-5 focus:outline-none transition duration-150 ease-out hover:ease-in">
+						Get My CV
+					</a>
+				</div>
+			</div>
+			<div class="column">
+				<p class="lg:text-xl">
+					Dolorum est et corporis. Unde nobis quo rerum aspernatur cum dolorem 
+					tempore et. Beatae atque nobis qui nam nulla nihil sunt quis. Earum 
+					minima cum consectetur ab repudiandae sed esse dolores.<br />
+					Do you have a question? Send us a word:<br />
+					<a href={`mailto:${EMAIL}`} class="font-leadFont underline decoration-1 hover:no-underline">support@yoursite.com</a>
+				</p>
+				<p class="lg:text-xl !font-leadFont mt-8">
+					&copy; {today.getFullYear()} {SITE_TITLE} - {SITE_DESCRIPTION}
+				</p>
+			</div>
+		</div>
+	</article>
+</footer>

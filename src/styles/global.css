@@ -1,0 +1,78 @@
+:root {
+	--colors-fog-100: #eff0f3;
+	--colors-fog-200: #D6D7DA;
+	--colors-fog-300: #BCBDC0;
+	--colors-fog-400: #A3A4A7;
+	--colors-fog-500: #898A8D;
+	--colors-fog-600: #707174;
+	--colors-sun: #ff8e3c;
+	--colors-servette: #d9376e;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* playfair-display-800 - latin */
+@font-face {
+	font-display: optional; 
+	font-family: 'headingFont';
+	font-style: normal;
+	font-weight: 800;
+	src: url('/playfair-display-v30-latin-800.woff2') format('woff2')
+}
+
+/* quattrocento-regular - latin */
+@font-face {
+	font-display: optional; 
+	font-family: 'contentFont';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/quattrocento-v17-latin-regular.woff2') format('woff2')
+}
+
+/* quicksand-500 - latin */
+@font-face {
+	font-display: optional; 
+	font-family: 'leadFont';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/quicksand-v30-latin-regular.woff2') format('woff2')
+}
+
+@layer base {
+	html {
+		font-family: "contentFont", system-ui, sans-serif;
+		font-weight: 400;
+		height: 100%;
+	}
+}
+
+.header-max-width  {
+	width: min(1536px, 90vw);
+}
+
+.max-width {
+	width: min(1200px, 90vw);
+}
+
+@media (min-width: 1024px){
+	.extra-tight {
+		line-height: 1.075 !important;
+	}
+}
+
+[datetime] {
+	margin-bottom: 0.5rem;
+	display: block;
+}
+
+[data-fix="bg-fog-100"] {
+	background-color: rgba(239, 240, 243,0.9);
+	backdrop-filter: blur(4px);
+}
+
+[data-fix="bg-white"] {
+	background-color: rgba(255, 255, 255,0.9);
+	backdrop-filter: blur(4px);
+}

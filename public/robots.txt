@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://maillard.dev/sitemap-index.xml

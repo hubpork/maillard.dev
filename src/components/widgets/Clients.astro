@@ -1,0 +1,54 @@
+---
+interface Item {
+    name: string;
+    url: string;
+}
+
+export interface Props {
+    items?: Array<Item>;
+}
+
+const {
+    items = [],
+} = Astro.props;
+---
+
+<script>
+    
+</script>
+
+<ul class="clients__list flex flex-wrap">
+    {
+        items.map(({ name, url }) => (
+            <li class="inline-block !leading-8 !lg:leading-10 mb-1">
+                <a href={url} class="font-headingFont text-4xl lg:text-6xl xl:text-7xl hover:text-zinc-500 dark:md:hover:bg-fuchsia-600">{name}</a>
+            </li>
+        ))
+    }
+</ul>
+
+
+<style>
+    .clients__list li:not(:last-child)::after {
+        content: "/";
+        font-family: 'leadFont';
+        font-size: 1em;
+        color: var(--colors-fog-500);
+        margin: 0 .1em;
+        position: relative;
+        bottom: .05em;
+    }
+
+
+    @media (min-width: 768px) { 
+        .clients__list li:not(:last-child)::after {
+            font-size: 1.5em;
+            margin: 0 .3em 0 .4em;
+        }
+    }
+    @media (min-width: 1024px) { 
+        .clients__list li:not(:last-child)::after {
+            font-size: 2em;
+        }
+    }
+</style>

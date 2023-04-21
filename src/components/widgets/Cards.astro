@@ -1,0 +1,216 @@
+---
+interface Item {
+    name: string;
+    value: string;
+    placeHolder: string;
+}
+
+export interface Props {
+    items?: Array<Item>;
+}
+
+const {
+    items = [],
+} = Astro.props;
+
+import { Picture } from '@astrojs/image/components';
+
+---
+
+
+
+<ul id="cards" class="pt-8 mx-auto header-max-width">
+    {
+        items.map(({ name, value, placeHolder }, index) => (
+            <li class="card" data-id={index}>
+                <div class="card__content">
+                    <div>
+
+						<h2 class="mb-2 font-headingFont !text-2xl timeline__bullet relative">{name}</h2>
+						<p class="text-xl">
+							{value}
+						</p>
+                    </div>
+                    <figure>
+                        <Picture src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1:1" width={1200} height={1200} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="descriptive text" />
+                    </figure>
+                </div>
+            </li>
+        ))
+    }
+</ul>
+
+<style>
+    :root {
+        --card-height: 30vw;
+        --card-margin: 4vw;
+        --card-top-offset: 1em;
+        --numcards: 8;
+        --outline-width: 0px;
+    }
+
+    #cards {
+        padding-bottom: calc(var(--numcards) * var(--card-top-offset)); /* Make place at bottom, as items will slide to that position*/
+        margin-bottom: var(--card-margin); /* Don't include the --card-margin in padding, as that will affect the scroll-timeline*/
+    }
+
+
+    [data-id="1"] {
+        --index: 1;
+    }
+
+    [data-id="2"] {
+        --index: 2;
+    }
+
+    [data-id="3"] {
+        --index: 3;
+    }
+
+    [data-id="4"] {
+        --index: 4;
+    }
+
+    [data-id="5"] {
+        --index: 5;
+    }
+
+    [data-id="6"] {
+        --index: 6;
+    }
+
+    [data-id="7"] {
+        --index: 7;
+    }
+
+    [data-id="8"] {
+        --index: 8;
+    }
+
+    .card {
+        position: sticky;
+        top: 50px;
+        padding-top: calc(var(--index) * var(--card-top-offset));
+    }
+
+    @media (min-width: 1024px) { 
+        .card {
+            top: 200px;
+        }
+    }
+
+    @supports (animation-timeline: works) {
+
+        @scroll-timeline cards-element-scrolls-in-body {
+            source: selector(body);
+            scroll-offsets:
+                /* Start when the start edge touches the top of the scrollport */
+                selector(#cards) start 1,
+                /* End when the start edge touches the start of the scrollport */
+                selector(#cards) start 0
+            ;
+            start: selector(#cards) start 1; /* Start when the start edge touches the top of the scrollport */
+            end: selector(#cards) start 0; /* End when the start edge touches the start of the scrollport */
+            time-range: 4s;
+        }
+
+        .card {
+            --index0: calc(var(--index) - 1); /* 0-based index */
+            --reverse-index: calc(var(--numcards) - var(--index0)); /* reverse index */
+            --reverse-index0: calc(var(--reverse-index) - 1); /* 0-based reverse index */
+        }
+        
+        .card__content {
+            transform-origin: 50% 0%;
+            will-change: transform;
+
+            --duration: calc(var(--reverse-index0) * 1s);
+            --delay: calc(var(--index0) * 1s);
+
+            animation: var(--duration) linear scale var(--delay) forwards;
+            animation-timeline: cards-element-scrolls-in-body;
+        }
+
+        @keyframes scale {
+            to {
+                transform:
+                    scale(calc(
+                        1.1
+                        -
+                        calc(0.1 * var(--reverse-index))
+                    ));
+            }
+        }
+    }
+
+/** DEBUG **/
+
+    /* #debug {
+    position: fixed;
+    top: 1em;
+    left: 1em;
+    }
+    #debug::after {
+    content: " Show Debug";
+    margin-left: 1.5em;
+    color: white;
+    white-space: nowrap;
+    }
+
+    #debug:checked ~ main {
+    --outline-width: 1px;
+    } */
+
+
+    #cards {
+        list-style: none;
+        /* outline: calc(var(--outline-width) * 10) solid blue; */
+        
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(var(--numcards), var(--card-height));
+        gap: var(--card-margin);
+    }
+
+    /* .card {
+        outline: var(--outline-width) solid hotpink;
+    } */
+
+    .card__content {
+        min-height: var(--card-height);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        background: rgb(255, 255, 255);
+        overflow: hidden;
+
+        display: grid;
+        grid-template-areas: "text img";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+
+        align-items: stretch;
+        /* outline: var(--outline-width) solid lime; */
+    }
+
+    .card__content > div {
+        grid-area: text;
+        width: 80%;
+        place-self: center;
+        text-align: left;
+
+        display: grid;
+        gap: 1em;
+        place-items: start;
+    }
+
+    .card__content > figure {
+        grid-area: img;
+        overflow: hidden;
+    }
+
+    .card__content > figure > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+</style>

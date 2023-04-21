@@ -3,6 +3,8 @@ import { Picture } from '@astrojs/image/components';
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import Cards from '@/components/widgets/Cards.astro';
+import Clients from '@/components/widgets/Clients.astro';
 import Stats from '@/components/widgets/Stats.astro';
 import Timeline from '@/components/widgets/Timeline.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
@@ -86,7 +88,7 @@ import placeHolder from '/public/photo-index.jpg';
 
 
 
-			<section id="stats" class="pb-10 xl:pb-16 bg-white dark:bg-primary-dark">
+			<section id="stats" class="pb-8 xl:pb-12 bg-white dark:bg-primary-dark">
 				<article class="max-width mx-auto">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
 						<div class="md:px-12">
@@ -108,40 +110,53 @@ import placeHolder from '/public/photo-index.jpg';
 
 
 
-			<section id="clients" class="pb-10 xl:pb-16 bg-white dark:bg-primary-dark">
+			<section id="clients" class="clients pb-10 xl:pb-20 bg-white dark:bg-primary-dark">
 				<article class="max-width mx-auto">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
-						<h2 class="!mt-0 !mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Selected Clients</h2>
+						<h2 class="!mt-0 !mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Selected clients whose website I was involved in</h2>
 					</div>
 
-					<ul class="clients__list flex flex-wrap">
-						<li class="inline-block"><a href="#0" class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Microsoft</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Amazon</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Solana</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Nike</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Adidas</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Polkadot</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Google</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Atom</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Square</a></li>
-						<li class="inline-block"><a href="#0"  class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">Brave</a></li>
-					</ul>
+					<Clients
+						items={[
+							{ name: 'Fust', url: 'https://www.fust.ch' },
+							{ name: 'Baur au Lac', url: 'https://www.bauraulac.ch' },
+							{ name: 'Allgeier-Inovar', url: 'https://www.allgeier-inovar.de' },
+							{ name: 'Flyerline', url: 'https://www.flyerline.ch' },
+							{ name: 'Energie Wettingen', url: 'https://www.energiewettingen.ch' },
+							{ name: 'Santalucia-Lieferservice', url: 'https://www.santalucia-lieferservice.ch' },
+							{ name: 'Buechehof', url: 'https://www.buechehof.ch' },
+							{ name: 'Baur au Lac Vins', url: 'https://www.bauraulacvins.ch' },
+							{ name: 'Stadtbibliothek Basel', url: 'https://www.stadtbibliothekbasel.ch' },
+						]}
+					/>
+
 				</article>
 			</section>
 
 			<section id="works" class="pt-8 pb-20 xl:pt-16 xl:pb-28  bg-stone-800 dark:bg-primary-dark relative">
-				<article class="max-width mx-auto">
+				<article class="max-width mx-auto lg:mb-16">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
 						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Selected Projects</h2>
 						<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-white">
 							I love the Funk! Get some Bootsie & James Brown!
 						</p>
-
-
-
-						Bilder
 					</div>
 				</article>
+				
+				<Cards
+					items={[
+						{ name: 'Downloads', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+						{ name: 'Stars', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' }, 
+						{ name: 'Forks', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+						{ name: 'Users', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+						{ name: 'Digger', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+						{ name: 'Foundation', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+						{ name: 'Awesome', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+						{ name: 'Blower', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+					]}
+				/>
+
+
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
 					<polygon points="100 0 100 10 0 10"></polygon>
 				</svg>

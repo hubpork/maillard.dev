@@ -1,0 +1,118 @@
+---
+interface Item {
+    name: string;
+    value: string;
+}
+
+export interface Props {
+    items?: Array<Item>;
+}
+
+const {
+    items = [],
+} = Astro.props;
+---
+
+<script>
+    const spaceHolder: HTMLElement = document.querySelector('.space-holder')!;
+    const horizontal: HTMLElement = document.querySelector('.horizontal')!;
+    spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
+
+    function calcDynamicHeight(ref: HTMLElement): number {
+        const vw: number = window.innerWidth;
+        const vh: number = window.innerHeight;
+        const objectWidth: number = ref.scrollWidth;
+        return objectWidth - vw + vh + 50;
+    }
+
+    window.addEventListener('scroll', () => {
+        const sticky: HTMLElement | null = document.querySelector('.sticky');
+        if (sticky) {
+            horizontal.style.transform = `translateX(-${sticky.offsetTop}px)`;
+        }
+    });
+
+    window.addEventListener('resize', () => {
+        spaceHolder.style.height = `${calcDynamicHeight(horizontal)}px`;
+    });
+    
+</script>
+
+<div class="spacer">
+    <div class="space-holder">
+        <div class="sticky">
+            <div class="horizontal">
+                <div role="feed" class="cards">
+                    {
+                        items.map(({ name, value }) => (
+                            <article class="sample-card" data-progress={value}>{name}</article>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+
+    .spacer {
+        position: relative;
+        width: 100%;
+        /* min-height: 60vh; */
+    }
+
+    .space-holder {
+        position: relative;
+        width: 100%;
+    }
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .horizontal {
+        position: absolute;
+        height: 100%;
+        will-change: transform;
+    }
+
+    .cards {
+        position: relative;
+        height: 100%;
+        padding: 0 0 0 150px;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .sample-card {
+        position: relative;
+        width: 300px;
+        aspect-ratio: 4/3;
+        background-color: #cad3dd;
+        margin-right: 75px;
+        flex-shrink: 0;
+    }
+
+
+    @media (min-width: 768px) { 
+
+        .sample-card {
+            width: 600px;
+        }
+    }
+
+    @media (min-width: 1024px) { 
+        .sample-card {
+            width: 900px;
+        }
+    }
+
+</style>

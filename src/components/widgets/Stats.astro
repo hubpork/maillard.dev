@@ -14,19 +14,27 @@ const {
 ---
 
 <script>
-
-    var bars = document.querySelectorAll('.meter > span');
-
-    setInterval(function(){
-        bars.forEach(function(bar){
-            if (bar instanceof HTMLElement) {
-                var getWidth = parseFloat(bar.dataset.progress as string);
-                for(var i = 0; i < getWidth; i++) {
-                    bar.style.width = i + '%';
-                }
+    const bars = document.querySelectorAll('.meter > span');
+    function handleIntersection(entries: any[]) {
+        entries.map((entry) => {
+            if (entry.isIntersecting) {
+                setInterval(function(){
+                    bars.forEach(function(bar){
+                        if (bar instanceof HTMLElement) {
+                            var getWidth = parseFloat(bar.dataset.progress as string);
+                            for(var i = 0; i < getWidth; i++) {
+                                bar.style.width = i + '%';
+                            }
+                        }
+                    });
+                }, 500);
             }
         });
-    }, 500);
+    }
+
+    const observer = new IntersectionObserver(handleIntersection);
+    bars.forEach(bar => observer.observe(bar));
+
 </script>
 
 <section class="stats py-4 md:py-8">
@@ -35,7 +43,7 @@ const {
             items.map(({ name, value }) => (
                 <li class="relative md:px-12">
                     <div class="mb-2 font-headingFont !text-2xl">{name}</div>
-                    <div class="stats__meter meter block md:mb-10 relative rounded-sm bg-fog-500">
+                    <div class="stats__meter meter block md:mb-10 relative rounded-sm bg-fog-300">
                         <span data-progress={value} style="width:0;" class="relative overflow-hidden block h-full"></span>
                     </div>
                 </li>
@@ -72,9 +80,8 @@ const {
 .stats__meter > span {
     background: rgb(2,0,36);
     background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(45,11,22,1) 100%);
+    background: var(--colors-servette);
     box-shadow: inset 0 2px 9px rgba(255,255,255,0.3) inset 0 -2px 6px rgba(0,0,0,0.4);
     transition: width 2s ease-out;
 }
-
-
 </style>

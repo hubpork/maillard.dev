@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import { Picture } from '@astrojs/image/components';
+import HeaderLink from '@/components/HeaderLink.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
@@ -36,6 +37,8 @@ const { title, description, pubDate, updatedDate, heroImage, headerClass, header
 		
 				<slot />
 				
+
+				<HeaderLink href="/blog" class="mt-8 leading-1 no-underline inline-flex justify-center font-headingFont !text-2xl font-semibold text-black border-2 border-black bg-white hover:text-white hover:bg-black hover:border-black focus:ring-4 focus:ring-red-300 rounded-sm px-5 py-2 focus:outline-none transition duration-150 ease-out hover:ease-in">Back to blog</HeaderLink>
 			</article>
 
 

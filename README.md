@@ -53,4 +53,4 @@ Check out [the documentation](https://docs.astro.build) or jump into our [Discor
 
 ## Credit
 
-This theme is based off of the lovely [Theme Augustine](https://styleshout.com/demo/?theme=augustine).
+This theme is based on the lovely [Theme Augustine](https://styleshout.com/demo/?theme=augustine).

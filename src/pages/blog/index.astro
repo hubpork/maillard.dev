@@ -1,11 +1,11 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 import { getCollection } from 'astro:content';
 import { Picture } from "@astrojs/image/components";
-import FormattedDate from '../../components/FormattedDate.astro';
+import FormattedDate from '@/components/FormattedDate.astro';
 const blogEntries = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -45,7 +45,7 @@ const blogEntries = (await getCollection('blog')).sort(
 					</li>
 				))}
 			</ul>
-			
+
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 dark:bg-primary-dark w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
 				<polygon points="100 0 100 10 0 10"></polygon>
 			</svg>

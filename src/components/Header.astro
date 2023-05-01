@@ -3,6 +3,7 @@ import HeaderLink from './HeaderLink.astro';
 import GitHub from '@/components/icons/GitHub.astro';
 import Twitter from '@/components/icons/Twitter.astro';
 import Codepen from '@/components/icons/Codepen.astro';
+import Linkedin from '@/components/icons/Linkedin.astro';
 import { SITE_DESCRIPTION, HANDLE_GITHUB, HANDLE_TWITTER, HANDLE_CODEPEN } from '../consts';
 const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 ---
@@ -28,7 +29,7 @@ const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 	
 	
 		<div class="flex space-x-3 lg:text-3xl">
-			<a
+			<!-- <a
 				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
 				title="Github"
 				href={`https://github.com/${HANDLE_GITHUB}`}
@@ -36,7 +37,7 @@ const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 				rel="noopener"
 			>
 				<GitHub />
-			</a>
+			</a> -->
 			<a
 				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
 				title="Twitter"
@@ -54,6 +55,15 @@ const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 				rel="noopener"
 			>
 				<Codepen />
+			</a>
+			<a
+				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
+				title="Linkedin"
+				href={`https://ch.linkedin.com/in/michel-maillard`}
+				target="_blank"
+				rel="noopener"
+			>
+				<Linkedin />
 			</a>
 		</div>
 	</div>

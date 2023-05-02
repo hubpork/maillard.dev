@@ -13,8 +13,6 @@ const {
     items = [],
 } = Astro.props;
 
-import { Picture } from '@astrojs/image/components';
-
 ---
 
 
@@ -32,7 +30,7 @@ import { Picture } from '@astrojs/image/components';
 						</p>
                     </div>
                     <figure>
-                        <Picture src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1:1" width={1200} height={1200} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="descriptive text" />
+                        <img src={placeHolder} alt={name}/>
                     </figure>
                 </div>
             </li>

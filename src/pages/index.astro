@@ -27,7 +27,7 @@ const blogEntries = (await getCollection('blog')).sort(
 		<main class="flex-grow flex-shrink-0">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
-					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="descriptive text" />
+					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="my philosophy" />
 					<div class="prose lg:prose-2xl max-w-[100%] lg:mx-auto">
 						<h1 class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-gray-800">
 							Do you need a sustainable and professional solution?
@@ -50,7 +50,7 @@ const blogEntries = (await getCollection('blog')).sort(
 
 
 						<figure class="flex justify-end !mt-0">
-							<img src="signature.png" alt="Michel Maillard" width="500" height="81" class="-rotate-1 max-w-xs lg:max-w-none">
+							<img src="signature.png" srcset="signature@2x.png 2x" alt="Michel Maillard" width="393" height="57" class="-rotate-1 max-w-xs lg:max-w-none">
 						</figure>
 					</div>
 				</article>

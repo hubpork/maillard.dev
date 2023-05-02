@@ -8,7 +8,7 @@ import Clients from '@/components/widgets/Clients.astro';
 import Stats from '@/components/widgets/Stats.astro';
 import Timeline from '@/components/widgets/Timeline.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import placeHolder from '/public/photo-index.jpg';
+import placeHolder from '/public/photo-about.jpg';
 ---
 
 <!DOCTYPE html>
@@ -23,13 +23,11 @@ import placeHolder from '/public/photo-index.jpg';
 		<main class="flex-grow flex-shrink-0">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
-					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="descriptive text" />
+					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="about me" />
 					<div class="prose lg:prose-2xl max-w-[100%] lg:mx-auto">
 						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">about me</h2>
 						<p>
-							Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-							template serves as a lightweight, minimally-styled starting point for anyone looking to build
-							a personal website, blog, or portfolio with Astro.
+							Responsible for the technical implementation of websites in HTML, CSS, Javascript and various CMS frameworks. I am also responsible for the preparation and publication of content. Where it is appropriate, I optimise my workflows in order to complete my projects properly and on deadline.
 						</p>
 
 					</div>

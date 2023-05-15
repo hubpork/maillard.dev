@@ -22,22 +22,22 @@
 	src: url('/playfair-display-v30-latin-800.woff2') format('woff2')
 }
 
-/* quattrocento-regular - latin */
+/* quicksand-400 - latin */
 @font-face {
 	font-display: optional; 
 	font-family: 'contentFont';
 	font-style: normal;
 	font-weight: 400;
-	src: url('/quattrocento-v17-latin-regular.woff2') format('woff2')
+	src: url('/quicksand-v30-latin-regular.woff2') format('woff2')
 }
 
-/* quicksand-500 - latin */
+/* quicksand-600 - latin */
 @font-face {
 	font-display: optional; 
 	font-family: 'leadFont';
 	font-style: normal;
-	font-weight: 400;
-	src: url('/quicksand-v30-latin-regular.woff2') format('woff2')
+	font-weight: 700;
+	src: url('/quicksand-v30-latin-600.woff2') format('woff2')
 }
 
 @layer base {

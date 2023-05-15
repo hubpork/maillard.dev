@@ -24,7 +24,7 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 		<Header title={SITE_TITLE} headerClass="header bg-white dark:bg-primary-dark py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" />
 		
 		<main class="flex-grow flex-shrink-0 relative">
-			<article class="pb-20 prose prose-headings:font-headingFont mx-auto lg:max-w-[50%] sm:px-6 px-6 mt-8 dark:prose-a:servette dark:prose-headings:servette dark:prose-invert lg:prose-xl prose-a:servette prose-headings:leading-tighter prose-lg prose-md">
+			<article class="pb-20 prose lg:prose-2xl prose-headings:font-headingFont mx-auto sm:px-6 px-6 mt-8 dark:prose-a:servette dark:prose-headings:servette dark:prose-invert lg:prose-xl prose-a:servette prose-headings:leading-tighter prose-lg prose-md">
 				{heroImage && <Picture class="mb-5 lg:mb-10" src={heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="descriptive text" />}
 				<FormattedDate date={pubDate} />
 				{

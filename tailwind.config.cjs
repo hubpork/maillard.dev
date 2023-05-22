@@ -7,22 +7,20 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
-				'sun': 'var(--colors-sun)',
-				'servette': 'var(--colors-servette)',
+				'sun': 'hsl(var(--colors-sun) / <alpha-value>)',
+				'servette': 'hsl(var(--colors-servette) / <alpha-value>)',
 				'fog': {
-					100: 'var(--colors-fog-100)',
-					200: 'var(--colors-fog-200)',
-					300: 'var(--colors-fog-300)',
-					400: 'var(--colors-fog-400)',
-					500: 'var(--colors-fog-500)',
-					600: 'var(--colors-fog-600)',
-				}
+					100: 'hsl(var(--colors-fog-100) / <alpha-value>)',
+					200: 'hsl(var(--colors-fog-200) / <alpha-value>)',
+					300: 'hsl(var(--colors-fog-300) / <alpha-value>)',
+					400: 'hsl(var(--colors-fog-400) / <alpha-value>)',
+					500: 'hsl(var(--colors-fog-500) / <alpha-value>)',
+					600: 'hsl(var(--colors-fog-600) / <alpha-value>)',
+				},
+				bkg: "hsl(var(--color-bkg) / <alpha-value>)",
+				content: "hsl(var(--color-content) / <alpha-value>)",
 			},
 			fontFamily: {
-				// 'sourceSerif': ['"Source Serif"', 'serif'],
-				// 'sourceSerifBold': ['"Source Serif"', 'serif'],
-				// 'overpass': ['"Overpass"', 'system-ui'],
-				// 'overpassBlack': ['"Overpass Black"', 'system-ui'],
 				'headingFont': ['"headingFont"', 'system-ui'],
 				'contentFont': ['"contentFont"', 'serif'],
 				'leadFont': ['"leadFont"', 'system-ui'],

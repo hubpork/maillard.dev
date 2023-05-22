@@ -1,5 +1,6 @@
 ---
 title: "YouTube Video Facade"
+linktext: "Read about this"
 description: "Improving page speed on websites that embed YouTube videos"
 pubDate: "Apr 11 2023"
 heroImage: "/youtube-unsplash.jpg"

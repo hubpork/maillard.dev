@@ -1,17 +1,41 @@
-:root {
-	--colors-fog-100: #eff0f3;
-	--colors-fog-200: #D6D7DA;
-	--colors-fog-300: #BCBDC0;
-	--colors-fog-400: #A3A4A7;
-	--colors-fog-500: #898A8D;
-	--colors-fog-600: #707174;
-	--colors-sun: #ff8e3c;
-	--colors-servette: #d9376e;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+@layer base {
+	:root {
+		--color-bkg: 0deg 0% 100%;
+		--colors-fog-100: 225deg 14% 95%;
+		--colors-fog-200: 225deg 5% 85%;
+		--colors-fog-300: 225deg 3% 75%;
+		--colors-fog-400: 225deg 2% 65%;
+		--colors-fog-500: 225deg 2% 55%;
+		--colors-fog-600: 225deg 2% 45%;
+		--colors-sun: 25deg 100% 62%;
+		--colors-servette: 340deg 68% 53%;
+	}
+
+	@media (prefers-color-scheme: dark) {
+		:root {
+		  --color-bkg: 210deg 8% 10%;
+		  --colors-fog-100: 210deg 8% 10%;
+		  --color-content: 210deg 40% 98%;
+		}
+	}
+	:root[data-theme="dark"] {
+		--color-bkg: 0deg 0% 0%;
+		--color-content: 210deg 40% 98%;
+	}
+
+	html {
+		font-family: "contentFont", system-ui, sans-serif;
+		font-weight: 400;
+		height: 100%;
+	}
+}
 
 /* playfair-display-800 - latin */
 @font-face {
@@ -38,14 +62,6 @@
 	font-style: normal;
 	font-weight: 700;
 	src: url('/quicksand-v30-latin-600.woff2') format('woff2')
-}
-
-@layer base {
-	html {
-		font-family: "contentFont", system-ui, sans-serif;
-		font-weight: 400;
-		height: 100%;
-	}
 }
 
 .header-max-width  {

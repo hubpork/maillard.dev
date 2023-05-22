@@ -2,26 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
-
 @layer base {
 	:root {
 		--color-bkg: 0deg 0% 100%;
-		--colors-fog-100: 225deg 14% 95%;
-		--colors-fog-200: 225deg 5% 85%;
-		--colors-fog-300: 225deg 3% 75%;
-		--colors-fog-400: 225deg 2% 65%;
-		--colors-fog-500: 225deg 2% 55%;
-		--colors-fog-600: 225deg 2% 45%;
-		--colors-sun: 25deg 100% 62%;
-		--colors-servette: 340deg 88% 50%;
+		--color-fog-100: 225deg 14% 95%;
+		--color-fog-200: 225deg 5% 85%;
+		--color-fog-300: 225deg 3% 75%;
+		--color-fog-400: 225deg 2% 65%;
+		--color-fog-500: 225deg 2% 55%;
+		--color-fog-600: 225deg 2% 45%;
+		--color-sun: 25deg 100% 62%;
+		--color-servette: 340deg 88% 50%;
 	}
 
 	@media (prefers-color-scheme: dark) {
 		:root {
 		  --color-bkg: 225deg 2% 45%;
-		  --colors-fog-100: 210deg 8% %;
+		  --color-fog-100: 210deg 8% %;
 		  --color-content: 210deg 40% 98%;
 		}
 	}

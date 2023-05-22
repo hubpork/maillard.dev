@@ -33,7 +33,8 @@ const {
     }
 
     .stats__bars li::before {
-        color: var(--colors-fog-600);
+        /* color: var(--color-fog-600); */
+        color: #707174;
         font-family: "leadFont", system-ui !important;
         display: block;
         content: counter(ctr, decimal-leading-zero) ".";
@@ -45,16 +46,4 @@ const {
         left: 0;
     }
 }
-
-/* .stats__meter {
-    height: 0.4rem;
-}
-
-.stats__meter > span {
-    background: rgb(2,0,36);
-    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(45,11,22,1) 100%);
-    background: var(--colors-servette);
-    box-shadow: inset 0 2px 9px rgba(255,255,255,0.3) inset 0 -2px 6px rgba(0,0,0,0.4);
-    transition: width 2s ease-out;
-} */
 </style>

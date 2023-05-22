@@ -39,7 +39,7 @@
 
 /* playfair-display-800 - latin */
 @font-face {
-	font-display: optional; 
+	font-display: swap; 
 	font-family: 'headingFont';
 	font-style: normal;
 	font-weight: 800;
@@ -48,7 +48,7 @@
 
 /* quicksand-400 - latin */
 @font-face {
-	font-display: optional; 
+	font-display: swap; 
 	font-family: 'contentFont';
 	font-style: normal;
 	font-weight: 400;
@@ -57,7 +57,7 @@
 
 /* quicksand-600 - latin */
 @font-face {
-	font-display: optional; 
+	font-display: swap; 
 	font-family: 'leadFont';
 	font-style: normal;
 	font-weight: 700;
@@ -91,4 +91,9 @@
 [data-fix="bg-white"] {
 	background-color: rgba(255, 255, 255,0.9);
 	backdrop-filter: blur(4px);
+}
+/* Improve Page speed */
+/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
+img {
+	content-visibility: auto;
 }

@@ -26,10 +26,7 @@ import placeHolder from '/public/photo-about.jpg';
 					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="about me" />
 					<div class="prose lg:prose-2xl lg:mx-auto">
 						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">my mission</h2>
-						<p>
-							Responsible for the technical implementation of websites in HTML, CSS, Javascript and various CMS frameworks. I am also responsible for the preparation and publication of content. Where it is appropriate, I optimise thre workflows and also rethink every little detail like SEO and pagespeed to complete the projects with full satisfaction.
-						</p>
-
+						<p>Accountable for the technical implementation of websites in HTML, CSS, Javascript and various CMS frameworks. In addition, it involves creating and publishing content. Where appropriate, I optimise workflows and also rethink every little detail such as SEO and pagespeed to complete projects to everyone's satisfaction. Because creating websites is a passion.</p>
 					</div>
 				</article>
 			</section>
@@ -38,9 +35,7 @@ import placeHolder from '/public/photo-about.jpg';
 				<article class="max-width mx-auto">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
 						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">resume</h2>
-						<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-gray-800">
-							Here is my education, work experience, & some skills I've got.
-						</p>
+						<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-gray-800">Here is my education, work experience, & some skills I've got.</p>
 					</div>
 
 					<Timeline
@@ -70,7 +65,7 @@ import placeHolder from '/public/photo-about.jpg';
 							[
 								{
 									title: 'Page Speed',
-									description:'Conduct comprehensive pagespeed audits for websites to identify opportunities for improvement and provide actionable insights. Evaluating factors such as compression, image optimisation, script loading and mobile optimisation. <br /><br />Working with designers and digital agencies to develop page speed optimisation services and ensure that aspects of page speed are considered in the early stages of development.',
+									description:'Conduct comprehensive pagespeed audits for websites to identify opportunities for improvement and if possible providing actionable insights. Evaluating factors such as compression, image optimisation, script loading and mobile optimisation. <br /><br />Working with designers and digital agencies to develop page speed optimisation services and ensure that aspects of page speed are considered in the early stages of development.',
 								},
 								{
 									title: 'Search Engine Optimization (SEO)',
@@ -78,7 +73,7 @@ import placeHolder from '/public/photo-about.jpg';
 								},
 								{
 									title: 'Open to new ideas and contributions',
-									description:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
+									description:'Usability is also very important in 2023. Responsive web design, which is so important for the mobile market and emphasises technical flexibility while taking the end devices of the users into account, is decisive for this trend.',
 								}
 							]
 						]}
@@ -92,25 +87,23 @@ import placeHolder from '/public/photo-about.jpg';
 				<article class="max-width mx-auto">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
 						<div class="md:px-12">
-							<h2 class="!mt-0 !mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Skills & Expertise </h2>
+							<h2 class="!mt-0 !mb-0 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Skills & Expertise </h2>
 						</div>
 							
 					</div>
 
 					<Stats
 						items={[
-						{ name: 'Downloads', value: '100' },
-						{ name: 'Stars', value: '24' },
-						{ name: 'Forks', value: '10' },
-						{ name: 'Users', value: '48' },
+						{ name: 'Productivity, quality and communication', value: '102' },
+						{ name: 'HTML, CSS, SCSS, BEM & Tailwind', value: '102' },
+						{ name: 'Javascript, jQuery, Astro', value: '102' },
+						{ name: 'GIT, Package Management', value: '102' },
 						]}
 					/>
 				</article>
 			</section>
 
-
-
-			<section id="clients" class="clients pb-10 xl:pb-20 bg-white dark:bg-primary-dark">
+			<section id="clients" class="clients pt-8 xl:pt-16 pb-10 xl:pb-20 dark:bg-primary-dark">
 				<article class="max-width mx-auto">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
 						<h2 class="!mt-0 !mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Selected clients whose website I was involved in</h2>
@@ -135,25 +128,18 @@ import placeHolder from '/public/photo-about.jpg';
 			</section>
 
 			<section id="works" class="pt-8 pb-20 xl:pt-16 xl:pb-28  bg-stone-800 dark:bg-primary-dark relative">
-				<article class="max-width mx-auto lg:mb-16">
+				<article class="max-width mx-auto">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
-						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Selected Projects</h2>
-						<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-white">
-							I love the Funk! Get some Bootsie & James Brown!
-						</p>
+						<h2 class="!mb-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Selected Pictures</h2>
 					</div>
 				</article>
 				
 				<Cards
 					items={[
-						{ name: 'Downloads', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
-						{ name: 'Stars', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' }, 
-						{ name: 'Forks', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
-						{ name: 'Users', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
-						{ name: 'Digger', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
-						{ name: 'Foundation', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
-						{ name: 'Awesome', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
-						{ name: 'Blower', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip', placeHolder: 'photo-index.jpg' },
+						{ name: 'Fust Relaunch 3.0', direction:'right', value: 'Maintain consistency throughout the interface in terms of visual elements, terminology, and interaction patterns. ', placeHolder: 'fust.jpg' },
+						{ name: 'Flyerline', direction:'left', value: 'Create clear and logical navigation structures that allow users to find information or perform tasks efficiently. p', placeHolder: 'flyerline.jpg' },
+						{ name: 'Mapo Relaunch 2023', direction:'center', value: 'Use visual cues such as typography, color, and spacing to establish a clear visual hierarchy in your interface. Highlight important elements and differentiate them from less important ones.', placeHolder: 'mapo.jpg' }, 
+						{ name: 'Allgeier-Inovar', direction:'left', value: 'Optimize your interface for different devices and screen sizes. Implement responsive design techniques to ensure that your GUI adapts seamlessly to various platforms.', placeHolder: 'allgeier.jpg' },
 					]}
 				/>
 

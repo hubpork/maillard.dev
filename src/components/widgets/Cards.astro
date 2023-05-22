@@ -3,6 +3,7 @@ interface Item {
     name: string;
     value: string;
     placeHolder: string;
+    direction?: string;
 }
 
 export interface Props {
@@ -19,17 +20,16 @@ const {
 
 <ul id="cards" class="pt-8 mx-auto header-max-width">
     {
-        items.map(({ name, value, placeHolder }, index) => (
+        items.map(({ name, value, placeHolder, direction }, index) => (
             <li class="card" data-id={index}>
                 <div class="card__content">
                     <div>
-
-						<h2 class="mb-2 font-headingFont !text-2xl timeline__bullet relative">{name}</h2>
-						<p class="text-xl">
+						<h2 class="!leading-4 mb-0 !md:mb-2 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">{name}</h2>
+						<p class="lg:text-xl sr-only md:not-sr-only">
 							{value}
 						</p>
                     </div>
-                    <figure>
+                    <figure class={direction}>
                         <img src={placeHolder} alt={name}/>
                     </figure>
                 </div>
@@ -40,10 +40,10 @@ const {
 
 <style>
     :root {
-        --card-height: 30vw;
-        --card-margin: 4vw;
+        --card-height: 60vw;
+        --card-margin: 10vw;
         --card-top-offset: 1em;
-        --numcards: 8;
+        --numcards: 4;
         --outline-width: 0px;
     }
 
@@ -87,13 +87,21 @@ const {
 
     .card {
         position: sticky;
-        top: 50px;
+        top: 20px;
         padding-top: calc(var(--index) * var(--card-top-offset));
+    }
+
+
+    @media (min-width: 768px) { 
+        :root {
+            --card-height: 38vw;
+            --card-margin: 4vw;
+        }
     }
 
     @media (min-width: 1024px) { 
         .card {
-            top: 200px;
+            top: 140px;
         }
     }
 
@@ -181,23 +189,22 @@ const {
         overflow: hidden;
 
         display: grid;
-        grid-template-areas: "text img";
-        grid-template-columns: 1fr 1fr;
+        grid-template-areas: "img img";
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
-
         align-items: stretch;
+        
         /* outline: var(--outline-width) solid lime; */
     }
 
     .card__content > div {
+        position: absolute;
         grid-area: text;
-        width: 80%;
-        place-self: center;
-        text-align: left;
-
+        width: fit-content;
         display: grid;
         gap: 1em;
-        place-items: start;
+        place-self: center;
+        text-align: center;
     }
 
     .card__content > figure {
@@ -209,6 +216,49 @@ const {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: rotate(3deg) scale(1.5);
+    }
+
+    .card__content > figure.right > img {
+        object-position: right center;
+    }
+
+    .card__content > figure.left > img {
+        object-position: left center;
+    }
+
+    @media (min-width: 768px) {
+        .card__content {
+            grid-template-areas: "text img";
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+            align-items: stretch;
+        }
+
+        .card__content > div {
+            width: 80%;
+            padding: 0;
+            position: relative;
+            text-align: left;
+            place-items: start;
+        }
+
+        .card__content > figure > img {
+            transform: none;
+            border-left: 1px solid var(--colors-fog-100);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .card__content h2 {
+            font-size: 1rem !important;
+        }
+        .card__content > div {
+            padding: 1rem;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            background-color: white;
+            z-index: 2;
+        }
     }
 
 </style>

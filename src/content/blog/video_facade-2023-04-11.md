@@ -17,5 +17,5 @@ Here some easy solution to implement.
 </iframe>
 
 
-<small>Further read by Jason Knight and his version [Better Explaining The Reason For Video Facades](https://medium.com/codex/better-explaining-the-reason-for-video-facades-f774d9795c03)</small>
+<small>Further read by Jason Knight and his version [Better Explaining The Reason For Video Facades](https://medium.com/codex/better-explaining-the-reason-for-video-facades-f774d9795c03)</small><br />
 <small><i>Picture by NordWood Themes</i></small>

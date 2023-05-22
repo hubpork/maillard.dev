@@ -21,7 +21,7 @@ const blogEntries = (await getCollection('blog')).sort(
 		<Header title={SITE_TITLE} headerClass="header bg-white dark:bg-primary-dark py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" />
 		
 		<main class="flex-grow flex-shrink-0 relative">
-			<section class="py-4 xl:py-8 prose lg:prose-2xl lg:mx-auto">
+			<section class="py-4 xl:py-8 prose lg:prose-2xl max-width mx-auto">
 				<h2 class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !lg:text-4xl !mt-0">blog posts</h2>
 				<p class="text-2xl">
 					Seeking insightful articles, well-researched perspectives, or simply want to expand your knowledge, reading my blog posts can be an enriching experience. I aim to deliver informative and engaging content that meets your needs and keeps you informed on the topics that matter to you.
@@ -31,8 +31,8 @@ const blogEntries = (await getCollection('blog')).sort(
 			<ul class="grid gap-5 md:gap-5 pt-8 pb-20 xl:pt-16 xl:pb-28 max-width mx-auto">
 				{blogEntries.reverse().map(blogPostEntry => (
 					<li>
-						<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center">
-							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`}><Picture src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  fit={'cover'}  alt="{blogPostEntry.data.title}" /></a>}
+						<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center mb-8">
+							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`}><Picture src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  fit={'cover'}  alt={blogPostEntry.data.title} /></a>}
 							<div class="grid grid-cols-1 text-2xl">
 								<h3 class="!font-headingFont !text-3xl font-bold !mb-2">{blogPostEntry.data.title}</h3>
 								<FormattedDate date={blogPostEntry.data.pubDate} />

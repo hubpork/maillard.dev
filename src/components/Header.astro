@@ -16,11 +16,6 @@ const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 			<div class="text-center md:text-right text-base font-leadFont">{SITE_DESCRIPTION}</div>
 		</HeaderLink>
 
-		<!-- <HeaderLink href="/" class="mb-4 md:mb-0 mt-[-5px]" title={title}>
-			<div class="text-5xl md:text-4xl xl:text-5xl font-headingFont">Astro<span class:list={[ headerDotClass ]}>.</span>project</div>
-			<div class="text-center md:text-right text-base font-leadFont mt-1">{SITE_DESCRIPTION}</div>
-		</HeaderLink>-->
-		
 		<nav class="nav flex gap-3 lg:gap-6 text-xl lg:text-3xl lowercase mb-4 md:mb-0 font-headingFont">
 			<HeaderLink href="/">Home</HeaderLink>
 			<HeaderLink href="/blog">Blog</HeaderLink>
@@ -29,15 +24,6 @@ const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 	
 	
 		<div class="flex space-x-3 lg:text-3xl">
-			<!-- <a
-				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
-				title="Github"
-				href={`https://github.com/${HANDLE_GITHUB}`}
-				target="_blank"
-				rel="noopener"
-			>
-				<GitHub />
-			</a> -->
 			<a
 				class="hover:opacity-70 py-2 px-3 rounded-lg dark:hover:bg-neutral-800"
 				title="Twitter"

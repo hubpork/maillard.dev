@@ -28,7 +28,7 @@ const blogEntries = (await getCollection('blog')).sort(
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
 					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="my philosophy" />
-					<div class="prose lg:prose-2xl lg:mx-auto">
+					<div class="prose lg:prose-2xl mx-auto">
 						<h1 class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 text-gray-800">
 							Do you need a sustainable and professional solution?
 						</h1>
@@ -39,7 +39,7 @@ const blogEntries = (await getCollection('blog')).sort(
 						<p>The main task of a front-end developer is to integrate a responsive user interface (UI) website or web application that is easy to use. To work efficiently. With high quality standards, the presentation is perfected. This pleases all visitors. In addition, SEO measures and page speed optimization means maximizing the experience users have within their site. This is the producer's seal of quality.</p>
 						<p>My passion to make it a place your target audience loves to visit.</p>
 						<figure class="flex justify-end !mt-0">
-							<img src="signature.png" srcset="signature@2x.png 2x" alt="Michel Maillard" width="393" height="57" class="-rotate-1 max-w-xs lg:max-w-none">
+							<img src="signature.png" srcset="signature@2x.png 2x" alt="Michel Maillard" width="393" height="57" class="-rotate-1 max-w-[15rem] lg:max-w-none">
 						</figure>
 					</div>
 				</article>

@@ -6,7 +6,7 @@ import { getCollection } from 'astro:content';
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
-import placeHolder from '/public/photo-index.jpg';
+import placeHolder from '/public/images/photo-index.jpg';
 
 import FormattedDate from '@/components/FormattedDate.astro';
 
@@ -18,7 +18,7 @@ const blogEntries = (await getCollection('blog')).sort(
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<BaseHead title="Home" description={SITE_DESCRIPTION} />
+		<BaseHead title="Presentation is perfected" description={SITE_DESCRIPTION} />
 	</head>
 	<body class="flex flex-col bg-fog-100">
 		<div class="js-header-desktop-shim absolute t-0"></div>
@@ -39,7 +39,7 @@ const blogEntries = (await getCollection('blog')).sort(
 						<p>The main task of a front-end developer is to integrate a responsive user interface (UI) website or web application that is easy to use. To work efficiently. With high quality standards, the presentation is perfected. This pleases all visitors. In addition, SEO measures and page speed optimization means maximizing the experience users have within their site. This is the producer's seal of quality.</p>
 						<p>My passion to make it a place your target audience loves to visit.</p>
 						<figure class="flex justify-end !mt-0">
-							<img src="signature.png" srcset="signature@2x.png 2x" alt="Michel Maillard" width="393" height="57" class="-rotate-1 max-w-[15rem] lg:max-w-none">
+							<img src="images/signature.png" srcset="images/signature@2x.png 2x" alt="Michel Maillard" width="393" height="57" class="-rotate-1 max-w-[15rem] lg:max-w-none">
 						</figure>
 					</div>
 				</article>

@@ -56,6 +56,10 @@ const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 
 
 <style>
+	.header {
+		--color-fog-700: hsl(0, 0%, 40%);
+	}
+
 	a {
 		display: inline-block;
 		text-decoration: none;
@@ -64,7 +68,6 @@ const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 		opacity: 0.7;
 	}
 	.nav > a.active {
-		/* color: var(--color-servette) ;*/
-		color: #666;
+		color: var(--color-fog-700);
 	}
 </style>

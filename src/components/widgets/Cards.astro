@@ -170,17 +170,11 @@ const {
 
     #cards {
         list-style: none;
-        /* outline: calc(var(--outline-width) * 10) solid blue; */
-        
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: repeat(var(--numcards), var(--card-height));
         gap: var(--card-margin);
     }
-
-    /* .card {
-        outline: var(--outline-width) solid hotpink;
-    } */
 
     .card__content {
         min-height: var(--card-height);
@@ -245,8 +239,7 @@ const {
 
         .card__content > figure > img {
             transform: none;
-            /* border-left: 1px solid var(--color-fog-100); */
-            border-left: 1px solid  #eff0f3;
+            border-left: 1px solid hsl(225, 14%, 95%);
         }
     }
 

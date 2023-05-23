@@ -17,7 +17,7 @@ const {
     
 </script>
 
-<ul class="clients__list flex flex-wrap">
+<ul class="clients flex flex-wrap">
     {
         items.map(({ name, url }) => (
             <li class="inline-block !leading-8 !lg:leading-10 mb-1">
@@ -29,12 +29,15 @@ const {
 
 
 <style>
-    .clients__list li:not(:last-child)::after {
+	.clients {
+		--color-fog-500: hsl(225, 2%, 55%);
+	}
+
+    .clients li:not(:last-child)::after {
         content: "/";
         font-family: 'leadFont';
         font-size: 1em;
-        /* color: var(--color-fog-500); */
-        color: #898A8D;
+        color: var(--color-fog-500);
         margin: 0 .1em;
         position: relative;
         bottom: .05em;
@@ -42,13 +45,13 @@ const {
 
 
     @media (min-width: 768px) { 
-        .clients__list li:not(:last-child)::after {
+        .clients li:not(:last-child)::after {
             font-size: 1.5em;
             margin: 0 .3em 0 .4em;
         }
     }
     @media (min-width: 1024px) { 
-        .clients__list li:not(:last-child)::after {
+        .clients li:not(:last-child)::after {
             font-size: 2em;
         }
     }

@@ -4,29 +4,17 @@
 
 @layer base {
 	:root {
-		--color-bkg: 0deg 0% 100%;
-		--color-fog-100: 225deg 14% 95%;
-		--color-fog-200: 225deg 5% 85%;
-		--color-fog-300: 225deg 3% 75%;
-		--color-fog-400: 225deg 2% 65%;
-		--color-fog-500: 225deg 2% 55%;
-		--color-fog-600: 225deg 2% 45%;
-		--color-sun: 25deg 100% 62%;
-		--color-servette: 340deg 88% 50%;
+		--colors-fog-100: #eff0f3;
+		--colors-fog-200: #D6D7DA;
+		--colors-fog-300: #BCBDC0;
+		--colors-fog-400: #A3A4A7;
+		--colors-fog-500: #898A8D;
+		--colors-fog-600: #707174;
+		--colors-fog-700: #666;
+		--colors-sun: #ff8e3c;
+		--colors-servette: #f00f5a;
 	}
-
-	@media (prefers-color-scheme: dark) {
-		:root {
-		  --color-bkg: 225deg 2% 45%;
-		  --color-fog-100: 210deg 8% %;
-		  --color-content: 210deg 40% 98%;
-		}
-	}
-	:root[data-theme="dark"] {
-		--color-bkg: 0deg 0% 0%;
-		--color-content: 210deg 40% 98%;
-	}
-
+	
 	html {
 		font-family: "contentFont", system-ui, sans-serif;
 		font-weight: 400;
@@ -81,12 +69,12 @@
 }
 
 [data-fix="bg-fog-100"] {
-	background-color: rgba(239, 240, 243,0.9);
+	background-color: hsla(225, 14%, 95%, 0.9);
 	backdrop-filter: blur(4px);
 }
 
 [data-fix="bg-white"] {
-	background-color: rgba(255, 255, 255,0.9);
+	background-color: hsla(0, 0%, 100%, 0.9);
 	backdrop-filter: blur(4px);
 }
 
@@ -95,3 +83,23 @@
 img {
 	content-visibility: auto;
 }
+
+/* @media (prefers-color-scheme: dark) {
+	#intro,
+	.bg-white {
+		color: white !important;
+		background-color: hsl(20, 14%, 4%) !important;
+	}
+
+	.prose, h1, h2, h3, :where(main, footer) .font-headingFont {
+		color: white !important;
+	}
+
+	body {
+		background-color: rgb(12, 10, 9) !important;
+	}
+
+	.fill-white {
+		fill: hsl(20, 14%, 4%) !important;
+	}
+} */

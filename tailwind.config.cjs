@@ -6,19 +6,27 @@ module.exports = {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
-			colors: {
-				'sun': 'hsl(var(--color-sun) / <alpha-value>)',
-				'servette': 'hsl(var(--color-servette) / <alpha-value>)',
-				'fog': {
-					100: 'hsl(var(--color-fog-100) / <alpha-value>)',
-					200: 'hsl(var(--color-fog-200) / <alpha-value>)',
-					300: 'hsl(var(--color-fog-300) / <alpha-value>)',
-					400: 'hsl(var(--color-fog-400) / <alpha-value>)',
-					500: 'hsl(var(--color-fog-500) / <alpha-value>)',
-					600: 'hsl(var(--color-fog-600) / <alpha-value>)',
+			typography: ({ theme }) => ({
+				DEFAULT: {
+					css: {
+						'--tw-prose-body': theme('colors.zinc[950]'),
+						'--tw-prose-headings': theme('colors.zinc[950]'),
+						'--tw-prose-lead': theme('colors.zinc[950]'),
+					},
 				},
-				bkg: "hsl(var(--color-bkg) / <alpha-value>)",
-				content: "hsl(var(--color-content) / <alpha-value>)",
+			}),
+			colors: {
+				'sun': 'var(--colors-sun)',
+				'servette': 'var(--colors-servette)',
+				'fog': {
+					100: 'var(--colors-fog-100)',
+					200: 'var(--colors-fog-200)',
+					300: 'var(--colors-fog-300)',
+					400: 'var(--colors-fog-400)',
+					500: 'var(--colors-fog-500)',
+					600: 'var(--colors-fog-600)',
+					700: 'var(--colors-fog-700)'
+				}
 			},
 			fontFamily: {
 				'headingFont': ['"headingFont"', 'system-ui'],

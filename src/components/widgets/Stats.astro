@@ -27,23 +27,26 @@ const {
 
 
 <style>
-@media (min-width: 768px) { 
-    .stats__bars {
-        counter-reset: ctr;
-    }
+    .stats {
+		--color-fog-600: hsl(225, 2%, 45%);
+	}
 
-    .stats__bars li::before {
-        /* color: var(--color-fog-600); */
-        color: #707174;
-        font-family: "leadFont", system-ui !important;
-        display: block;
-        content: counter(ctr, decimal-leading-zero) ".";
-        counter-increment: ctr;
-        font-weight: 400;
-        letter-spacing: .1em;
-        position: absolute;
-        top: 5px;
-        left: 0;
+    @media (min-width: 768px) { 
+        .stats__bars {
+            counter-reset: ctr;
+        }
+
+        .stats__bars li::before {
+            color: var(--color-fog-600);
+            font-family: "leadFont", system-ui !important;
+            display: block;
+            content: counter(ctr, decimal-leading-zero) ".";
+            counter-increment: ctr;
+            font-weight: 400;
+            letter-spacing: .1em;
+            position: absolute;
+            top: 5px;
+            left: 0;
+        }
     }
-}
 </style>

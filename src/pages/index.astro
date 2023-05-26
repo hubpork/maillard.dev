@@ -51,7 +51,7 @@ const blogEntries = (await getCollection('blog')).sort(
 				<ul class="max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
 					{blogEntries.slice(0, 2).map(blogPostEntry => (
 						<li class="flex flex-col lg:text-xl">
-							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`} class="block"><Picture class="mb-5" src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  fit={'cover'}  alt="{blogPostEntry.data.title}" /></a>}
+							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`} class="block"><Picture class="mb-5" src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  fit={'cover'}  alt={blogPostEntry.data.title} /></a>}
 							<h3 class="!font-headingFont !text-2xl font-bold !mb-2">{blogPostEntry.data.title}</h3>
 							<FormattedDate date={blogPostEntry.data.pubDate} />
 							<p>{blogPostEntry.data.description}</p>

@@ -9,14 +9,13 @@ import svelte from "@astrojs/svelte";
 import image from "@astrojs/image";
 
 // https://astro.build/config
-
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://maillard.dev',
-  integrations: [image({serviceEntryPoint: '@astrojs/image/sharp'})],
-  integrations: [mdx(), sitemap(), svelte(), image(), tailwind()],
-  compressHTML: true,
+  integrations: [image({
+    serviceEntryPoint: '@astrojs/image/sharp'
+  }), sitemap(), mdx(), sitemap(), svelte(), image(), tailwind()],
+  compressHTML: true
 });

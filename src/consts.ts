@@ -7,4 +7,4 @@ export const AUTHOR = 'Michel Maillard';
 export const HANDLE_TWITTER = 'twittypork';
 export const HANDLE_GITHUB = 'hubpork';
 export const HANDLE_CODEPEN = 'hubpork';
-export const EMAIL = 'grandaddy.gee@gmail.com';
+export const EMAIL = 'hi@maillard.dev';

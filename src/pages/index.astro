@@ -27,7 +27,7 @@ const blogEntries = (await getCollection('blog')).sort(
 		<main class="flex-grow flex-shrink-0">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
-					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  fit={'cover'}  alt="my philosophy" />
+					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']} alt="my philosophy" />
 					<div class="prose lg:prose-2xl mx-auto">
 						<h1 class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">
 							Do you need a sustainable and professional solution?
@@ -51,7 +51,7 @@ const blogEntries = (await getCollection('blog')).sort(
 				<ul class="max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
 					{blogEntries.slice(0, 2).map(blogPostEntry => (
 						<li class="flex flex-col lg:text-xl">
-							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`} class="block"><Picture class="mb-5" src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  fit={'cover'}  alt={blogPostEntry.data.title} /></a>}
+							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`} class="block"><Picture class="mb-5" src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']} alt={blogPostEntry.data.title} /></a>}
 							<h3 class="!font-headingFont !text-2xl font-bold !mb-2">{blogPostEntry.data.title}</h3>
 							<FormattedDate date={blogPostEntry.data.pubDate} />
 							<p>{blogPostEntry.data.description}</p>

@@ -13,7 +13,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://maillard.dev',
+  site: 'https://www.maillard.dev',
   integrations: [image({
     serviceEntryPoint: '@astrojs/image/sharp'
   }), sitemap(), mdx(), sitemap(), svelte(), image(), tailwind()],

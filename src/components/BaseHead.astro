@@ -13,7 +13,7 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString();
 const { title } = Astro.props;
-const makeTitle = title ? title + " - " + "maillard.dev" : "maillard.dev - creating websites is a passion";
+const makeTitle = title ? title + " - " + "michel maillard.dev" : "michel maillard.dev - creating websites is a passion";
 ---
 
 <!-- Global Metadata -->

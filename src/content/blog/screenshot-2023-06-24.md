@@ -6,7 +6,7 @@ pubDate: "Jul 24 2023"
 heroImage: "/screenshot-unsplash.jpg"
 ---
 
-Taking screenshots of all or parts of web pages is super useful (scroll down to the See Also part at the bottom of this page for more tips on that). But sometimes, the resulting screenshots aren't high-resolution enough for your needs.
+Taking screenshots of all or parts of web pages is super useful. But sometimes, the resulting screenshots aren't high-resolution enough for your needs.
 
 It turns you can make DevTools take high-resolution screenshots of your web pages too!
 From the Console in Firefox

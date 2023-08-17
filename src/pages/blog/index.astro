@@ -23,7 +23,7 @@ const blogEntries = (await getCollection('blog')).sort(
 		<main class="flex-grow flex-shrink-0 relative">
 			<section class="py-4 xl:py-8 prose lg:prose-2xl max-width mx-auto">
 				<h1 class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !lg:text-4xl !mt-0">well-researched perspectives</h1>
-				<p class="text-2xl lead">
+				<p>
 					Want to expand your knowledge, reading my blog posts can be an enriching experience. I aim to deliver informative and engaging content that meets your needs and keeps you informed on the topics that matter to you.
 				</p>
 			</section>
@@ -55,7 +55,7 @@ const blogEntries = (await getCollection('blog')).sort(
 
 <style>
 
-	.lead {
+	h1 + p {
 		margin-top: 0 !important;
 	}
 	

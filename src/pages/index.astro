@@ -45,21 +45,19 @@ const blogEntries = (await getCollection('blog')).sort(
 				</article>
 			</section>
 
-			<!-- Renders an <article> for the latest 2 blog posts -->
-			<section id="blogpost" class="py-8 xl:py-16 bg-white">
-				<h2 class="max-width mx-auto !mb-4 !lg:mb-6 !font-leadFont !font-normal !text-2xl !lg:text-3xl">What I blog...</h2>
-				<ul class="max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
-					{blogEntries.slice(0, 2).map(blogPostEntry => (
-						<li class="flex flex-col lg:text-xl">
-							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`} class="block"><Picture class="mb-5" src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']} alt={blogPostEntry.data.title} /></a>}
-							<h3 class="!font-headingFont !text-2xl font-bold !mb-2">{blogPostEntry.data.title}</h3>
-							<FormattedDate date={blogPostEntry.data.pubDate} />
-							<p>{blogPostEntry.data.description}</p>
-							<a href={`/blog/${blogPostEntry.slug}`} class="mt-4 underline decoration-1 hover:no-underline">{blogPostEntry.data.linktext}</a>
-						</li>
-					))}
-				</ul>
+			
+			<section id="react" class="py-8 xl:py-16 bg-white">
+				<div class="prose prose-xl max-w-[100%] lg:mx-auto text-white">
+					<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl !text-white">&lsaquo;React /&rsaquo;</h2>
+					<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4 !text-white">
+						Little tools build in React with Chakra-UI
+					</p>
+					<p>
+						<a href="https://react-tools-neon.vercel.app/" class="!text-white !text-2xl">Little tools</a>
+					</p>
+				</div>
 			</section>
+
 
 			<section id="about" class="pt-8 pb-20 xl:pt-16 xl:pb-28 bg-servette relative">
 				<article class="max-width mx-auto">
@@ -73,6 +71,7 @@ const blogEntries = (await getCollection('blog')).sort(
 						</p>
 					</div>
 				</article>
+
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
 					<polygon points="100 0 100 10 0 10"></polygon>
 				</svg>

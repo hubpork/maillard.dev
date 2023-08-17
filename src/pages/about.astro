@@ -26,7 +26,7 @@ import placeHolder from '/public/images/photo-about.jpg';
 					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="about me" />
 					<div class="prose lg:prose-2xl lg:mx-auto">
 						<h1 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Michel Maillard - Web Publisher</h1>
-						<p class="mt-0">Accountable for the technical implementation of websites in HTML, CSS, Javascript and various CMS frameworks. In addition, it involves creating and publishing content. Where appropriate, I optimise workflows and also rethink every little detail such as SEO and pagespeed to complete projects to everyone's satisfaction. Because creating websites is a passion.</p>
+						<p class="lead">Accountable for the technical implementation of websites in HTML, CSS, Javascript and various CMS frameworks. In addition, it involves creating and publishing content. Where appropriate, I optimise workflows and also rethink every little detail such as SEO and pagespeed to complete projects to everyone's satisfaction. Because creating websites is a passion.</p>
 					</div>
 				</article>
 			</section>
@@ -162,6 +162,10 @@ import placeHolder from '/public/images/photo-about.jpg';
 	margin-top: var(--vspace-2_5);
 	display: flex;
 	flex-flow: row wrap;
+}
+
+.lead {
+	margin-top: 0 !important;
 }
 
 </style>

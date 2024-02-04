@@ -4,7 +4,7 @@ const { footerClass } = Astro.props;
 import Twitter from '@/components/icons/Twitter.astro';
 import Codepen from '@/components/icons/Codepen.astro';
 import Linkedin from '@/components/icons/Linkedin.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, EMAIL } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HANDLE_CODEPEN } from '../consts';
 ---
 
 <footer class:list={[ footerClass ]}>
@@ -35,10 +35,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL } from '../consts';
 				<p class="lg:text-xl">
 					I try to respond to messages in a timely manner. I value your feedback and would appreciate the opportunity to hear your thoughts. 
 				</p>
-				<p class="lg:text-xl !font-leadFont mx-8">
-					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
-				</p>
-
 
 				<div class="flex space-x-3 lg:text-3xl">
 					<a
@@ -69,6 +65,9 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL } from '../consts';
 						<Linkedin />
 					</a>
 				</div>
+				<p class="lg:text-xl !font-leadFont mt-8">
+					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
+				</p>
 			</div>
 		</div>
 	</article>

@@ -5,7 +5,6 @@ import Footer from '@/components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
 import { getCollection } from 'astro:content';
 import { Picture } from "@astrojs/image/components";
-import FormattedDate from '@/components/FormattedDate.astro';
 const blogEntries = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
@@ -35,7 +34,6 @@ const blogEntries = (await getCollection('blog')).sort(
 							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`}><Picture src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  alt={blogPostEntry.data.title} /></a>}
 							<div class="grid grid-cols-1 text-2xl">
 								<h2 class="!font-headingFont !text-3xl font-bold !mb-2">{blogPostEntry.data.title}</h2>
-								<FormattedDate date={blogPostEntry.data.pubDate} />
 								<p>{blogPostEntry.data.description}</p>
 								<a href={`/blog/${blogPostEntry.slug}`} class="mt-4 underline decoration-1 hover:no-underline">{blogPostEntry.data.linktext}</a>
 							</div>

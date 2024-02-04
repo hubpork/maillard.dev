@@ -20,9 +20,8 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HAN
 
 			<div class="column">
 				<p class="lg:text-xl">
-					Web developer and funk music lover based in Olten. I love to learn new things and share my knowledge with others. I value your feedback and would appreciate the opportunity to hear your thoughts. 
+					Web developer and funk music lover based in Olten. I love to learn new things and share my knowledge with others. 
 				</p>
-				
 				
 				<div class="mt-10 grid gap-5">
 					<a href={`mailto:${EMAIL}`} 
@@ -32,12 +31,15 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HAN
 				</div>
 			</div>
 			<div class="column">
-
-				<p class="lg:text-xl !font-leadFont">
-					Links to socal media channels and Codepen
+				<p class="lg:text-xl">
+					I try to respond to messages in a timely manner. I value your feedback and would appreciate the opportunity to hear your thoughts. 
 				</p>
 
-				<div class="flex space-x-3 lg:text-3xl my-8">
+				<p class="lg:text-xl !font-leadFont my-8">
+					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
+				</p>
+
+				<div class="flex space-x-3 lg:text-3xl">
 					<a
 						class="hover:opacity-70 py-2 px-3 rounded-lg"
 						title="Twitter"
@@ -66,9 +68,6 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HAN
 						<Linkedin />
 					</a>
 				</div>
-				<p class="lg:text-xl !font-leadFont">
-					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
-				</p>
 			</div>
 		</div>
 	</article>

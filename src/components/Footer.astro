@@ -1,6 +1,9 @@
 ---
 const today = new Date();
 const { footerClass } = Astro.props;
+import Twitter from '@/components/icons/Twitter.astro';
+import Codepen from '@/components/icons/Codepen.astro';
+import Linkedin from '@/components/icons/Linkedin.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, EMAIL } from '../consts';
 ---
 
@@ -32,9 +35,40 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL } from '../consts';
 				<p class="lg:text-xl">
 					I try to respond to messages in a timely manner. I value your feedback and would appreciate the opportunity to hear your thoughts. 
 				</p>
-				<p class="lg:text-xl !font-leadFont mt-8">
+				<p class="lg:text-xl !font-leadFont mx-8">
 					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
 				</p>
+
+
+				<div class="flex space-x-3 lg:text-3xl">
+					<a
+						class="hover:opacity-70 py-2 px-3 rounded-lg"
+						title="Twitter"
+						href={`https://twitter.com/${HANDLE_TWITTER}`}
+						target="_blank"
+						rel="noopener"
+					>
+						<Twitter />
+					</a>
+					<a
+						class="hover:opacity-70 py-2 px-3 rounded-lg"
+						title="Codepen"
+						href={`https://codepen.io/${HANDLE_CODEPEN}`}
+						target="_blank"
+						rel="noopener"
+					>
+						<Codepen />
+					</a>
+					<a
+						class="hover:opacity-70 py-2 px-3 rounded-lg"
+						title="Linkedin"
+						href={`https://ch.linkedin.com/in/michel-maillard`}
+						target="_blank"
+						rel="noopener"
+					>
+						<Linkedin />
+					</a>
+				</div>
 			</div>
 		</div>
 	</article>

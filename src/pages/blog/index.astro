@@ -21,7 +21,7 @@ const blogEntries = (await getCollection('blog')).sort(
 		
 		<main class="flex-grow flex-shrink-0 relative">
 			<section class="py-4 xl:py-8 prose lg:prose-2xl max-width mx-auto">
-				<h1 class="!mb-6 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Empower your learning journey, discover insightful and engaging blog posts</h1>
+				<h1 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Empower your learning journey, discover insightful and engaging blog posts</h1>
 				<p>
 					Want to expand your knowledge, reading my blog posts can be an enriching experience. I aim to deliver informative and engaging content that meets your needs and keeps you informed on the topics that matter to you.
 				</p>
@@ -36,7 +36,7 @@ const blogEntries = (await getCollection('blog')).sort(
 						<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center mb-8">
 							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`}><Picture src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  alt={blogPostEntry.data.title} /></a>}
 							<div class="grid grid-cols-1 text-2xl">
-								<h2 class="!font-headingFont !text-3xl font-bold !mb-2">{blogPostEntry.data.title}</h2>
+								<h2 class="!font-headingFont !text-3xl font-bold !mb-3">{blogPostEntry.data.title}</h2>
 								<p>{blogPostEntry.data.description}</p>
 								<a href={`/blog/${blogPostEntry.slug}`} class="mt-4 underline decoration-1 hover:no-underline">{blogPostEntry.data.linktext}</a>
 							</div>

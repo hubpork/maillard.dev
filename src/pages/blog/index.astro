@@ -33,7 +33,7 @@ const blogEntries = (await getCollection('blog')).sort(
 			<ul class="grid gap-5 md:gap-5 pt-8 pb-20 xl:pt-16 xl:pb-28 max-width mx-auto">
 				{blogEntries.reverse().map(blogPostEntry => (
 					<li>
-						<div class="grid md:grid-cols-2 gap-5 md:gap-10 items-center mb-8">
+						<div class="grid md:grid-cols-2 gap-5 md:gap-10 lg:items-center mb-8">
 							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`}><Picture src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  alt={blogPostEntry.data.title} /></a>}
 							<div class="grid grid-cols-1 text-2xl">
 								<h2 class="!font-headingFont !text-3xl font-bold !mb-3">{blogPostEntry.data.title}</h2>

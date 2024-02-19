@@ -15,11 +15,8 @@ A common issue on mobile forms is the need to delete a pre-filled value before e
 
 Let me know what your think about?
 
-```
-
 ###  Here an example
-
-<iframe height="300" style="width: 100%;" scrolling="no" title="A Flex Counter / Mobile Focus Friendly" src="https://codepen.io/hubpork/embed/QWVoNJV?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
+<iframe class="w-full aspect-[4/3] lg:aspect-video" scrolling="no"  title="A Flex Counter / Mobile Focus Friendly" src="https://codepen.io/hubpork/embed/QWVoNJV?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
   See the Pen <a href="https://codepen.io/hubpork/pen/QWVoNJV">
   A Flex Counter / Mobile Focus Friendly</a> by Michel Maillard (<a href="https://codepen.io/hubpork">@hubpork</a>)
   on <a href="https://codepen.io">CodePen</a>.

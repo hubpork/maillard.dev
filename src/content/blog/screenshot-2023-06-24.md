@@ -15,6 +15,6 @@ Firefox has a super handy :screenshot command you can use in the Console tool to
 
 For example: `:screenshot --dpr 3 --fullpage` will take a screenshot of the full page at three times the resolution.
 
-Find out more about the :screenshot command and its other options in the [Firefox DevTools documentation](https://firefox-source-docs.mozilla.org/devtools-user/web_console/helpers/index.html).
+Find out more about the :screenshot command and its other options in at [devtoolstips](https://devtoolstips.org/tips/en/take-high-res-screenshots/).
 
 <small><i>Picture by Dayne Topkin</i></small>

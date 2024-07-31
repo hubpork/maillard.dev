@@ -213,6 +213,15 @@ const {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        transform: rotate(3deg) scale(1.5);
+    }
+
+    .card__content > figure.right > img {
+        object-position: right center;
+    }
+
+    .card__content > figure.left > img {
+        object-position: left center;
     }
 
     @media (min-width: 768px) {
@@ -235,6 +244,7 @@ const {
         }
 
         .card__content > figure > img {
+            transform: none;
             border-left: 1px solid hsl(225, 14%, 95%);
         }
     }

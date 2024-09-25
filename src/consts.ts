@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'maillard.dev';
-export const SITE_DESCRIPTION = 'Managing websites and posts is a passion';
+export const SITE_DESCRIPTION = 'Improve your content with enthusiasm.';
 export const AUTHOR = 'Michel Maillard';
 export const HANDLE_TWITTER = 'twittypork';
 export const HANDLE_GITHUB = 'hubpork';

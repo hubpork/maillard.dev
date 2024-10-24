@@ -6,8 +6,6 @@ pubDate: "Oct 24 2024"
 heroImage: "/webanimation.jpg"
 ---
 
-# The magical world of the CSS Animations API
-
 Imagine if you could bring websites to life, as if they were on a big stage in the spotlight, dancing, flowing, captivating – welcome to the magical world of the CSS Animations API. This is no ordinary tool, but the ace up the sleeve of every developer who dreams of smooth, performance-optimised animations.
 
 Instead of laboriously navigating through endless lines of CSS animations or cluttering up JavaScript libraries, you can work directly with the core of the browser using the CSS Animations API. It allows you to control animations precisely and flexibly – without sacrificing performance. That's not only practical, but also pretty darn cool!

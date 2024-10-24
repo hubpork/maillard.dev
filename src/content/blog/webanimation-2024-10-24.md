@@ -1,7 +1,7 @@
 ---
-title: "The CSS Animations API Revolution: Your ultimate guide to modern web animations."
+title: "The CSS Animations API Revolution"
 linktext: "Let's animate it"
-description: "The magical world of the CSS Animations API"
+description: "Your ultimate guide to modern web animations"
 pubDate: "Oct 24 2024"
 heroImage: "/webanimation.jpg"
 ---

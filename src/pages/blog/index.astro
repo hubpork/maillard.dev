@@ -9,7 +9,6 @@ const blogEntries = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
 );
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 	<head>

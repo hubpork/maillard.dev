@@ -2,6 +2,7 @@
 const today = new Date();
 const { footerClass } = Astro.props;
 import Linktree from '@/components/icons/Linktree.astro';
+import Insta from '@/components/icons/Insta.astro';
 import Codepen from '@/components/icons/Codepen.astro';
 import Linkedin from '@/components/icons/Linkedin.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HANDLE_CODEPEN } from '../consts';
@@ -42,7 +43,7 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HAN
 				<div class="flex space-x-3 lg:text-3xl">
 					<a
 					class="hover:opacity-70 py-2 px-3 rounded-lg"
-					title="Codepen"
+					title="Linktree"
 					href={`https://linktr.ee/maillard.dev`}
 					target="_blank"
 					rel="noopener"
@@ -57,6 +58,16 @@ import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HAN
 						rel="noopener"
 					>
 						<Linkedin />
+					</a>
+					<div class="flex space-x-3 lg:text-3xl">
+						<a
+						class="hover:opacity-70 py-2 px-3 rounded-lg"
+						title="Instagram"
+						href={`https://www.instagram.com/maillard_dev`}
+						target="_blank"
+						rel="noopener"
+					>
+						<Insta />
 					</a>
 					<a
 						class="hover:opacity-70 py-2 px-3 rounded-lg"

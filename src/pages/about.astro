@@ -10,7 +10,6 @@ import Timeline from '@/components/widgets/Timeline.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import placeHolder from '/public/images/photo-about.jpg';
 import video from '/public/video/funkologie.mp4';
-import poster from '/public/images/curtis.jpg';
 ---
 
 <!DOCTYPE html>
@@ -25,13 +24,14 @@ import poster from '/public/images/curtis.jpg';
 		<main class="flex-grow flex-shrink-0">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
-					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="about me" />
-					<div class="prose lg:prose-2xl lg:mx-auto">
-						<video controls poster={poster}>
+					<Picture class="mb-5 lg:mb-12" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="about me" />
+					<h1 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Michel Maillard – Frontend Web Developer and Online Marketing Manager</h1>
+
+					<div class="lg:prose-2xl about-grid">
+						<video controls>
 							<source src={video} type="video/mp4">
 						  Your browser does not support the video tag.
 						</video> 
-						<h1 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Michel Maillard – Frontend Web Developer and Online Marketing Manager</h1>
 						<p>My extensive knowledge in the technical implementation of websites, including HTML, CSS and Javascript, as well as expertise in various CMS frameworks. The passion for targeted online marketing is evident in the development and implementation of successful SEO strategies and ads campaigns that significantly increase the visibility and reach of customer projects.</p>
 						<p>I also have in-depth knowledge of content strategy and community management, which enables me to develop tailored solutions that are based on sound target group analysis and strengthen brand identity. My analytical approach to KPI reports and trend analysis allows me to continuously monitor and optimise the effectiveness of marketing measures.</p>
 					</div>
@@ -176,12 +176,20 @@ import poster from '/public/images/curtis.jpg';
 
 <style>
 
-
 .skill-bars {
 	--bar-padding: var(--timeline-left-padding);
 	margin-top: var(--vspace-2_5);
 	display: flex;
 	flex-flow: row wrap;
+}
+
+.about-grid {
+	display: grid;display: grid;
+  	gap: 1rem;
+	@media (width > 48rem) {
+		grid-template-columns: 1fr 2fr;
+		gap: 2rem;
+	}
 }
 
 h1 + p {

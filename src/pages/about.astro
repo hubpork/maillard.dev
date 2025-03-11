@@ -32,7 +32,7 @@ import poster from '/public/images/poster.webp';
 							<p>My extensive knowledge in the technical implementation of websites, including HTML, CSS and Javascript, as well as expertise in various CMS frameworks. The passion for targeted online marketing is evident in the development and implementation of successful SEO strategies and ads campaigns that significantly increase the visibility and reach of customer projects.</p>
 							<p>I also have in-depth knowledge of content strategy and community management, which enables me to develop tailored solutions that are based on sound target group analysis and strengthen brand identity. My analytical approach to KPI reports and trend analysis allows me to continuously monitor and optimise the effectiveness of marketing measures.</p>
 						</div>
-						<video controls poster={poster}>
+						<video controls preload="metadata">
 							<source src={video} type="video/mp4">
 						  Your browser does not support the video tag.
 						</video> 
@@ -190,6 +190,7 @@ h1 {
 
 video {
 	aspect-ratio: 9/16;
+	margin-top: 0;
 }
 
 .about-grid {

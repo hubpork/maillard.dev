@@ -10,7 +10,6 @@ import Timeline from '@/components/widgets/Timeline.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import placeHolder from '/public/images/photo-about.webp';
 import video from '/public/video/mereal.mp4';
-import posterUrl from '/public/images/poster.jpg';
 ---
 
 <!DOCTYPE html>
@@ -34,7 +33,7 @@ import posterUrl from '/public/images/poster.jpg';
 							<p>Thanks to my experience in content strategy and community management, I develop targeted solutions that strengthen brand identity. I continuously optimise marketing measures through KPI analysis.</p>
 							<p>As an AI expert, I use tools such as Claude, ChatGPT, Neuroflash, Leonardo, Flux and Kling AI to automate text, image and video content. My focus: making creative processes more efficient, optimising brand communication and increasing engagement.</p>
 						</div>
-						<video controls preload="metadata"  poster={posterUrl}>
+						<video controls preload="metadata">
 							<source src={video} type="video/mp4">
 						  Your browser does not support the video tag.
 						</video> 
@@ -191,6 +190,7 @@ h1 {
 }
 
 .about-grid video {
+	background-image: url(/public/images/poster.jpg);
 	aspect-ratio: 9/16;
 	margin-top: 0 !important;
 }

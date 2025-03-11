@@ -8,8 +8,9 @@ import Clients from '@/components/widgets/Clients.astro';
 import Stats from '@/components/widgets/Stats.astro';
 import Timeline from '@/components/widgets/Timeline.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import placeHolder from '/public/images/photo-about.jpg';
-import video from '/public/video/funkologie.mp4';
+import placeHolder from '/public/images/photo-about.webp';
+import video from '/public/video/mereal.mp4';
+import poster from '/public/images/poster.webp';
 ---
 
 <!DOCTYPE html>
@@ -26,15 +27,15 @@ import video from '/public/video/funkologie.mp4';
 				<article class="max-width mx-auto">
 					<Picture class="mb-6 lg:mb-14" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="about me" />
 					<div class="lg:prose-2xl about-grid">
-						<video controls>
-							<source src={video} type="video/mp4">
-						  Your browser does not support the video tag.
-						</video> 
 						<div>
 							<h1 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-3xl !lg:text-4xl">Michel Maillard – Frontend Web Developer and Online Marketing Manager</h1>
 							<p>My extensive knowledge in the technical implementation of websites, including HTML, CSS and Javascript, as well as expertise in various CMS frameworks. The passion for targeted online marketing is evident in the development and implementation of successful SEO strategies and ads campaigns that significantly increase the visibility and reach of customer projects.</p>
 							<p>I also have in-depth knowledge of content strategy and community management, which enables me to develop tailored solutions that are based on sound target group analysis and strengthen brand identity. My analytical approach to KPI reports and trend analysis allows me to continuously monitor and optimise the effectiveness of marketing measures.</p>
 						</div>
+						<video controls poster={poster}>
+							<source src={video} type="video/mp4">
+						  Your browser does not support the video tag.
+						</video> 
 					</div>
 				</article>
 			</section>
@@ -195,7 +196,7 @@ video {
 	display: grid;display: grid;
   	gap: 1.5rem;
 	@media (width > 48rem) {
-		grid-template-columns: 1fr 2fr;
+		grid-template-columns: 2fr 1fr;
 		gap: 3rem;
 	}
 }

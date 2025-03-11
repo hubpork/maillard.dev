@@ -10,7 +10,7 @@ import Timeline from '@/components/widgets/Timeline.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import placeHolder from '/public/images/photo-about.webp';
 import video from '/public/video/mereal.mp4';
-import poster from '/public/images/poster.jpg';
+import posterUrl from '/public/images/poster.jpg';
 ---
 
 <!DOCTYPE html>
@@ -26,15 +26,16 @@ import poster from '/public/images/poster.jpg';
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
 					<Picture class="mb-6 lg:mb-14" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="about me" />
-					<h1 class=‘!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-3xl !lg:text-4xl’>Michel Maillard – frontend web developer, online marketing manager & AI expert</h1>
-			
+					<div class="prose lg:prose-2xl">
+						<h1 class=‘!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-3xl !lg:text-4xl’>Michel Maillard – frontend web developer, online marketing manager & AI expert</h1>
+					</div>
 					<div class=" about-grid">
 						<div class="prose lg:prose-2xl">
 							<p>With in-depth expertise in web development (HTML, CSS, JavaScript) and CMS frameworks, I implement high-performance web solutions. My know-how in online marketing is reflected in successful SEO strategies and advertising campaigns that increase visibility and reach.</p>
 							<p>Thanks to my experience in content strategy and community management, I develop targeted solutions that strengthen brand identity. I continuously optimise marketing measures through KPI analysis.</p>
 							<p>As an AI expert, I use tools such as Claude, ChatGPT, Neuroflash, Leonardo, Flux and Kling AI to automate text, image and video content. My focus: making creative processes more efficient, optimising brand communication and increasing engagement.</p>
 						</div>
-						<video controls preload="metadata" poster={poster}>
+						<video controls preload="metadata"  poster={posterUrl}>
 							<source src={video} type="video/mp4">
 						  Your browser does not support the video tag.
 						</video> 

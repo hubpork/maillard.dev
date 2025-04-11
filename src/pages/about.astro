@@ -33,7 +33,7 @@ import video from '/public/video/mereal.mp4';
 							<p>Thanks to my experience in content strategy and community management, I develop targeted solutions that strengthen brand identity. I continuously optimise marketing measures through KPI analysis.</p>
 							<p>As an AI expert, I use selected tools to automate and generate text, image and video content. My focus: making creative processes more efficient, optimising brand communication and increasing engagement.</p>
 						</div>
-						<video controls preload="metadata">
+						<video controls preload="metadata" id="video">
 							<source src={video} type="video/mp4">
 						  Your browser does not support the video tag.
 						</video> 
@@ -80,18 +80,20 @@ import video from '/public/video/mereal.mp4';
 							],
 							[
 								{
+									title: 'FocusMedia Zurich',
+									business:'Media Technology',
+									time:'Aug 2024 – Mai 2025',
+									description:'Specialisation in multimedia productions with a focus on video production and editing techniques (CapCut, DaVinci Resolve). Creative use of AI-supported image and video production. AI-supported training and strategies for content, image and video. <br />Development of transversal skills for a holistic digital strategy.'
+								},
+								{
 									title: 'HKV Aarau',
 									business:'Online Marketing Manager',
 									time:'Nov 2023 - June 2024',
 									description:'Extensive experience in providing SEO and PPC support to clients, as well as developing and analysing successful social media strategies with KPI reports. My focus is on content creation, community management and website optimisation, supported by trend and performance analysis.'
 								},
 								{
-									title: 'Page Speed',
-									description:'Conduct comprehensive pagespeed audits for websites to identify opportunities for improvement and if possible providing actionable insights. Evaluating factors such as compression, image optimisation, script loading and mobile optimisation. <br /><br />Working with designers and digital agencies to develop page speed optimisation services and ensure that aspects of page speed are considered in the early stages of development.',
-								},
-								{
 									title: 'Search Engine Optimization (SEO)',
-									description:'User experience is an integral part of SEO. Search engines aim to deliver the best possible results to users, so they consider factors such as website accessibility, navigation, and mobile responsiveness. Providing a seamless and user-friendly experience on your website can positively impact search engine rankings.',
+									description:'User experience is an integral part of SEO. Search engines aim to deliver the best possible results to users, so they consider factors such as website accessibility, navigation, and mobile responsiveness. Providing a seamless and user-friendly experience on your website can positively impact search engine rankings. Conduct comprehensive pagespeed audits for websites to identify opportunities for improvement and if possible providing actionable insights.',
 								},
 								// {
 								// 	title: 'Open to new ideas and contributions',
@@ -116,11 +118,11 @@ import video from '/public/video/mereal.mp4';
 
 					<Stats
 						items={[
+							{ name: 'Adobe Creative Suite, Notion, Make, ChatGPT, Manus, Midjourney, Leonardo, Recraft, Ideogram, Hailuo, Kling, Runway, Krea, ElevenLabs, Suno', value: '102' },
 							{ name: 'HTML, CSS, SCSS, BEM, Tailwind & Zurb Foundation', value: '102' },
 							{ name: 'Javascript, jQuery, GSAP, Astro, React', value: '102' },
 							{ name: 'GIT, Gulp, Grunt - Package Management', value: '102' },
 							{ name: 'SEO Analyzer, SEA Expert, Social Media Marketing Specialist', value: '102' },
-							{ name: 'Adobe Creative Suite, Canvas, Easil, Leonardo & Flux', value: '102' },
 							{ name: 'Quality, calm, disciplined, imaginative, analytical & meticulous', value: '102' },
 						]}
 					/>

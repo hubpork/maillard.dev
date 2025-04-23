@@ -2,7 +2,6 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import '../styles/global.css';
-import { SEO } from "astro-seo";
 
 export interface Props {
 	title: string;
@@ -12,10 +11,9 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString();
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 const makeTitle = title ? title + " - " + "Michel Maillard" : "Michel Maillard - Elevate your digital presence";
 ---
-
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -23,34 +21,40 @@ const makeTitle = title ? title + " - " + "Michel Maillard" : "Michel Maillard -
 <link rel="icon" href="favicon/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
 <link rel="manifest" href="favicon/site.webmanifest">
-<meta name="google-site-verification" content="RnzuYGpWRn3iqjzgzeYiFyBMdFZY8Fvg3YXr4zrwiMM" />
-
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link
+	rel="alternate"
+	type="application/rss+xml"
+	title={title}
+	href={new URL('rss.xml', Astro.site)}
+/>
 <meta name="generator" content={Astro.generator} />
+
+<!-- Font preloads -->
 <link rel="preload" href="/playfair-display-v30-latin-800.woff2" as="font" type="font/woff2" crossorigin>
 
-<SEO
-	title={makeTitle}
-	description="Seeking insightful articles, well-researched perspectives, or simply want to expand your knowledge, reading my blog posts can be an enriching experience."
-	canonical={canonicalURL}
-	twitter={{
-		creator: "@twittypork",
-		site: "@twittypork",
-		card: "summary_large_image",
-	}}
-	openGraph={{
-		basic: {
-			url: canonicalURL,
-			type: "website",
-			title: makeTitle,
-			image: resolvedImageWithDomain,
-		},
-		image: {
-			alt: "creating websites is a passion",
-			width: 1200,
-			height: 627,
-		},
-	}}
-/>
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image ? new URL(image, Astro.url).toString() : resolvedImageWithDomain} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={image ? new URL(image, Astro.url).toString() : resolvedImageWithDomain} />
+
 
 <script>
 	(() => {

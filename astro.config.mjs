@@ -6,16 +6,16 @@ import sitemap from '@astrojs/sitemap';
 import svelte from "@astrojs/svelte";
 
 // https://astro.build/config
-import image from "@astrojs/image";
-
-// https://astro.build/config
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://www.maillard.dev',
-  integrations: [image({
-    serviceEntryPoint: '@astrojs/image/sharp'
-  }), sitemap(), mdx(), sitemap(), svelte(), image(), tailwind()],
-  compressHTML: true
+  integrations: [sitemap(), mdx(), svelte(), tailwind()],
+  compressHTML: true,
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/sharp'
+    }
+  }
 });

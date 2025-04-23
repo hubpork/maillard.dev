@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from 'astro:content';
-import { Picture } from '@astrojs/image/components';
+import { Picture } from 'astro:assets';
 import HeaderLink from '@/components/HeaderLink.astro';
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
@@ -24,7 +24,7 @@ const { title, description, heroImage } = Astro.props;
 		
 		<main class="flex-grow flex-shrink-0 relative">
 			<article class="pb-20 prose lg:prose-2xl prose-headings:font-headingFont mx-auto sm:px-6 px-6 mt-8 lg:prose-xl prose-a:servette prose-headings:leading-tighter prose-lg prose-md">
-				{heroImage && <Picture class="mb-5 lg:mb-10" src={heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="descriptive text" />}
+				{heroImage && <Picture class="mb-5 lg:mb-10" src={heroImage} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="descriptive text" />}
 		
 				<slot />
 				

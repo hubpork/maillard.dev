@@ -1,11 +1,11 @@
 ---
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import { Picture } from '@astrojs/image/components';
 import { getCollection } from 'astro:content';
 
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
+import { Picture } from 'astro:assets';
 import placeHolder from '/public/images/photo-index.jpg';
 
 const blogEntries = (await getCollection('blog')).sort(
@@ -25,7 +25,7 @@ const blogEntries = (await getCollection('blog')).sort(
 		<main class="flex-grow flex-shrink-0">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
-					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']} alt="my philosophy" />
+					<Picture class="mb-5 lg:mb-10" src={placeHolder} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']} alt="my philosophy" />
 					<div class="prose lg:prose-2xl mx-auto">
 						<h1 class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight !lg:leading-extra-tight my-4">
 							Unleash the power of your digital presence: websites and social media with passion.

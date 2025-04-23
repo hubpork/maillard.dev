@@ -1,5 +1,5 @@
 ---
-import { Picture } from '@astrojs/image/components';
+import { Picture } from 'astro:assets';
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
@@ -24,7 +24,7 @@ import video from '/public/video/mereal.mp4';
 		<main class="flex-grow flex-shrink-0">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
-					<Picture class="mb-6 lg:mb-14" src={placeHolder} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="about me" />
+					<Picture class="mb-6 lg:mb-14" src={placeHolder} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="about me" />
 					<div class="about-grid">
 						<div class="prose lg:prose-2xl">
 							<h1 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Michel Maillard – frontend web developer, online marketing manager & AI expert</h1>
@@ -83,7 +83,7 @@ import video from '/public/video/mereal.mp4';
 									title: 'FocusMedia Zurich',
 									business:'Media Technology',
 									time:'Aug 2024 – Mai 2025',
-									description:'Specialisation in multimedia productions with a focus on video production and editing techniques (CapCut, DaVinci Resolve). Creative use of AI-supported image and video production. AI-supported training and strategies for content, image and video. <br />Development of transversal skills for a holistic digital strategy.'
+									description:'Creative use of AI-supported image and video production. AI-supported training and strategies for content, image and video. Specialisation in multimedia productions with a focus on video production and editing techniques (CapCut, DaVinci Resolve). Development of transversal skills for a holistic digital strategy.'
 								},
 								{
 									title: 'HKV Aarau',
@@ -118,9 +118,9 @@ import video from '/public/video/mereal.mp4';
 
 					<Stats
 						items={[
-							{ name: 'Adobe Creative Suite, Notion, Make, ChatGPT, Manus, Midjourney, Leonardo, Recraft, Ideogram, Hailuo, Kling, Runway, Krea, ElevenLabs, Suno', value: '102' },
-							{ name: 'HTML, CSS, SCSS, BEM, Tailwind & Zurb Foundation', value: '102' },
-							{ name: 'Javascript, jQuery, GSAP, Astro, React', value: '102' },
+							{ name: 'Notion, Make, ChatGPT, Manus, Midjourney, Leonardo, Recraft, Ideogram, Hailuo, Kling, Runway, Krea, ElevenLabs, Suno', value: '102' },
+							{ name: 'HTML, CSS, SCSS, BEM, Tailwind & Adobe Creative Suite', value: '102' },
+							{ name: 'Javascript, GSAP, Astro, React', value: '102' },
 							{ name: 'GIT, Gulp, Grunt - Package Management', value: '102' },
 							{ name: 'SEO Analyzer, SEA Expert, Social Media Marketing Specialist', value: '102' },
 							{ name: 'Quality, calm, disciplined, imaginative, analytical & meticulous', value: '102' },
@@ -143,9 +143,10 @@ import video from '/public/video/mereal.mp4';
 							{ name: 'Schubi Weine', url: 'https://www.schubiweine.ch' },
 							{ name: 'Flyerline', url: 'https://www.flyerline.ch' },
 							{ name: 'Mapo', url: 'https://www.mapo.ch' },
-							{ name: 'Stadtbibliothek Basel', url: 'https://www.stadtbibliothekbasel.ch' },
 							{ name: 'Fust', url: 'https://www.fust.ch' },
-							{ name: 'Olwo', url: 'https://www.olwo.ch' }
+							{ name: 'Olwo', url: 'https://www.olwo.ch' },
+							{ name: 'Liebegg', url: 'https://www.liebegg.ch' },
+							{ name: 'Stadtbibliothek Basel', url: 'https://www.stadtbibliothekbasel.ch' },
 						]}
 					/>
 

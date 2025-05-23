@@ -1,16 +1,14 @@
 /* src/styles/facade.css */
 
+.course,
 .film {
 	--color-fog-200: hsl(225, 5%, 85%);
 	--color-fog-500: hsl(225, 2%, 55%);
 }
 
-.course {
-	--color-fog-200: hsl(225, 5%, 85%);
-	--color-fog-500: hsl(225, 2%, 55%);
-}
 
 .youtube,
+.youtube iframe,
 .wrapper {
 	width: 100%;
 	aspect-ratio: 1/1;
@@ -71,6 +69,7 @@
 }
 
 .youtube__16,
+.youtube__16 iframe,
 .wrapper__16 {
 	aspect-ratio: 9/16 !important;
 }

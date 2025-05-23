@@ -5,6 +5,11 @@
 	--color-fog-500: hsl(225, 2%, 55%);
 }
 
+.course {
+	--color-fog-200: hsl(225, 5%, 85%);
+	--color-fog-500: hsl(225, 2%, 55%);
+}
+
 .youtube,
 .wrapper {
 	width: 100%;

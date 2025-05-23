@@ -196,6 +196,7 @@ const t = isEnglish ? en : de;
 	h1 {
 		text-wrap: balance;
 	}
+	
 	.skill-bars {
 		--bar-padding: var(--timeline-left-padding);
 		margin-top: var(--vspace-2_5);
@@ -225,7 +226,32 @@ const t = isEnglish ? en : de;
 	}
 </style>
 
+
 <script>
-    import initLazyYoutube from '@/scripts/facade.js';
-    initLazyYoutube();
+    (function() {
+        const youtube = document.querySelectorAll<HTMLElement>(".youtube");
+
+        for (let i = 0; i < youtube.length; i++) {
+            const videoId = youtube[i].dataset.embed;
+            const altText = youtube[i].dataset.alt || "YouTube Video";
+            const source = "https://img.youtube.com/vi/" + videoId + "/sddefault.jpg";
+            
+            const image = new Image();
+            image.src = source;
+            image.alt = altText;
+
+            image.addEventListener("load", function() {
+                youtube[i].appendChild(image);
+            });
+
+            youtube[i].addEventListener("click", function(this: HTMLElement) {
+                const iframe = document.createElement("iframe");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.embed + "?rel=0&showinfo=0&autoplay=1");
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });
+        }
+    })();
 </script>

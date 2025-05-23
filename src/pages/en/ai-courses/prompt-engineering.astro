@@ -1,0 +1,167 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Course from '@/components/widgets/Course.astro';
+import Faq from '@/components/widgets/Faq.astro';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+
+import automationen from '@/assets/images/mastermind.png';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<BaseHead title={t.serp.engineeringTitle} description={t.serp.engineeringDesc} />
+	</head>
+    <body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+							<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">Master AI: Understanding tools, automation and prompt engineering</h1>
+                            <p>In this course, you will learn how to use modern language models (LLMs) such as ChatGPT specifically for marketing, content creation and automation. You will gain practical experience in how to adapt AI tools to your needs in combination with platforms such as Make or Notion (optional). With prompt engineering training from the first prompt to the finished result, you will make your work processes more efficient and creative.</p>
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">What to expect</h2>
+                            <p>Use GPT to create targeted blog articles, landing pages, emails and social media posts – including calls to action and precise targeting. Improve your SEO with AI through smart keyword research, compelling meta descriptions and effective content optimisation – for greater visibility and better rankings. Automate recurring tasks. From content planning and newsletter creation to customer communication – efficient, error-free and time-saving.</p>
+                        </div>
+					</div>
+				</article>
+            </section>
+            <section id="course" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="max-w-[100%] lg:mx-auto text-white">
+						<Course
+							items={[
+								[
+									{
+										videoId:'',
+										imgHolder: automationen,
+										title: 'Tools',
+                                        groups: t.groups.mastering,
+                                        costs: t.price.mastering,
+										plus: t.extra.mastering,
+										time: t.time.mastering,
+                                        description: t.description.mastering,
+                                        linkText: "Register now",
+										link: "mailto:engineering@maillard.dev?subject=Prompt%20Engineering"
+									},
+								]
+							]}
+						/>
+
+					</div>
+				</article>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="videos" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-white relative">
+				<article class="max-width mx-auto">
+					
+					<h2 class="!mb-5 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-balance">Examples from the course</h2>
+                    <p class="!font-normal text-l lg:text-2xl text-balance">Here you will find inspiring examples of how you can efficiently create content to speed up processes using well-thought-out prompts and the right tools.</p>
+					<div class="grid mx-auto md:grid-cols-2 gap-8 lg:gap-16 my-8">
+
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">An example analysis</h3>
+                            <p><i>I would like you to analyse the video in the link below. Afterwards, please create three appealing social media posts that are suitable for both Instagram and Twitter and are based on the content of the video. Each post should include an emoji and three hashtags.</i></p><br />
+                            <p><i>I would like to generate a suitable photorealistic image for each post. Please give me a suitable Midjourney prompt for each one.</i></p>
+
+                        </div>
+                        
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">The RICE-Q method</h3>
+                            <ul>
+                                <li>R – Role. Give ChatGPT a role.
+                                <li>I – Instructions. Tell ChatGPT what to do.
+                                <li>C – Context. Provide some background information about the task.
+                                <li>E – Example. If possible, give ChatGPT an example of what the answer should look like.
+                                <li>Q – Questions. Tell ChatGPT to ask you questions so that it can understand better.
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="outro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+                            
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">AI for marketing with a plan – prompt, design, automate</h2>
+                            <p>Learn how to use AI tools such as ChatGPT, Make and Notion to develop marketing content that works – quickly, creatively and strategically.</p>
+
+                            <h2 class="!font-leadFont !text-2xl !mt-8 text-balance">Register for a workshop now and get started</h2>
+                            <a href="mailto:engineering@maillard.dev?subject=Prompt%20Engineering" class="mt-0 leading-1 no-underline inline-flex justify-center font-leadFont font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 focus:outline-none rounded-sm px-5 py-2 transition duration-150 ease-out hover:ease-in">
+                                Secure your place now
+                            </a>
+					
+                       </div>
+					</div>
+				</article>
+            </section>
+			<section id="faq" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+
+					<h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Frequently asked questions</h2>
+					<Faq
+                        faqs={[
+                            {
+                                question: "What exactly will I learn in the Mastering AI course?",
+                                answer: "You will learn how to use language models such as ChatGPT or Claude AI specifically for content creation, SEO and marketing. I will also show you how to automate workflows with Make and Notion. The focus is on practical prompt engineering – from the first input to the finished result.",
+                            },
+                            {
+                                question: "Do I need any prior knowledge for the AI course?",
+                                answer: "No, the course is also suitable for beginners with no technical knowledge. Everything is explained in an easy-to-understand way – all you need is a ChatGPT Plus account. Ideal for marketing professionals, copywriters, entrepreneurs or teams who want to work smarter.",
+                            },
+                            {
+                                question: "What is prompt engineering and why is it important?",
+                                answer: "Prompt engineering means formulating specific inputs (prompts) that enable you to obtain better, more relevant and more accurate results from AI tools. You will learn how to turn ChatGPT & Co. into your productive assistant – for texts, ideas, planning and more.",
+                            },
+                            {
+                                question: "How will the course benefit me in terms of SEO?",
+                                answer: "You will learn how to use AI to research keywords, optimise meta texts and create SEO content for blog articles, landing pages and product texts. This saves time and significantly improves your Google ranking.",
+                            },
+                            {
+                                question: "Is the course also suitable for companies?",
+                                answer: "Absolutely. The course is ideal for marketing departments, SMEs, agencies or content teams who want to automate their processes and make them more efficient – without additional tools or expensive software subscriptions.",
+                            },
+                            {
+                                question: "Where does the course take place?",
+                                answer: "The course can take place on-site in Olten, online or at your company. The flexible format allows for maximum planning flexibility – even as a team event or training day.",
+                            },
+                        ]}
+                    />
+				</article>
+            </section>
+
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+
+    import initLazyYoutube from '@/scripts/facade.js';
+    initLazyYoutube();
+</script>

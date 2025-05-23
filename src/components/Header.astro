@@ -2,19 +2,28 @@
 import HeaderLink from './HeaderLink.astro';
 import { SITE_DESCRIPTION } from '../consts';
 const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
+
+import de from '../i18n/de.json';
+import en from '../i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+
 ---
 
 <header class:list={[ headerClass ]} data-fix={headerFixClass}>
 	<div class="flex flex-col md:flex-row items-center md:justify-between mx-auto header-max-width">
 
-		<HeaderLink href="/" class="mb-4 md:mb-0 mt-[-5px]" title={title}>
-			<div class="text-5xl md:text-4xl xl:text-5xl font-headingFont">m<span class:list={[ headerDotClass ]}>ai</span>llard.dev</div>
-			<div class="text-center md:text-right text-base font-leadFont">{SITE_DESCRIPTION}</div>
+		<HeaderLink href={isEnglish ? "/en" : "/"} class="mb-4 md:mb-0 mt-[-5px]" title={title}>
+			<div class="text-5xl md:text-4xl xl:text-5xl font-logoFont">m<span class:list={[ headerDotClass ]}>ai</span>llard<span class:list={[ headerDotClass ]}>.</span>dev</div>
+			<div class="text-center md:text-right font-leadFont">{SITE_DESCRIPTION}</div>
 		</HeaderLink>
 
-		<nav class="nav flex gap-3 lg:gap-6 text-xl lg:text-2xl mb-4 md:mb-0 font-headingFont">
-			<HeaderLink href="/blog">insights</HeaderLink>
-			<HeaderLink href="/about">journey</HeaderLink>
+		<nav class="nav flex gap-3 lg:gap-6 text-xl lg:text-2xl mb-4 md:mb-0 !font-leadFont">
+			<HeaderLink href={isEnglish ? "/en/ai-courses" : "/ki-kurse"}>{t.nav.courses}</HeaderLink>
+			<HeaderLink href={isEnglish ? "/en/blog" : "/blog"}>{t.nav.blog}</HeaderLink>
+			<HeaderLink href={isEnglish ? "/en/portrait" : "/portrait"}>{t.nav.portrait}</HeaderLink>
 		</nav>
 	
 	</div>

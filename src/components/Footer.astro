@@ -1,58 +1,82 @@
 ---
 const today = new Date();
-const { footerClass } = Astro.props;
+const { footerClass, frontmatter } = Astro.props;
 import Linktree from '@/components/icons/Linktree.astro';
 import Insta from '@/components/icons/Insta.astro';
 import Codepen from '@/components/icons/Codepen.astro';
 import Linkedin from '@/components/icons/Linkedin.astro';
-import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_GITHUB, HANDLE_TWITTER, HANDLE_CODEPEN } from '../consts';
+import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_CODEPEN } from '@/consts';
+
+import de from '../i18n/de.json';
+import en from '../i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+let switchLangPath = '';
+
+const pathMap: Record<string, string> = {
+  '/ki-kurse': '/en/ai-courses',
+  '/en/ai-courses': '/ki-kurse',
+  '/ki-kurse/ai-appetizers': '/en/ai-courses/ai-appetizers',
+  '/en/ai-courses/ai-appetizers': '/ki-kurse/ai-appetizers',
+  '/ki-kurse/prompt-engineering': '/en/ai-courses/prompt-engineering',
+  '/en/ai-courses/prompt-engineering': '/ki-kurse/prompt-engineering',
+  '/ki-kurse/music-generation': '/en/ai-courses/music-generation',
+  '/en/ai-courses/music-generation': '/ki-kurse/music-generation',
+};
+
+if (frontmatter?.slug_de && frontmatter?.slug_en) {
+	switchLangPath = isEnglish
+		? `/blog/${frontmatter.slug_de}`
+		: `/en/blog/${frontmatter.slug_en}`;
+} else {
+	// Fallback für statische Seiten
+	switchLangPath = pathMap[pathname] ?? (
+		isEnglish ? pathname.replace(/^\/en/, '') || '/' : '/en' + pathname
+	);
+}
 ---
 
 <footer class:list={[ footerClass ]}>
+
 	<article class="max-width mx-auto">
 	
-		
-		<h2 class="!mb-4 !lg:mb-6 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Get in touch</h2>
-		<p class="font-headingFont text-4xl lg:text-6xl xl:text-7xl leading-tight extra-tight my-4">
-			Feel free to reach out if you want to collaborate with me, or simply have a chat.
-		</p>
+		<h2 class="!mb-4 !lg:mb-6 !font-leadFont !font-normal !text-2xl !lg:text-3xl">{t.footer.intro}</h2>
 	
 		<div class="max-width mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 mt-5 lg:mt-10 lg:mb-20">
 
 			<div class="column">
 				<p class="lg:text-xl">
-					Web developer and funk music lover based in Olten. I love to learn new things and share my knowledge with others. 
+					{t.footer.based} {t.footer.respond}
 				</p>
-				
+	
 				<div class="mt-10 grid gap-5">
 					<a href={`mailto:${EMAIL}`} 
-						class="flex justify-center font-headingFont !text-3xl font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 rounded-sm px-10 py-5 focus:outline-none transition duration-150 ease-out hover:ease-in">
-						Say Hello
+						class="flex justify-center font-leadFont !text-3xl font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 rounded-sm px-10 py-5 focus:outline-none transition duration-150 ease-out hover:ease-in">
+						{t.footer.hello}
 					</a>
 				</div>
 			</div>
 			<div class="column">
-				<p class="lg:text-xl">
-					I try to respond to messages in a timely manner. I value your feedback and would appreciate the opportunity to hear your thoughts. 
-				</p>
-
-				<p class="lg:text-xl !font-leadFont my-8">
+				<p class="lg:text-xl">{t.footer.language}: <a href={switchLangPath} class="cursor-pointer no-underline text-servette hover:text-black focus:outline-none transition duration-150 ease-out hover:ease-in">{isEnglish ? "Deutsch" : "English"}</a></p>
+				<p class="lg:text-xl !font-leadFont my-8 text-balance">
 					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
 				</p>
 
-				<div class="flex space-x-3 lg:text-3xl">
+				<div class="flex space-x-3 lg:text-3xl justify-center lg:justify-start">
 					<a
 					class="hover:opacity-70 py-2 px-3 rounded-lg"
-					title="Linktree"
-					href={`https://linktr.ee/maillard.dev`}
-					target="_blank"
-					rel="noopener"
-				>
-					<Linktree />
-				</a>
+						title="Linktree"
+						href={`https://linktr.ee/maillard.dev`}
+						target="_blank"
+						rel="noopener"
+					>
+						<Linktree />
+					</a>
 
-					<div class="flex space-x-3 lg:text-3xl">
-						<a
+				
+					<a
 						class="hover:opacity-70 py-2 px-3 rounded-lg"
 						title="Instagram"
 						href={`https://www.instagram.com/maillard_dev`}

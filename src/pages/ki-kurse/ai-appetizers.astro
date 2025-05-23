@@ -1,0 +1,197 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Course from '@/components/widgets/Course.astro';
+import Faq from '@/components/widgets/Faq.astro';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<BaseHead title={t.serp.apptizersTitle} description={t.serp.apptizersDesc} />
+	</head>
+    <body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+							<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">AI Appetizers – Bild- & Videocontent auf neuem Level</h1>
+                            <p>Willkommen in der Welt der KI-Kunst! Hier lernst du wie digitale Meisterwerke entstehen, aber auch, wie du Sie smart bewirbst. Hol dir Ideen, wie du mit kreativem Marketing echte Fans gewinnst.
+                            <br />Perfekte KI-Kunst, die knallt und verkauft, für Social Media, Marketing oder dein Portfolio. </p>
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">Was erwartet dich</h2>
+                            <p>Ob für Social Media oder grosse Kampagnen: Mit KI erstellst du im Handumdrehen professionelle Videos. Ich zeige dir Schritt für Schritt, wie du ein überzeugendes Marketingvideo produzierst – ideal, um eine Instagram- oder TikTok-Community mit einzigartigem Content zu begeistern. 🎥 ✨</p>
+                        </div>
+					</div>
+				</article>
+            </section>
+            <section id="course" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="max-w-[100%] lg:mx-auto text-white">
+						<Course
+							items={[
+								[
+									{
+										videoId:'8BX3C07nCv0',
+										imgHolder: undefined,
+										title: 'Tools',
+                                        groups: t.groups.appetizers,
+                                        costs: t.price.appetizers,
+                                        plus: t.extra.appetizers,
+                                        time: t.time.appetizers,
+                                        description: t.description.appetizers,
+										link: "mailto:appetizers@maillard.dev?subject=AI%20Appetizers"
+									},
+								]
+							]}
+						/>
+
+					</div>
+				</article>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="videos" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-white relative">
+				<article class="max-width mx-auto">
+					
+					<h2 class="!mb-5 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-balance">Beispiele aus dem Kurs</h2>
+                    <p class="!font-normal text-l lg:text-2xl text-balance">Hier findest du inspirierende Beispiele für KI-gestützte Videoerstellung – von Social-Media-Posts bis zu Marketingclips.</p>
+					<div class="grid mx-auto md:grid-cols-2 md:grid-cols-3 gap-8 lg:gap-16 my-8 film">
+
+                        <div class="wrapper fade-in">
+                            <div class="youtube" data-embed="tme2kG8H2BQ">
+                                <div class="play-button"></div>
+                            </div>
+                            <h3 class="!mt-3 !font-normal !text-l">Deupine Dénuly Werbung</h3>
+                        </div>
+
+                        <div class="wrapper fade-in">
+                            <div class="youtube" data-embed="lK2ww2_-4Bo">
+                                <div class="play-button"></div>
+                            </div>
+                            <h3 class="!mt-3 !font-normal !text-l">Strip - The Lipstick</h3>
+                        </div>
+                        
+                        <div class="wrapper fade-in">
+                            <div class="youtube" data-embed="Jk2QDxmN6qY">
+                                <div class="play-button"></div>
+                            </div>
+                            <h3 class="!mt-3 !font-normal !text-l">Die Welt von Joel und seine Dinos</h3>
+                        </div>
+
+                    </div>
+                    <h2 class="!mt-16 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-balance">Diese Hybrid-Werbefilme wurde mit dem iPhone gedreht – die kreative Magie stammt von KI-Tools</h2>
+                    <div class="grid mx-auto md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-16 my-8 film">
+
+                        <div>
+                            <div class="wrapper wrapper__16 fade-in">
+                                <div class="youtube youtube__16" data-embed="gijFWAIFVAY">
+                                    <div class="play-button"></div>
+                                </div>
+                            </div>
+                            <h3 class="!mt-3 !font-normal !text-l">Alcazar Chips Werbung</h3>
+                        </div>
+          
+                        <div class="wrapper wrapper__16 fade-in">
+                            <div class="youtube youtube__16" data-embed="uox9a-ubuOI">
+                                <div class="play-button"></div>
+                            </div>
+                            <h3 class="!mt-3 !font-normal !text-l">3 Tannen Bier Werbung</h3>
+                        </div>
+
+                        <div class="wrapper wrapper__16 fade-in">
+                            <div class="youtube youtube__16" data-embed="6AuWBUnjCDw">
+                                <div class="play-button"></div>
+                            </div>
+                            <h3 class="!mt-3 !font-normal !text-l">Brasil 1982</h3>
+                        </div>
+
+                    </div>
+
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="outro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+                            
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">Videos, die auffallen – dank KI</h2>
+                            <p>Ob für Social Media oder grosse Kampagnen: KI macht's möglich, Videos im Handumdrehen zu erstellen. Und du lernst, wie du sie so einsetzt, dass sie nicht nur gut aussehen, sondern auch richtig was bringen.</p>
+
+                            <h2 class="!font-leadFont !text-2xl !mt-8 text-balance">Jetzt zum KI-Workshop anmelden und durchstarten</h2>
+                            <a href="mailto:appetizers@maillard.dev?subject=AI%20Appetizers" class="mt-0 leading-1 no-underline inline-flex justify-center font-leadFont font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 focus:outline-none rounded-sm px-5 py-2 transition duration-150 ease-out hover:ease-in">
+                                Sichere dir jetzt deinen Platz
+                            </a>
+					
+                       </div>
+					</div>
+				</article>
+            </section>
+			<section id="faq" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+
+					<h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Häufig gestellte Fragen</h2>
+					<Faq
+						faqs={[
+							{
+								question: "Was lerne ich im Kurs AI Appetizers konkret?",
+								answer: "In diesem Kurs lernst du, wie du mit KI-Tools beeindruckende Bilder und Videos erstellst – für Social Media, Marketing oder dein Portfolio. Du bekommst praxisnahes Wissen zur Erstellung, Bearbeitung und Bewerbung deines Contents. Ziel ist es, visuelle Inhalte zu kreieren, die Aufmerksamkeit erzeugen – und verkaufen.",
+							},
+							{
+								question: "Brauche ich Vorkenntnisse für den KI-Kurs?",
+								answer: "Nein, der Kurs ist für Einsteiger*innen und Fortgeschrittene geeignet. Du brauchst weder technisches Know-how noch Erfahrung mit Bildbearbeitung oder Videoschnitt. Alles wird Schritt für Schritt erklärt – von der Tool-Auswahl bis zum fertigen Video.",
+							},
+							{
+								question: "Welche KI-Tools werden im Kurs verwendet?",
+								answer: "Wir arbeiten mit modernsten Tools: 📸 Für Bilder z.B. Leonardo AI, Recraft, Flux, Ideogram oder Midjourney. 🎥 Für Videos z.B. Runway, Kling AI, Higgsfield, Hailuo. 🎵 Für Musik nutzen wir SUNO AI. Du lernst, welche Tools zu deinem Ziel passen.",
+							},
+                            {
+								question: "Wie lange dauert der Kurs?",
+								answer: "Der Kurs dauert zwischen 3 und 8 Stunden – je nachdem, wie tief du einsteigen möchtest. Du kannst den Umfang flexibel an deine Bedürfnisse anpassen. Ideal für Einzelpersonen und Gruppen.",
+							},
+                            {
+								question: "Ist der Kurs auch für Marketing-Teams oder Agenturen geeignet?",
+								answer: "Ja, besonders! Der Kurs eignet sich ideal für Teams, Agenturen oder Freelancer, die ihren visuellen Content auf das nächste Level bringen wollen – schnell, effizient und kostengünstig.",
+							},
+                            {
+								question: "Wo findet der Kurs statt?",
+								answer: "Der Kurs kann vor Ort in Olten, online oder in deinem Unternehmen stattfinden. Die flexible Durchführung ermöglicht maximale Planbarkeit – auch als Teamevent oder Weiterbildungstag.",
+							},
+						]}
+				  />
+				</article>
+	
+			</section>
+
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+
+    import initLazyYoutube from '@/scripts/facade.js';
+    initLazyYoutube();
+
+</script>

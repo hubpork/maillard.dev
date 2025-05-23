@@ -29,6 +29,7 @@ module.exports = {
 				}
 			},
 			fontFamily: {
+				'logoFont': ['"logoFont"', 'system-ui'],
 				'headingFont': ['"headingFont"', 'system-ui'],
 				'contentFont': ['"contentFont"', 'serif'],
 				'leadFont': ['"leadFont"', 'system-ui'],

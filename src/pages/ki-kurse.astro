@@ -1,0 +1,201 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import { Picture } from 'astro:assets';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Courses from '@/components/widgets/Courses.astro';
+import Faq from '@/components/widgets/Faq.astro';
+import Testimonials from '@/components/widgets/Testimonials.astro';
+import placeHolder from '@/assets/images/photo-ki.jpg';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+
+import patrickFrank from '@/assets/images/patrick_frank.jpg';
+import automationen from '@/assets/images/automationen.png';
+import suno from '@/assets/images/suno.png';
+import strip from '@/assets/images/strip.png';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<BaseHead title={t.serp.kurseTitle} description={t.serp.kurseDesc} />
+	</head>
+	<body class="flex flex-col bg-white text-gray-800">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-white py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<Picture class="mb-6 lg:mb-14 hero" src={placeHolder} layout='responsive' width={1440} height={720} formats={['avif', 'webp']}  alt="ki-kurse" loading="eager" />
+					<div class="prose lg:prose-2xl mx-auto">
+						<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">KI-Kurse für die Praxis: Lernen, anwenden, vorausgehen</h1>
+						<p>Mein Name ist Michel Maillard. Als erfahrener Webentwickler mit Expertise in SEO, Online-Marketing und der Integration von Künstlicher Intelligenz (KI) biete ich praxisnahe Schulungen für Unternehmen, Agenturen und Einzelpersonen an. Ich beherrsche ein breites Spektrum moderner KI-Technologien und setze sie gezielt ein, um kreative und effiziente Workflows zu gestalten.</p>
+						<h2 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Warum jetzt handeln?</h2>
+						<p>Der Future of Jobs Report 2025 des World Economic Forum zeigt: Bis 2030 entstehen weltweit rund 170 Millionen neue Jobs durch technologische Innovation – gleichzeitig könnten 92 Millionen Arbeitsplätze durch Automatisierung und KI wegfallen. Jetzt ist der Moment zu handeln: Mach dich und dein Team fit für die digitale Zukunft.</p>
+					</div>
+				</article>
+			</section>
+			<section id="courses" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="max-w-[100%] lg:mx-auto text-white">
+						<h2 class="!mb-8 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl !text-white">Das sind die drei Kernbereiche meiner Kursen:</h2>
+						
+						<Courses
+							items={[
+								[
+									{
+										videoId:'',
+										imgHolder: strip,
+										title: 'AI Appetizers – Bild- & Videocontent auf neuem Level',
+										costs: t.price.appetizers,
+										plus: t.extra.appetizers,
+										time: t.time.appetizers,
+										description: "Erstelle beeindruckende Inhalte mit Midjourney, Leonardo, Recraft, Flux, Kling & Co. – perfekt für Social Media, Marketing oder dein Portfolio. Und das auch ohne Vorkenntnisse.",
+										link: "/ki-kurse/ai-appetizers",
+									},
+								],
+								[
+									{
+										videoId:'',
+										imgHolder: automationen,
+										title: 'KI meistern: Tools, Automatisierungen und Prompt-Engineering verstehen',
+										costs: t.price.mastering,
+										plus: t.extra.mastering,
+										time: t.time.mastering,
+										description: "Mit Tools wie ChatGPT, Notion mit Make automatisierst du deine Workflows – und gewinnst Zeit für die wirklich wichtigen Dinge. Werde zum ultimativen KI-Flüsterer.",
+										link: "/ki-kurse/prompt-engineering"
+									},
+								],
+								[
+									{
+										videoId:'',
+										imgHolder: suno,
+										title: 'Sound trifft KI: Lerne, wie du mit SUNO AI Musik komponierst',
+										costs: t.price.suno,
+										plus: t.extra.suno,
+										time: t.time.suno,
+										description: "Lerne, wie du mit SUNO AI in Sekunden eigene Songs generierst. Mit praktischen Tipps, kreativen Prompts und smarten Tricks wirst du schnell zum KI-Musikprofi – ganz ohne Vorkenntnisse.",
+										link: "/ki-kurse/music-generation"
+									},
+								]
+							]}
+						/>
+
+						<p class="mt-8 lg:mt-16 text-xs">Gruppen profitieren von individuellen Preisangeboten – wir beraten euch gerne persönlich.</p>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class=" fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="about" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-fog-100 relative">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl">
+							<h2 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">KI-Kurse schweizweit – kreativ, praxisnah und mit persönlicher Begleitung</h2>
+							<p>
+								Möchtest du erste Schritte mit Künstlicher Intelligenz machen oder dein Wissen gezielt erweitern? In meinen KI-Kursen lernst du, wie du KI-Werkzeuge gezielt für dein Business oder kreative Projekte einsetzen kannst.
+							</p>
+							<p>
+								Gemeinsam entdecken wir, wie du mit KI-generierten Bildern, Videos, Musik und Texten nicht nur beeindruckende Inhalte erstellst, sondern auch neue Leads und Kund:innen gewinnst. 
+								Egal, ob online oder vor Ort. Ich begleite dich individuell auf deinem Weg in die Welt der Künstlichen Intelligenz.
+							</p>
+							<p>Entfalte dein kreatives Potenzial – und gestalte mit KI die Zukunft aktiv mit.</p>
+						</div>
+						<div class="wrapper wrapper__16 film">
+                            <div class="youtube youtube__16" data-embed="m9Oan0-uKN4">
+                                <div class="play-button"></div>
+                            </div>
+                        </div>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+
+			<section id="testimonials" class="pt-8 pb-20 xl:pt-16 xl:pb-28  bg-stone-800 relative text-white">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Testimonial</h2>
+					</div>
+
+					<Testimonials
+						items={[
+							{
+								link: "https://www.focusmedia.ch/team/",
+								sentence: "Michel's AI Kurse sind sehr praxisnah und effizient. Seine sympathische und pragmatische Art Inhalte zu vermitteln hilft beim erlernen neuer AI-Tools.",
+								name: "Patrick Frank",
+								job: "Media Coach",
+								testimonialHolder: patrickFrank
+							}
+						]}
+				  />
+
+					
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-gray-50 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+
+			<section id="faq" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+
+					<h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Häufig gestellte Fragen</h2>
+					<Faq
+						faqs={[
+							{
+								question: "Wie lange dauern die Kurs?",
+								answer: "Die Kurse dauern zwischen 2 bis 8 Stunden, je nach individuellem Tempo und Inhalt.",
+							},
+							{
+								question: "Wo finden die Kurse statt?",
+								answer: "Du entscheidest: Entweder vor Ort mit persönlichem Austausch oder ganz flexibel remote.",
+							},
+							{
+								question: "Wann finden die Kurse statt?",
+								answer: "Die Kurse werden flexibel geplant – bitte kontaktiere mich für konkrete Termine.",
+							},
+						]}
+				  />
+				</article>
+	
+			</section>
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+<style>
+	.about-grid video {
+		width: 100%;
+		background-image: url(/src/assets/images/ki-kurse-poster.jpg);
+		background-size: cover;
+		aspect-ratio: 9/16;
+		margin-top: 0 !important;
+	}
+
+	.about-grid {
+		display: grid;
+		gap: 1.5rem;
+		@media (width > 48rem) {
+			grid-template-columns: 2fr 1fr;
+			gap: 3rem;
+		}
+	}
+</style>
+
+<script>
+	import initLazyYoutube from '@/scripts/facade.js';
+	initLazyYoutube();
+</script>

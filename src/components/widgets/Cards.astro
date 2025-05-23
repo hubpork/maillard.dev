@@ -1,22 +1,22 @@
 ---
+import { Picture } from 'astro:assets';
+
 interface Item {
-    name: string;
-    value: string;
-    placeHolder: string;
-    direction?: string;
+	name: string;
+	value: string;
+	placeHolder: ImageMetadata;
+	direction?: string;
 }
 
 export interface Props {
-    items?: Array<Item>;
+	items?: Array<Item>;
 }
 
 const {
-    items = [],
+	items = [],
 } = Astro.props;
 
 ---
-
-
 
 <ul id="cards" class="pt-8 mx-auto header-max-width">
     {
@@ -30,13 +30,14 @@ const {
 						</p>
                     </div>
                     <figure class={direction}>
-                        <img src={placeHolder} alt={name}/>
+                        <Picture src={placeHolder} layout='responsive' width={2400} height={1200} formats={['avif', 'webp']}  alt={name} />
                     </figure>
                 </div>
             </li>
         ))
     }
 </ul>
+
 
 <style>
     :root {
@@ -206,21 +207,21 @@ const {
 
     .card__content > figure {
         grid-area: img;
-        overflow: hidden;
+        /*overflow: hidden;*/
     }
 
-    .card__content > figure > img {
+    .card__content > figure img {
         width: 100%;
         height: 100%;
         object-fit: cover;
         transform: rotate(3deg) scale(1.5);
     }
 
-    .card__content > figure.right > img {
+    .card__content > figure.right img {
         object-position: right center;
     }
 
-    .card__content > figure.left > img {
+    .card__content > figure.left img {
         object-position: left center;
     }
 
@@ -243,7 +244,7 @@ const {
             left: auto;
         }
 
-        .card__content > figure > img {
+        .card__content > figure img {
             transform: none;
             border-left: 1px solid hsl(225, 14%, 95%);
         }

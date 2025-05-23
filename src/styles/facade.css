@@ -1,0 +1,86 @@
+/* src/styles/facade.css */
+
+.film {
+	--color-fog-200: hsl(225, 5%, 85%);
+	--color-fog-500: hsl(225, 2%, 55%);
+}
+
+.youtube,
+.wrapper {
+	width: 100%;
+	aspect-ratio: 1/1;
+}
+
+.youtube {
+	background-color: var(--color-fog-200);
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.youtube img {
+	margin: 0;
+	width: 100%;
+	aspect-ratio: 1;
+	top: 0;
+	left: 0;
+	object-fit: cover;
+	position: absolute;
+	cursor: pointer;
+}
+
+.youtube iframe,
+.youtube .play-button,
+.youtube .play-button:before {
+	position: absolute;
+}
+
+.youtube .play-button {
+	width: 90px;
+	height: 60px;
+	background-color: var(--colors-servette);
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+	z-index: 1;
+	border-radius: 6px;
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+.youtube .play-button:before {
+	content: "";
+	border-style: solid;
+	border-width: 15px 0 15px 26px;
+	border-color: transparent transparent transparent var(--color-fog-200);
+	top: 50%;
+	left: 50%;
+	transform: translate3d(-50%, -50%, 0);
+}
+
+.youtube iframe {
+	background-color: var(--color-fog-200);
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+}
+
+.youtube__16,
+.wrapper__16 {
+	aspect-ratio: 9/16 !important;
+}
+
+.youtube__16 img {
+	aspect-ratio: 9/16 !important;
+}
+
+.fade-in {
+	opacity: 0;
+	transform: translateY(20px);
+	transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+	opacity: 1;
+	transform: translateY(0);
+}

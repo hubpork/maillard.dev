@@ -1,0 +1,186 @@
+---
+
+import { Picture } from 'astro:assets';
+
+interface Item {
+    videoId?: string;
+	imgHolder?: ImageMetadata;
+    title: string;
+    description: string;
+    plus?: string;
+    costs?: string;
+    time?: string;
+    link?: string;
+    linkText?: string;
+}
+
+export interface Props {
+    items: Array<Array<Item>>;
+}
+
+const {
+    items = [],
+} = Astro.props;
+---
+
+<section class="courses">
+    <div class="grid mx-auto md:grid-cols-2 lg:grid-cols-3 gap-16 relative">
+
+        {
+            items.map((subitems) => (
+                <div class="courses__block">
+                    {subitems.map(({ videoId, imgHolder, title, plus, costs, time, description, link, linkText }) => (
+                        <div class="flex flex-row">
+                            <div class="fade-in w-100">
+                                {imgHolder && 
+                                    <figure class="wrapper relative overflow-hidden">
+                                        {link && (
+                                        <a href={link} class="block absolute h-full w-full" rel="no-follow"><span class="sr-only">{linkText || "Kurs im Detail"}</span></a>
+                                        )}
+                                        <Picture src={imgHolder} layout='responsive' width={800} height={800} formats={['avif', 'webp']}  alt={title} />
+                                    </figure>
+                                }
+                                {videoId && 
+                                    <div class="wrapper">
+                                        <div class="youtube" data-embed={videoId}>
+                                            <div class="play-button"></div>
+                                        </div>
+                                    </div>
+                                }
+                                <h2 class="mb-2 !font-leadFont text-2xl mt-8 text-balance">{title}</h2>
+                                <p set:html={description} />
+                                {costs && (
+                                    <h3 class="mt-3 text-xl font-bold">{costs}</h3>
+                                )}
+                                {time && (
+                                    <p class="!font-leadFont !font-normal text-balance">{time}</p>
+                                )}
+                                {plus && (
+                                    <p class="text-xs">{plus}</p>
+                                )}
+                                {link && (
+                                    <a href={link} class="mt-5 no-underline inline-flex justify-center font-leadFont !text-xl font-semibold text-white border-2 border-white bg-transparent hover:text-red-300 hover:border-red-300 focus:ring-4 focus:ring-red-300 rounded-sm px-5 py-2 focus:outline-none transition duration-150 ease-out hover:ease-in">
+                                        {linkText || "Kurs im Detail"}
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ))
+        }
+    </div>
+</section>
+
+
+
+<style>
+    .courses {
+        --color-fog-200: hsl(225, 5%, 85%);
+        --color-fog-500: hsl(225, 2%, 55%);
+    }
+
+    .youtube,
+    .wrapper {
+        aspect-ratio: 1/1;
+    }
+
+    .youtube {
+        background-color: --color-fog-200;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            margin: 0;
+            width: 100%;
+            aspect-ratio: 1;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        }
+        img,
+        .play-button {
+            cursor: pointer;
+        }
+
+        img,
+        iframe,
+        .play-button,
+        .play-button:before {
+            position: absolute;
+        }
+
+        .play-button,
+        .play-button:before {
+            top: 50%;
+            left: 50%;
+            transform: translate3d( -50%, -50%, 0 );
+        }
+
+        .play-button {
+            width: 90px;
+            height: 60px;
+            background-color: var(--colors-servette);
+            box-shadow: 0 0 30px rgba( 0,0,0,0.6 );
+            z-index: 1;
+            border-radius: 6px;
+        }
+        .play-button:before {
+            content: "";
+            border-style: solid;
+            border-width: 15px 0 15px 26.0px;
+            border-color: transparent transparent transparent var(--color-fog-200);
+        }
+
+        iframe {
+            background-color: var(--color-fog-200);
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+</style>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+
+
+    ( function() {
+        const youtube = document.querySelectorAll<HTMLElement>(".youtube");
+
+        for (let i = 0; i < youtube.length; i++) {
+            const source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+            const image = new Image();
+            image.src = source;
+            image.addEventListener("load", function() {
+                youtube[i].appendChild(image);
+            });
+            
+            youtube[i].addEventListener("click", function(this: HTMLElement) {
+                const iframe = document.createElement("iframe");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1");
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });	
+        }
+    })();
+</script>

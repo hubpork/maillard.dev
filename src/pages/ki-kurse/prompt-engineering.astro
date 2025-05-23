@@ -1,0 +1,186 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Course from '@/components/widgets/Course.astro';
+import Faq from '@/components/widgets/Faq.astro';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<BaseHead title={t.serp.engineeringTitle} description={t.serp.engineeringDesc} />
+	</head>
+    <body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+							<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">KI meistern: Tools, Automatisierungen und Prompt-Engineering verstehen</h1>
+                            <p>In diesem Kurs lernst du, wie du moderne Sprachmodelle (LLMs) wie ChatGPT gezielt für Marketing, Content-Erstellung und Automatisierung einsetzt. Du erfährst praxisnah, wie du KI-Tools (optional) in Kombination mit Plattformen wie Make oder Notion auf deine Bedürfnisse anpassen kannst. Dank einem Prompt Engineering Training vom ersten Prompt bis zum fertigen Ergebnis gestaltest du deine Arbeitsprozesse effizienter und kreativer.</p>
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">Was erwartet dich</h2>
+                            <p>Erstelle mit GPT zielgerichtete Blogartikel, Landingpages, E-Mails und Social Media Posts – inklusive Call-to-Actions und präziser Zielgruppenansprache.
+                                Verbessere dein SEO mit KI durch smarte Keyword-Recherche, überzeugende Meta-Beschreibungen und effektive Content-Optimierung – für mehr Sichtbarkeit und bessere Rankings.
+                                Automatisiere wiederkehrende Aufgaben. Von der Content-Planung über Newsletter-Erstellung bis zur Kundenkommunikation – effizient, fehlerfrei und zeitsparend.</p>
+                        </div>
+					</div>
+				</article>
+            </section>
+            <section id="course" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="max-w-[100%] lg:mx-auto text-white">
+						<Course
+							items={[
+								[
+									{
+										videoId:'XGDXuijQckg',
+										imgHolder: undefined,
+										title: 'Tools',
+                                        groups: t.groups.mastering,
+                                        costs: t.price.mastering,
+										plus: t.extra.mastering,
+										time: t.time.mastering,
+                                        description: t.description.mastering,
+										link: "mailto:engineering@maillard.dev?subject=Prompt%20Engineering"
+									},
+								]
+							]}
+						/>
+
+					</div>
+				</article>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="videos" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-white relative">
+				<article class="max-width mx-auto">
+					
+					<h2 class="!mb-5 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-balance">Beispiele aus dem Kurs</h2>
+                    <p class="!font-normal text-l lg:text-2xl text-balance">Hier findest du inspirierende Beispiele dafür, wie du mit durchdachten Prompts und den richtigen Tools effizient Content erstellst, um Prozesse zu beschleunigen.</p>
+					<div class="grid mx-auto md:grid-cols-2 gap-8 lg:gap-16 my-8">
+
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">Ein Beispiel Analyse</h3>
+                            <p><i>Ich würde gerne, dass du das Video im unten angegebenen Link analysierst. Im Anschluss daran bitte ich dich, je 3 ansprechende Social-Media-Beiträge zu erstellen, die sich sowohl für Instagram als auch für Twitter eignen und auf dem Inhalt des Videos basieren. Jeder Beitrag sollte ein Emoji und drei Hashtags enthalten.</i></p><br />
+                            <p><i>Ich möchte zu jedem Beitrag auch ein passendes fotorealistisches Bild generieren. Gib mir dafür bitte jeweils einen geeigneten Midjourney-Prompt.</i></p>
+
+                        </div>
+                        
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">Die RICE-Q Methode</h3>
+                            <ul>
+                                <li>R – Rolle. Gib ChatGPT eine Rolle.</li>
+                                <li>I – Anweisungen. Sag ChatGPT, was es machen soll.</li>
+                                <li>C – Kontext. Gib ein bisschen Hintergrundinfo zur Aufgabe.</li>
+                                <li>E – Beispiel. Wenn möglich, gib ChatGPT ein Beispiel, wie die Antwort aussehen soll.</li>
+                                <li>Q – Fragen. Sag ChatGPT, dass es dir Fragen stellen soll, damit es besser versteht.</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="outro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+                            
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">KI für Marketing mit Plan – prompten, gestalten, automatisieren</h2>
+                            <p>Lerne, wie du mit KI-Tools wie ChatGPT, Make und Notion Marketing-Content entwickelst, der wirkt – schnell, kreativ und strategisch durchdacht.</p>
+
+                            <h2 class="!font-leadFont !text-2xl !mt-8 text-balance">Jetzt zum Kurs anmelden und durchstarten</h2>
+                            <a href="mailto:engineering@maillard.dev?subject=Prompt%20Engineering" class="mt-0 leading-1 no-underline inline-flex justify-center font-leadFont font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 focus:outline-none rounded-sm px-5 py-2 transition duration-150 ease-out hover:ease-in">
+                                Sichere dir jetzt deinen Platz
+                            </a>
+					
+                       </div>
+					</div>
+				</article>
+            </section>
+            <section id="faq" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+
+					<h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Häufig gestellte Fragen</h2>
+					<Faq
+						faqs={[
+                            {
+								question: "Was lerne ich im Kurs KI meistern genau?",
+								answer: "Du lernst, wie du Sprachmodelle wie ChatGPT oder Claude AI gezielt für Content-Erstellung, SEO und Marketing einsetzt. Ausserdem zeige ich dir, wie du mit Make und Notion Arbeitsabläufe automatisierst. Der Fokus liegt auf praxisnahem Prompt Engineering – von der ersten Eingabe bis zum fertigen Ergebnis.",
+							},
+							{
+								question: "Brauche ich Vorkenntnisse für den KI-Kurs?",
+								answer: "Nein, der Kurs ist auch für Einsteigerinnen ohne technisches Wissen geeignet. Alles wird verständlich erklärt – du brauchst nur ein ChatGPT Plus-Konto. Ideal für Marketingprofis, Texterinnen, Unternehmer*innen oder Teams, die smarter arbeiten wollen.",
+							},
+							{
+								question: "Was ist Prompt Engineering und warum ist es wichtig?",
+								answer: "Prompt Engineering bedeutet, gezielte Eingaben (Prompts) zu formulieren, mit denen du bessere, relevantere und präzisere Ergebnisse von KI-Tools bekommst. Du lernst, wie du ChatGPT & Co. zu deinem produktiven Assistenten machst – für Texte, Ideen, Planung und mehr.",
+							},
+                            {
+								question: "Was bringt mir der Kurs für SEO?",
+								answer: "Du lernst, wie du mit KI gezielt Keywords recherchierst, Meta-Texte optimierst und SEO-Content für Blogartikel, Landingpages und Produkttexte erstellst. Das spart Zeit – und verbessert dein Google-Ranking deutlich.",
+							},
+                            {
+								question: "Ist der Kurs auch für Unternehmen geeignet?",
+								answer: "Absolut. Der Kurs eignet sich hervorragend für Marketingabteilungen, KMUs, Agenturen oder Content-Teams, die ihre Prozesse automatisieren und effizienter gestalten möchten – ohne zusätzliche Tools oder teure Software-Abos.",
+							},
+                            {
+								question: "Wo findet der Kurs statt?",
+								answer: "Der Kurs kann vor Ort in Olten, online oder in deinem Unternehmen stattfinden. Die flexible Durchführung ermöglicht maximale Planbarkeit – auch als Teamevent oder Weiterbildungstag.",
+							},
+						]}
+				  />
+				</article>
+	
+			</section>
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+
+
+    ( function() {
+        const youtube = document.querySelectorAll<HTMLElement>(".youtube");
+
+        for (let i = 0; i < youtube.length; i++) {
+            const source = "https://img.youtube.com/vi/"+ youtube[i].dataset.embed +"/sddefault.jpg";
+            const image = new Image();
+            image.src = source;
+            image.addEventListener("load", function() {
+                youtube[i].appendChild(image);
+            });
+            
+            youtube[i].addEventListener("click", function(this: HTMLElement) {
+                const iframe = document.createElement("iframe");
+                iframe.setAttribute("frameborder", "0");
+                iframe.setAttribute("allowfullscreen", "");
+                iframe.setAttribute("src", "https://www.youtube.com/embed/"+ this.dataset.embed +"?rel=0&showinfo=0&autoplay=1");
+                this.innerHTML = "";
+                this.appendChild(iframe);
+            });	
+        }
+    })();
+</script>

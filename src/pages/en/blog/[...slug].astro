@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import { Picture } from 'astro:assets';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import HeaderLink from '@/components/HeaderLink.astro';
+import { SITE_TITLE } from '@/consts';
+
+type Props = {
+  post: CollectionEntry<'blog'>;
+};
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { title, description, heroImage, lang } = post.data;
+const frontmatter = post.data;
+
+const isEnglish = lang === 'en';
+const otherLangSlug = isEnglish ? post.data.slug_de : post.data.slug_en;
+const otherLangHref = isEnglish ? `/blog/${otherLangSlug}` : `/en/blog/${otherLangSlug}`;
+const { Content } = await post.render();
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body class="flex flex-col bg-white text-gray-800">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-white py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" />
+		
+		<main class="flex-grow flex-shrink-0 relative">
+			<article class="pb-20 prose lg:prose-2xl prose-headings:font-headingFont mx-auto sm:px-6 px-6 mt-8 lg:prose-xl prose-a:servette prose-headings:leading-tighter prose-lg prose-md">
+				{heroImage && <Picture class="mb-5 lg:mb-10" src={heroImage} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="descriptive text" />}
+        <h1>{post.data.title}</h1>
+        <Content />
+        <!-- p><a href={otherLangHref}>{isEnglish ? "Deutsche Version" : "English version"}</a></!-->
+			  <HeaderLink href="/en/blog" class="mt-8 leading-1 no-underline inline-flex justify-center font-leadFont !text-2xl font-semibold text-black border-2 border-black bg-white hover:text-white hover:bg-black hover:border-black focus:ring-4 focus:ring-red-300 rounded-sm px-5 py-2 focus:outline-none transition duration-150 ease-out hover:ease-in">Back to articles</HeaderLink>
+      
+      </article>
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+				<polygon points="100 0 100 10 0 10"></polygon>
+			</svg>
+    </main>
+    <Footer footerClass="bg-fog-100 flex justify-center py-10 xl:pt-16" />
+  </body>
+</html>

@@ -1,0 +1,60 @@
+{
+    "serp": {
+      "blogTitle": "Articles to Learn More & Grow Smarter",
+      "blogDesc": "Explore insightful articles on learning, growth, and development. Stay curious and expand your knowledge.",
+      "indexTitle": "Maillard.dev - Artificial intelligence for content.",
+      "indexDesc": "Explore expert content on web design, AI, SEO, and social media. Creative, passionate, and technically strong.",
+      "aboutTitle": "Michel Maillard – Front-end web developer, online marketing & AI expert",
+      "aboutDesc": "AI courses and web development: Discover how to effectively implement automated content strategies.",
+      "portraitTitle": "Get in touch – whether for a chat or a project",
+      "kurseTitle": "AI courses – training courses by Michel Maillard",
+      "kurseDesc": "Future-proof with AI expertise – successful throughout Switzerland",
+      "apptizersTitle": "AI Appetisers: AI content & marketing reimagined",
+      "apptizersDesc": "Learn how to create eye-catching content with AI tools such as Midjourney, Recraft & Kling – and use it cleverly for social media & marketing.", 
+      "engineeringTitle": "Working efficiently with AI: Discover ChatGPT, Make, Notion & more",
+      "engineeringDesc": "Learn how to use ChatGPT & AI tools for content, SEO & automation in a practical way in Olten – including Make & Notion. Secure your place now!",
+      "musicgenerationTitle": "Create AI music with SUNO & Riffusion – workshop for beginners",
+      "musicgenerationDesc": "Create music with AI: Learn SUNO & Riffusion in an online course. For social media, marketing & music projects."  
+  
+  },
+  "description": {
+    "appetizers": "I tailor my approach to your goals – choose the tools that suit you best. <br />In my courses, we work with image generators such as Leonardo, Recraft, Flux, Midjourney and Ideogram, among others. <br /><br />For video content, we use Kling, Runway, Hailuo, Higgsfield or Hailuo. Editing is done with CapCut or DaVinci Resolve – and the sound? We create that with SUNO AI.",
+    "mastering": "With ChatGPT and Claude, you have the ideal tools at your fingertips to create content, develop ideas and efficiently automate your workflows – without any technical knowledge. If you like, I can show you how you can make your processes even smarter with Automation Notion and Make.",
+    "suno": "For music and sound, we use SUNO AI and my SUNO style sheets. If you like, I can show you how to refine the audio output with free tools – and I'll also introduce you to cool alternatives such as Riffusion and Kitts."
+  },
+  "price": {
+    "appetizers": "from CHF 355.– for 3 hours",
+    "mastering": "from CHF 300.– for 2 hours",
+    "suno": "from CHF 260.–  for 2 hours"
+  },
+  "time": {
+    "appetizers": "Duration: 3 to 8 hours – depending on your needs",
+    "mastering": "Duration: 2 to 8 hours – depending on your needs",
+    "suno": "Duration: 2 to 4 hours – depending on your needs"
+  },
+  "extra": {
+    "appetizers": "Bonus: 1 month of Galaxy AI included (worth CHF 15.-)",
+    "mastering": "You need a ChatGPT Plus account",
+    "suno": "Includes 1 month of SUNO AI worth $10"
+  },
+  "groups": {
+    "appetizers": "Note: Groups benefit from individual price offers – I'll be happy to advise you personally.",
+    "mastering": "Note: Groups benefit from individual price offers –  I'll  be happy to advise you personally.",
+    "suno": "Note: Groups benefit from individual price offers –  I'll be happy to advise you personally."
+  },
+  "nav": {
+    "home": "Home",
+    "blog": "Articles",
+    "portrait": "Portrait",
+    "courses": "AI Courses"
+  },
+  "footer": {
+    "language": "Switch Language",
+    "intro": "Get in touch",
+    "title": "Whether for a chat or a project",
+    "hello": "Say Hello",
+    "based": "⟢ I'm an AI Synthographer and web professional from Olten. I enjoy learning new things and sharing my knowledge with others.",
+    "respond": "I value your feedback."
+  },
+  "switchTo": "Deutsch"
+}

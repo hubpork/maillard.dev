@@ -42,7 +42,7 @@ const {
                 <div class="md:px-12 timeline__block">
                     {subitems.map(({ title, business, time, description }) => (
                         <div class="py-5 flex flex-row max-w-md">
-                            <div>
+                            <div class="fade-in">
                                 <h2 class="mb-2 font-headingFont !text-2xl timeline__bullet relative">{title}</h2>
                                 {business && (
                                     <h3 class="text-xl font-bold">{business}</h3>
@@ -69,9 +69,20 @@ const {
         --timeline-bullet-adjust: -49px;
         --posMediumLine: 500px;
         --posMediumLineLast: 720px;
-        --tw-prose-headings: hsl(221, 39%, 11%);
+        --tw-prose-headings: hsl(340, 88%, 50%);
         --color-fog-200: hsl(225, 5%, 85%);
         --color-fog-500: hsl(225, 2%, 55%);
+    }
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
 
     @media (min-width: 768px) { 
@@ -143,5 +154,11 @@ const {
             order: initial;
         }
     }
-
 </style>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+</script>

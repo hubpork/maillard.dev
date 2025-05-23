@@ -1,0 +1,105 @@
+---
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import { Picture } from 'astro:assets';
+import placeHolder from '/src/assets/images/photo-index.png';
+import signature from '/src/assets/images/signature.png';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={t.serp.indexTitle} description={t.serp.indexDesc} />
+	</head>
+	<body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="relative pt-4 pb-16 xl:pb-24">
+				<article class="max-width mx-auto">
+					<Picture class="mb-5 lg:mb-10 hero" src={placeHolder} layout='responsive' width={1440} height={720} formats={['avif', 'webp']} alt="my philosophy" loading="eager" />
+					<div class="prose lg:prose-2xl mx-auto">
+						<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">
+							Websites and social media with passion.
+						</h1>
+						<p>My passion for creating websites goes hand in hand with my fascination for design and technology. It offers the opportunity to combine creativity and technical know-how to create a digital presence that reaches people worldwide and enhances your digital presence.</p>
+						<p>My pursuit of innovative marketing concepts and creative social media channels motivates me to get the most out of the given possibilities and to create an extraordinary source of great joy and satisfaction. In addition, my SEO measures and the optimisation of page speed ensure an excellent online experience.</p>
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Your professional partner for AI</h2>
+						<p>My intuition for digital trends and my continuous professional development make me a strong partner in the field of artificial intelligence. I offer practical training courses on image and video generation, prompt engineering and AI-supported music production.</p>
+						<p>With tools from Open AI or image and video generators such as Midjourney, Flux, Leonardo, Kling Krea or Hedra, I support the efficient and creative creation of content and marketing strategies. My skills in this area enable me to develop innovative solutions that not only improve digital presence but also ensure long-term success.</p>	
+						<figure class="flex justify-end !mt-0">
+							<Picture class="-rotate-1 max-w-[15rem] lg:max-w-none" src={signature} layout='responsive' width={393} height={57} formats={['avif', 'webp']} alt="Michel Maillard" />
+						</figure>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+
+			<section id="course" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-white relative">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">AI courses</h2>
+						<p class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance my-4">
+							You will learn how to use AI tools specifically for your creative projects.
+						</p>
+						<p> 
+							<a href="/en/ai-courses" class=" !text-2xl">All courses at a glance</a>
+						</p>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-servette w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+
+			<section id="funky" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto text-white">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl !text-white">What i like, besides coding</h2>
+						<p class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 my-4 !text-white">
+							I love the Funk! <br />Get some Bootsie & James Brown!
+						</p>
+						<p>
+							<a href="https://www.funkologie.com" class="!text-white !text-2xl">funkologie.com</a>
+						</p>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class=" fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+
+			<section id="react" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">&lsaquo;React /&rsaquo;</h2>
+						<p class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance my-4">
+							React Tools Playground with Tailwind
+						</p>
+						<p class="mt-0 text-balance mb-4">Small useful applications</p>
+						<p>
+							<a href="https://github.com/hubpork/React-Tools" class=" !text-2xl">Github Repo</a> / 
+							<a href="https://react-tools-beta.vercel.app/" class=" !text-2xl">Demo Link</a>
+						</p>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>

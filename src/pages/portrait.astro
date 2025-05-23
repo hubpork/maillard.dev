@@ -1,0 +1,246 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import { Picture } from 'astro:assets';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Cards from '@/components/widgets/Cards.astro';
+import Clients from '@/components/widgets/Clients.astro';
+import Stats from '@/components/widgets/Stats.astro';
+import Timeline from '@/components/widgets/Timeline.astro';
+
+import placeHolder from '@/assets/images/photo-about.jpg';
+import buechehof from '@/assets/images/buechehof.jpg';
+import flyerline from '@/assets/images/flyerline.jpg';
+import mapo from '@/assets/images/mapo.jpg';
+import santaLucia from '@/assets/images/santa-lucia.jpg';
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<BaseHead title={t.serp.aboutTitle} description={t.serp.aboutDesc} />
+	</head>
+	<body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<Picture class="mb-6 lg:mb-14 hero" src={placeHolder} layout='responsive' width={1440} height={720} formats={['avif', 'webp']}  alt="about me" loading="eager" />
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl">
+							<h1 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0 text-balance">Michel Maillard – Frontend-Webentwickler, Online-Marketing-Manager und KI-Experte</h1>
+							<p>Mit fundiertem Know-how in Webentwicklung (HTML, CSS, JavaScript) und CMS-Frameworks setze ich leistungsstarke Webl&ouml;sungen um. Mein Know-how im Online-Marketing zeigt sich in erfolgreichen SEO-Strategien und Werbekampagnen, die die Sichtbarkeit und Reichweite steigern.</p>
+							<p>Dank meiner Erfahrung in Content-Strategie und Community-Management entwickle ich zielgerichtete L&ouml;sungen, die die Markenidentit&auml;t st&auml;rken. Durch KPI-Analysen optimiere ich Marketingmassnahmen kontinuierlich.</p>
+							<p>Als KI-Experte setze ich ausgew&auml;hlte Tools ein, um Text-, Bild- und Videoinhalte zu automatisieren und zu generieren. Mein Fokus: Kreative Prozesse effizienter gestalten, Markenkommunikation optimieren und Engagement steigern.</p>
+						</div>
+						<div class="wrapper wrapper__16 film">
+                            <div class="youtube youtube__16" data-embed="FVA60xRXVhA">
+                                <div class="play-button"></div>
+                            </div>
+                        </div>
+					</div>
+				</article>
+			</section>
+
+			<section id="timeline" class="py-8 xl:pt-16 bg-white">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Lebenslauf</h2>
+						<p class="font-headingFont text-4xl lg:text-6xl !leading-tight text-balance my-4">Meine Berufserfahrungen, Ausbildungen und Skills</p>
+					</div>
+
+					<Timeline
+						title="Berufliche Laufbahn"
+						subtitle="Kompetenzen & Stärken"
+						items={[
+							[
+								{
+									title: '.hausformat GmbH',
+									business:'Digital Marketing Manager',
+									"time": "Mai 2024 – Juli 2024",
+									"description": "Betreuung von Kunden im Bereich SEO und Werbekampagnen. Entwicklung von Social-Media-Strategien und Analyse mittels KPI-Berichten. Unterstützung des Teams bei der technischen Umsetzung von Websites mit TYPO3 CMS."
+								},
+								{
+									title: 'MySign AG',
+									business:'Frontend Developer',
+									"time": "August 2012 – März 2024",
+									"description": "Umsetzung von Websites mit HTML, CSS, JavaScript und Java (MySign CMS). Kontinuierliche Einführung neuer Technologien zur Qualitätssteigerung. Optimierung von SEO und Seitenladegeschwindigkeit für eine bessere User Experience."
+								},
+								{
+									title: 'Insign AG',
+									business:'Web-Publisher & Designer',
+									"time": "2008 – 2012",
+									"description": "Technische Umsetzung und Gestaltung von Webprojekten mit Fokus auf Qualität und Benutzerfreundlichkeit. Einsatz verschiedener Tools wie WordPress, TYPO3 und Magento – angepasst an Kundenbedürfnisse."
+								},
+								{
+									title: 'Tief & Offset Drucker',
+									time:'bis 2008',
+									"description": "Einsatz in der Verpackungs- und Kunstindustrie als Tief- und Offsetdrucker."
+								}
+							],
+							[
+								{
+									"title": "FocusMedia Zurich",
+									"business": "Medientechnik",
+									"time": "Aug 2024 – Mai 2025",
+									"description": "Kreative Anwendung KI-gestützter Bild- und Videoproduktion. Entwicklung und Durchführung von KI-basierten Schulungen und Content-Strategien. Spezialisierung auf Videoproduktion und Schnitttechniken (CapCut, DaVinci Resolve) als Teil ganzheitlicher digitaler Strategien."
+								},
+								{
+									"title": "HKV Aarau",
+									"business": "Online Marketing Manager",
+									"time": "Nov 2023 – Juni 2024",
+									"description": "Beratung zu SEO und PPC. Entwicklung und Analyse von Social-Media-Strategien mit KPI-Berichten. Erstellung von Inhalten, Community-Management und Website-Optimierung auf Basis aktueller Trends und Leistungsdaten."
+								},
+								{
+									"title": "Suchmaschinenoptimierung (SEO)",
+									"description": "Nutzerzentrierte Optimierung von Websites mit Fokus auf Accessibility, Navigation und Mobile Usability. Durchführung umfassender PageSpeed-Audits zur Ermittlung und Umsetzung konkreter Verbesserungspotenziale für bessere Rankings."
+								}
+							]
+						]}
+					/>
+				</article>
+			</section>
+
+
+
+			<section id="stats" class="pb-8 xl:pb-12 bg-white">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<div class="md:px-12">
+							<h2 class="!mt-0 !mb-0 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl timeline__title">Fähigkeiten & Fachwissen</h2>
+						</div>
+							
+					</div>
+
+					<Stats
+						items={[
+							{ subtitle: 'Künstliche Intelligenz:', name: 'Notion, Make, ChatGPT, Manus, Midjourney, Leonardo, Recraft, Ideogram, Hailuo, Kling, Runway, Krea, ElevenLabs, Suno', value: '102' },
+							{ subtitle:'Frontend Styling & Adobe:', name: 'HTML, CSS, SCSS, BEM, Tailwind & Adobe Creative Suite', value: '102' },
+							{ subtitle:'Moderne Webentwicklung & UI:', name: 'Javascript, GSAP, Astro, React', value: '102' },
+							{ subtitle: 'Build-Tools & Versionskontrollen:', name: 'GIT, Gulp, Grunt - Package Management', value: '102' },
+							{ subtitle: 'Digital Marketing:', name: 'SEO-Analysator, SEA Experte, Social-Media-Marketing Spezialist', value: '102' },
+							{ subtitle: 'Persönliche Stärken', name: 'Qualität, ruhig, diszipliniert, einfallsreich, analytisch & akribisch', value: '102' },
+						]}
+					/>
+				</article>
+			</section>
+
+			<section id="clients" class="clients pt-8 xl:pt-16 pb-10 xl:pb-20">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mt-0 !mb-5 !font-leadFont !font-normal !text-lg timeline__title">Ausgewählte Websites, an denen ich als Teammitglied mit <a href="https://www.mysign.ch">MySign</a>, den Experten für E-Commerce-Automatisierung, mitgearbeitet habe</h2>
+					</div>
+
+					<Clients
+						items={[
+							
+							{ name: 'Baur’s', url: 'https://www.baurs-zurich.ch' },
+							{ name: 'Baur au Lac Vins', url: 'https://www.bauraulacvins.ch' },
+							{ name: 'Schubi Weine', url: 'https://www.schubiweine.ch' },
+							{ name: 'Flyerline', url: 'https://www.flyerline.ch' },
+							{ name: 'Mapo', url: 'https://www.mapo.ch' },
+							{ name: 'Fust', url: 'https://www.fust.ch' },
+							{ name: 'Olwo', url: 'https://www.olwo.ch' },
+							{ name: 'Liebegg', url: 'https://www.liebegg.ch' },
+							{ name: 'Stadtbibliothek Basel', url: 'https://www.stadtbibliothekbasel.ch' },
+						]}
+					/>
+
+				</article>
+			</section>
+
+			<section id="works" class="pt-8 pb-20 xl:pt-16 xl:pb-28  bg-stone-800 relative">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Ausgewählte GUI</h2>
+					</div>
+				</article>
+				
+				<Cards
+					items={[
+						{
+							name: 'Buechehof',
+							direction: 'left',
+							value: 'Konsistente Benutzeroberfläche – visuelle Elemente, Begriffe und Interaktionsmuster sind durchgängig einheitlich gestaltet.',
+							placeHolder: buechehof
+						},
+						{
+							name: 'Flyerline',
+							direction: 'left',
+							value: 'Strukturiere Inhalte klar und logisch, damit Nutzer Informationen schnell erfassen und Aufgaben effizient erledigen können.',
+							placeHolder: flyerline
+						},
+						{
+							name: 'Mapo Relaunch 2023',
+							direction: 'left',
+							value: 'Gezielte visuelle Elemente wie Typografie, Farben und Abstände, um eine klare visuelle Hierarchie zu schaffen – wichtige Inhalte sollten sofort erkennbar sein.',
+							placeHolder: mapo
+						},
+						{
+							name: 'Santa Lucia Delivery Service',
+							direction: 'left',
+							value: 'Tolle Benutzeroberfläche – so passt sie sich flexibel an verschiedene Geräte und Bildschirmgrössen an und sorgt für eine optimale User Experience.',
+							placeHolder: santaLucia
+						}
+  					]}
+				/>
+
+
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+
+
+<style>
+	h1 {
+		text-wrap: balance;
+	}
+	.skill-bars {
+		--bar-padding: var(--timeline-left-padding);
+		margin-top: var(--vspace-2_5);
+		display: flex;
+		flex-flow: row wrap;
+	}
+
+	.about-grid video {
+		width: 100%;
+		background-image: url(/src/assets/images/me-real-poster.jpg);
+		background-size: cover;
+		aspect-ratio: 9/16;
+		margin-top: 0 !important;
+	}
+
+	.about-grid {
+		display: grid;
+		gap: 1.5rem;
+		@media (width > 48rem) {
+			grid-template-columns: 2fr 1fr;
+			gap: 3rem;
+		}
+	}
+
+	h1 + p {
+		margin-top: 0 !important;
+	}
+</style>
+
+<script>
+    import initLazyYoutube from '@/scripts/facade.js';
+    initLazyYoutube();
+</script>

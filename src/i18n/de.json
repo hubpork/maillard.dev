@@ -1,0 +1,59 @@
+{
+    "serp": {
+        "blogTitle": "Artikel zum Lernen & Wissen vertiefen",
+        "blogDesc": "Entdecke spannende Artikel rund ums Lernen, Wissen & persönliche Entwicklung. Ideal für Neugierige & Weiterdenkende.",
+        "indexTitle": "Maillard.dev - Künstliche Intelligenz für Inhalte.",
+        "indexDesc": "Fesselnde Inhalte über Webdesign, KI, SEO & Social Media. Kreativ, technisch fundiert und voller Leidenschaft.",
+        "aboutTitle": "Michel Maillard – Frontend-Webentwickler, Online-Marketing & KI-Experte",
+        "aboutDesc": "KI-Kurse und Webentwicklung: Entdecke, wie du mit KI automatisierte Contentstrategien effektiv umsetzt.",
+        "portraitTitle": "Lass von dir hören – ob für ein Gespräch oder Projekt",
+        "kurseTitle": "KI-Kurse in der Schweiz – Praxisnah und zukunftsorientiert",
+        "kurseDesc": "Lernen Sie Künstliche Intelligenz konkret anzuwenden – mit unseren praxisnahen Kursen für Fachkräfte, Teams und Entscheider in der Schweiz",
+        "apptizersTitle": "AI Appetisers: KI-Content & Marketing neu gedacht",
+        "apptizersDesc": "Lerne, wie du mit KI-Tools wie Midjourney, Recraft & Kling auffällige Inhalte erstellst – und sie clever für Social Media & Marketing nutzt.",
+        "engineeringTitle": "Effizient arbeiten mit KI: ChatGPT, Make, Notion & mehr entdecken",
+        "engineeringDesc": "Lerne in diesem KI-Kurs, wie du mit ChatGPT Inhalte erstellst, SEO verbesserst und Workflows automatisierst – ohne Vorkenntnisse. Jetzt durchstarten!", 
+        "musicgenerationTitle": "KI-Musik erstellen mit SUNO & Riffusion – Workshop für Einsteiger",
+        "musicgenerationDesc": "Erstelle Musik mit KI: Lerne SUNO & Riffusion in Olten oder Online. Ideal für Social Media, Marketing & Musikprojekte."  
+    },
+    "description": {
+        "appetizers": "Ich richte mich nach deinen Zielen – wähle die Tools, die zu dir passen. <br />In meinen Kursen arbeiten wir u.a. mit Bildgeneratoren wie Leonardo, Recraft, Flux, Midjourney und Ideogram. <br /><br />Für Videocontent nutzen wir Kling, Runway, Hailuo, Higgsfield oder Hailuo. Geschnitten wird mit CapCut oder DaVinci Resolve – und der Sound? Den erzeugen wir mit SUNO AI.",
+        "mastering": "Mit ChatGPT und Claude hast du die idealen Werkzeuge an der Hand, um Inhalte zu erstellen, Ideen zu entwickeln und deine Workflows effizient zu automatisieren – ganz ohne technisches Vorwissen. Wenn du magst, zeige ich dir optional, wie du mit Automation Notion und Make deine Abläufe noch smarter gestalten kannst.",
+        "suno": "Für Musik und Sound nutzen wir SUNO AI und meine SUNO-Stylesheets. Wenn du magst, zeige ich dir, wie du den Audio-Output mit kostenlosen Tools verfeinern kannst – und ich stelle dir auch coole Alternativen wie Riffusion und Kitts vor."
+    },
+    "price": {
+        "appetizers": "ab CHF 355.– für 3 Stunden",
+        "mastering": "ab CHF 300.– für 2 Stunden",
+        "suno": "ab CHF 260.– für 2 Stunden"
+    },
+    "time": {
+        "appetizers": "Dauer: 3 bis 8 Stunden – je nach Bedarf",
+        "mastering": "Dauer: 2 bis 8 Stunden – je nach Bedarf",
+        "suno": "Dauer: 2 bis 4 Stunden – je nach Bedarf"
+    },
+    "extra": {
+        "appetizers": "Bonus: 1 Monat Galaxy AI im Wert von CHF 15.– inklusive",
+        "mastering": "Du benötigst ein ChatGPT Plus Konto",
+        "suno": "1 Monat SUNO im Wert von CHF 10.- inklusive"
+    },
+    "groups": {
+        "appetizers": "Hinweis: Für Gruppen oder Firmen stelle ich gerne ein individuelles Angebot zusammen – persönliche Beratung inklusive.",
+        "mastering": "Hinweis: Für Gruppen oder Firmen stelle ich gerne ein individuelles Angebot zusammen – persönliche Beratung inklusive.",
+        "suno": "Hinweis: Für Gruppen oder Firmen stelle ich gerne ein individuelles Angebot zusammen – persönliche Beratung inklusive."
+    },
+    "nav": {
+        "home": "Startseite",
+        "blog": "Artikel",
+        "portrait": "Portrait",
+        "courses": "KI-Kurse"
+    },
+    "footer": {
+        "language": "Sprache wechseln",
+        "intro": "Nimm Kontakt auf",
+        "title": "Lass von dir hören – ob für ein Gespräch oder Projekt",
+        "hello": "Sag Hallo",
+        "based": "⟢ Ich bin AI-Synthographer und Web-Profi aus Olten. Ich finde es cool, Neues zu lernen und mein Wissen mit anderen zu teilen.",
+        "respond": "Ich freue mich über dein Feedback."
+    },
+    "switchTo": "English"
+}

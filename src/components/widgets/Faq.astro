@@ -1,0 +1,104 @@
+---
+interface FaqItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FaqItem[];
+}
+
+const { faqs } = Astro.props as Props;
+
+const schemaJson = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map((faq) => ({
+    "@type": "Question",
+    "name": faq.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.answer,
+    },
+  })),
+};
+---
+
+<div class="faq">
+  <script type="application/ld+json">
+    {JSON.stringify(schemaJson)}
+  </script>
+
+  <div>
+    <hr class="border-fog-700" />
+    {faqs.map((faq, index) => (
+      <details
+        class="group m-0" data-detail="accordion-styled"
+      >
+        <summary class="m-0 py-4 md:py-6 cursor-pointer font-leadFont text-xl md:text-2xl text-gray-800 group-open:text-servette transition-colors">
+          {faq.question}
+        </summary>
+        <p class="mt-0 pb-6 text-l md:text-xl">{faq.answer}</p>
+      </details>
+    ))}
+  </div>
+</div>
+
+
+<style>
+
+    details {
+        border-bottom: 1px solid var(--colors-fog-700);
+    }
+
+    details summary::-webkit-details-marker {
+        display: none;
+    }
+
+    details summary {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        outline: none;
+    }
+
+    details[open] summary {
+
+    }
+
+    details summary:before,
+    details summary:after {
+        font-family: "FontAwesome";
+        line-height: 1;
+    }
+    details summary:before {
+        content: "\f107";
+        padding-right: var(--space-m);
+    }
+    details[open] summary:before {
+        content: "\f106";
+    }
+    details[open] {
+    }
+
+  [data-detail="accordion-styled"] {
+    
+    summary:before,
+    [open] summary:before {
+      display: none;
+    }
+
+    summary {
+      justify-content: space-between;
+    }
+
+    summary:after {
+      content: "\f107";
+    }
+
+    &[open] summary:after {
+      content: "\f106";
+    }
+}
+
+</style>

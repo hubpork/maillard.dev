@@ -1,0 +1,210 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import { Picture } from 'astro:assets';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Courses from '@/components/widgets/Courses.astro';
+import Faq from '@/components/widgets/Faq.astro';
+import Testimonials from '@/components/widgets/Testimonials.astro';
+import placeHolder from '@/assets/images/photo-ki.jpg';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+
+import patrickFrank from '@/assets/images/patrick_frank.jpg';
+import automationen from '@/assets/images/automationen.png';
+import suno from '@/assets/images/suno.png';
+import strip from '@/assets/images/strip.png';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={t.serp.kurseTitle} description={t.serp.kurseDesc} />
+	</head>
+	<body class="flex flex-col bg-white text-gray-800">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-white py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<Picture class="mb-6 lg:mb-14 hero" src={placeHolder} layout='responsive' width={1440} height={720} formats={['avif', 'webp']}  alt="ki-kurse" loading="eager" />
+					<div class="prose lg:prose-2xl mx-auto fade-in">
+						<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">AI courses for practical application: learn, apply, lead the way</h1>
+						<p>My name is Michel Maillard. As an experienced web developer with expertise in SEO, online marketing and the integration of artificial intelligence (AI), I offer practical training courses for companies, agencies and individuals. I have a broad knowledge of modern AI technologies and use them specifically to design creative and efficient workflows.
+						<h2 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Why act now?</h2>
+						<p>The World Economic Forum's Future of Jobs Report 2025 shows that by 2030, technological innovations will create around 170 million new jobs worldwide – while at the same time, 92 million jobs could be lost to automation and AI. Companies must act now to prepare their employees for the digital future. But how well are you and your teams really prepared?</p>
+					</div>
+				</article>
+			</section>
+			<section id="courses" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="max-w-[100%] lg:mx-auto text-white">
+						<h2 class="!mb-8 !lg:mb-4 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Three core area of my training courses:</h2>
+						
+						<Courses
+							items={[
+								[
+									{
+										videoId:'',
+										imgHolder: strip,
+										title: 'AI Appetizers – Image and video content on a whole new level',
+										costs: t.price.appetizers,
+										plus: t.extra.appetizers,
+										time: t.time.appetizers,
+										description: "Create impressive content with Midjourney, Leonardo, Recraft, Flux, Kling & Co. – perfect for social media, marketing or your portfolio. And you don't need any prior knowledge.",
+										link: "/en/ai-courses/ai-appetizers",
+										linkText: "Course details"
+									},
+								],
+								[
+									{
+										videoId:'',
+										imgHolder: automationen,
+										title: 'Mastering AI: Understanding tools, automation and prompt engineering',
+										costs: t.price.mastering,
+										plus: t.extra.mastering,
+										time: t.time.mastering,
+										description: "With tools such as ChatGPT, Claude, Notion and Make, you can automate your workflows and free up time for the things that really matter. Become the ultimate AI whisperer.",
+										link: "/en/ai-courses/prompt-engineering",
+										linkText: "Course details"
+									},
+								],
+								[
+									{
+										videoId:'',
+										imgHolder: suno,
+										title: 'Sound meets AI: Learn how to compose music with SUNO AI',
+										costs: t.price.suno,
+										plus: t.extra.suno,
+										time: t.time.suno,
+										description: "Learn how to generate your own songs in seconds with SUNO AI. With practical tips, creative prompts and smart tricks, you'll quickly become an AI music pro – no prior knowledge required.",
+										link: "/en/ai-courses/music-generation",
+										linkText: "Course details"
+									},
+								]
+							]}
+						/>
+
+						<p class="mt-8 lg:mt-16 text-xs">Groups benefit from individual price offers – we will be happy to advise you personally.</p>
+					</div>
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class=" fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="about" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-fog-100 relative">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl">
+							<h2 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">AI courses throughout Switzerland – creative, practical and with personal support from Olten</h2>
+							<p>
+								Would you like to take your first steps with artificial intelligence or expand your knowledge in a targeted manner? In my AI courses throughout Switzerland, you will learn how to use AI tools specifically for your business or creative projects.
+							</p>
+							<p>
+								Together, we will discover how you can use AI-generated images, videos, music and texts to not only create impressive content, but also gain new leads and customers.
+								Whether online or on-site, I will accompany you individually on your journey into the world of artificial intelligence.
+							</p>
+							<p class="text-balance">Unleash your creative potential and actively shape the future with AI.</p>
+						</div>
+						<div class="wrapper wrapper__16 film">
+                            <div class="youtube youtube__16" data-embed="HnPU30kI15g">
+                                <div class="play-button"></div>
+                            </div>
+                        </div>
+					</div>
+				</article>
+
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+
+			<section id="testimonials" class="pt-8 pb-20 xl:pt-16 xl:pb-28  bg-stone-800 relative text-white">
+				<article class="max-width mx-auto">
+					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
+						<h2 class="!mb-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Testimonial</h2>
+					</div>
+
+					<Testimonials
+						items={[
+							{
+								link: "https://www.focusmedia.ch/team/",
+								sentence: "Michel's AI courses are very practical and efficient. His friendly and pragmatic way of teaching helps you learn new AI tools.",
+								name: "Patrick Frank",
+								job: "Media Coach",
+								testimonialHolder: patrickFrank
+							}
+						]}
+				  />
+
+					
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-gray-50 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+
+			<section id="faq" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+
+					<h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Frequently asked questions</h2>
+					<Faq
+						faqs={[
+                            {
+								question: "How long do the courses last?",
+								answer: "The courses last between 2 and 8 hours, depending on individual pace and content.",
+							},
+							{
+								question: "Where do the courses take place?",
+								answer: "You decide: either on site with personal interaction or remotely with complete flexibility.",
+							},
+							{
+								question: "When do the courses take place?",
+								answer: "The courses are planned flexibly – please contact me for specific dates.",
+							},
+						]}
+				  	/>
+				</article>
+	
+			  </section>
+
+
+			
+
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+
+<style>
+	.about-grid video {
+		width: 100%;
+		background-image: url(/src/assets/images/ki-kurse-poster.jpg);
+		background-size: cover;
+		aspect-ratio: 9/16;
+		margin-top: 0 !important;
+	}
+
+	.about-grid {
+		display: grid;
+		gap: 1.5rem;
+		@media (width > 48rem) {
+			grid-template-columns: 2fr 1fr;
+			gap: 3rem;
+		}
+	}
+</style>
+
+<script>
+	import initLazyYoutube from '@/scripts/facade.js';
+	initLazyYoutube();
+</script>

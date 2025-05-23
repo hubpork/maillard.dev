@@ -1,0 +1,168 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Course from '@/components/widgets/Course.astro';
+import Faq from '@/components/widgets/Faq.astro';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<BaseHead title={t.serp.musicgenerationTitle} description={t.serp.musicgenerationDesc} />
+	</head>
+    <body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+							<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">Sound trifft KI: Werde kreativ mit SUNO & Riffusion</h1>
+                            <p>In diesem Kurs lernst du, wie du mit SUNO und Riffusion in wenigen Sekunden eigene Songs generierst. Egal, ob du Content für TikTok, YouTube Shorts, Werbung oder dein eigenes Musikprojekt brauchst – ich zeige dir, wie du aus einer Idee einen Soundtrack machst. Du brauchst keinerlei Musiktheorie oder Vorkenntnisse. Auch für Marketer, Agenturen, Gamer und Kreative ideal.</p>
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">Was erwartet dich</h2>
+                            <p>In diesem Kurs lernst du, mit Prompts Melodien, Songstrukturen und verschiedene Stile zu erzeugen. Mit den Funktionen Personas gestaltest du unterschiedliche musikalische Charaktere, und mit Extends verlängerst oder variierst du Tracks für fliessende Übergänge und mehr Dynamik – so wird dein Sound einzigartig.</p><p>Zusätzlich zeige ich dir in 4 Stunden, wie du deine KI-Musik professionell auf YouTube und Spotify veröffentlichst, um deine kreativen Ideen zu echten Hits zu machen und deine Online-Präsenz aufzubauen.</p>
+                        </div>
+					</div>
+				</article>
+            </section>
+            <section id="course" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="max-w-[100%] lg:mx-auto text-white">
+						<Course
+							items={[
+								[
+									{
+										videoId:'zoWK5_oYpbE',
+										imgHolder: undefined,
+										title: 'Tools',
+                                        groups: t.groups.suno,
+                                        costs: t.price.suno,
+										plus: t.extra.suno,
+										time: t.time.suno,
+                                        description: t.description.suno,
+										link: "mailto:music-generation@maillard.dev?subject=Prompt%20Suno"
+									},
+								]
+							]}
+						/>
+
+					</div>
+				</article>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="videos" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-white relative">
+				<article class="max-width mx-auto">
+					
+					<h2 class="!mb-5 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-balance">Beispiele aus dem Kurs</h2>
+                    <p class="!font-normal text-l lg:text-2xl text-balance"> 🎧 Alles wird Schritt für Schritt erklärt und ist sofort anwendbar – inklusive meiner Erfahrungen und wertvoller Tipps.</p>
+
+					<div class="grid mx-auto md:grid-cols-2 gap-8 lg:gap-16 my-8">
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">Beispiel für einen SUNO-Prompt</h3>
+                            <p><q><strong>Old-school boom bap instrumental with dusty vinyl textures, jazzy samples, mellow Rhodes chords, punchy MPC-style drums, and classic DJ scratching. 90s golden era hip-hop vibe with a touch of turntablism and smooth groove.</strong></q></p>
+                            <br />
+                            <p>Durch gezielten Einsatz von Begriffen, die den Stil und die Stimmung deiner Musik präzise beschreiben – wie etwa Scratching, Beatjuggling oder DJ-Elemente – kommst du deinem perfekten Sound noch näher.</p>
+
+                        </div>
+                        
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">Ein kleines Beispiel in die tag-basierten Feinheiten, die deinen Workflow mit SUNO AI noch präziser und  machen</h3>
+                            <p>Du kannst z.B. [Duet], [Spoken word] verwenden etc.</p><br />
+                            <p><i><strong>[Soulful duet] with smooth female lead vocal and deep male backing vocals, gospel harmonies and call & response chorus.</strong></i></p>
+                            
+                        </div>
+                        
+                    </div>
+
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="outro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+                            
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">KI-Musikproduktion meistern – kreativ komponieren und automatisieren</h2>
+                            <p>Entdecke, wie du mit SUNO AI oder Riffusion in kürzester Zeit eigene Songs, Jingles und Social-Media-Tracks erstellst – ohne Vorkenntnisse, mit smartem Prompt-Engineering und individueller Klanggestaltung.</p>
+                            
+                            <h2 class="!font-leadFont !text-2xl !mt-8 text-balance">Jetzt zum Kurs anmelden und musikalisch durchstarten</h2>
+                            <a href="mailto:music-generation@maillard.dev?subject=Prompt%20Suno" class="mt-0 leading-1 no-underline inline-flex justify-center font-leadFont font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 focus:outline-none rounded-sm px-5 py-2 transition duration-150 ease-out hover:ease-in">
+                                Sichere dir jetzt deinen Platz
+                            </a>
+					
+                       </div>
+					</div>
+				</article>
+            </section>
+			<section id="faq" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+
+					<h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Häufig gestellte Fragen</h2>
+					<Faq
+						faqs={[
+							{
+								question: "Für wen ist der SUNO Musik-Kurs geeignet?",
+								answer: "Dieser Kurs richtet sich an alle, die KI-Musik ohne Vorkenntnisse selbst erstellen möchten – ideal für Musiker, Content Creator, Social-Media-Manager und Marketing-Profis.",
+							},
+                            {
+								question: "Welche Voraussetzungen brauche ich für den SUNO Kurs?",
+								answer: "Du benötigst keine Vorkenntnisse in Musikproduktion oder KI. Ein Computer mit Internetzugang ist ausreichend. Es empfiehlt sich ein SUNO Pro Konto.",
+							},
+                            {
+								question: "Was lerne ich im SUNO Kurs?",
+								answer: "Du lernst, wie du mit SUNO per Text-Prompt professionelle Melodien, Hooks, Songstrukturen und verschiedene Musikstile erzeugst und deine Tracks für Social Media exportierst.",
+							},
+                            {
+								question: "Kann ich meine KI-generierte Musik auf Spotify, YouTube & Co. veröffentlichen?",
+								answer: "Ja! Der Kurs zeigt dir Schritt für Schritt, wie du deine Musik auf Spotify, YouTube und anderen Plattformen hochlädst und damit eine starke Online-Präsenz aufbaust.",
+							},
+
+                            {
+								question: "Wie lange dauert der SUNO Musik-Kurs?",
+								answer: "Der Kurs ist flexibel und kann je nach Bedarf zwischen 3 und 8 Stunden dauern. Für Gruppen und Firmen gibt es individuelle Angebote.",
+							},
+                            {
+								question: "Gibt es eine Prompt-Bibliothek und Beispiele?",
+								answer: "Ja, du erhältst Zugriff auf eine wachsende Bibliothek mit kreativen Prompts, mit denen du deine KI-Musik schnell und einfach erstellen kannst.",
+							},
+                            {
+								question: "Wo findet der Kurs statt?",
+								answer: "Der Kurs kann vor Ort in Olten, online oder in deinem Unternehmen stattfinden. Die flexible Durchführung ermöglicht maximale Planbarkeit – auch als Teamevent oder Weiterbildungstag.",
+							},
+						]}
+				  />
+				</article>
+	
+			</section>
+
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+
+    import initLazyYoutube from '@/scripts/facade.js';
+    initLazyYoutube();
+</script>

@@ -1,0 +1,172 @@
+---
+import "@/styles/facade.css";
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import Course from '@/components/widgets/Course.astro';
+import Faq from '@/components/widgets/Faq.astro';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+
+import suno from '@/assets/images/suno-detail.png';
+---
+
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<BaseHead title={t.serp.musicgenerationTitle} description={t.serp.musicgenerationDesc} />
+	</head>
+    <body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" />
+	
+		<main class="flex-grow flex-shrink-0">
+			<section id="intro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+                            <h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">Sound meets AI: Get creative with SUNO & Riffusion</h1>
+							<p>In this course, you will learn how to generate your own songs in seconds with SUNO and Riffusion. Whether you need content for TikTok, YouTube Shorts, advertising or your own music project, I will show you how to turn an idea into a soundtrack. No music theory or prior knowledge is required. Also ideal for marketers, agencies, gamers and creative professionals.</p>
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">What to expect</h2>
+                            <p>In this course, you'll learn how to use prompts to create melodies, song structures and different styles. With the Personas feature, you can design different musical characters, and with Extends, you can extend or vary tracks for smooth transitions and more dynamics – making your sound unique. </p><p>In addition, in 4 hours I'll show you how to professionally publish your AI music on YouTube and Spotify to turn your creative ideas into real hits and build your online presence.</p>
+                        </div>
+					</div>
+				</article>
+            </section>
+            <section id="course" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-servette relative">
+				<article class="max-width mx-auto">
+					<div class="max-w-[100%] lg:mx-auto text-white">
+						<Course
+							items={[
+								[
+									{
+										videoId:'',
+										imgHolder: suno,
+										title: 'Tools',
+                                        groups: t.groups.suno,
+                                        costs: t.price.suno,
+										plus: t.extra.suno,
+										time: t.time.suno,
+                                        description: t.description.suno,
+                                        linkText: "Register now",
+										link: "mailto:music-generation@maillard.dev?subject=Prompt%20Suno"
+									},
+								]
+							]}
+						/>
+
+					</div>
+				</article>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-white w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="videos" class="pt-8 xl:pt-16 pb-16 xl:pb-24 bg-white relative">
+				<article class="max-width mx-auto">
+					
+					<h2 class="!mb-5 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-balance">Examples from the course</h2>
+                    <p class="!font-normal text-l lg:text-2xl text-balance"> 🎧 Everything is explained step by step and can be applied immediately – including my experiences and valuable tips.</p>
+
+					<div class="grid mx-auto md:grid-cols-2 gap-8 lg:gap-16 my-8">
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">Example of a SUNO prompt</h3>
+                            <p><q><strong>Old-school boom bap instrumental with dusty vinyl textures, jazzy samples, mellow Rhodes chords, punchy MPC-style drums, and classic DJ scratching. 90s golden era hip-hop vibe with a touch of turntablism and smooth groove.</strong></q></p>
+                            <br />
+                            <p>By using terms that accurately describe the style and mood of your music – such as scratching, beat juggling or DJ elements – you can get even closer to your perfect sound.</p>
+
+                        </div>
+                        
+                        <div>
+                            <h3 class="!font-leadFont text-l text-balance mb-3">A small example of the tag-based subtleties that make your workflow with SUNO AI even more precise and efficient.</h3>
+                            <p>You can use [Duet], [Spoken word], etc.</p><br />
+                            <p><i><strong>[Soulful duet] with smooth female lead vocals and deep male backing vocals, gospel harmonies and call & response chorus.</strong></i></p>
+                            
+                        </div>
+                        
+                    </div>
+
+				</article>
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 10" preserveAspectRatio="none" class="fill-fog-100 w-full absolute left-0 right-0 top-auto bottom-[-1px] max-h-[50px]">
+					<polygon points="100 0 100 10 0 10"></polygon>
+				</svg>
+			</section>
+			<section id="outro" class="py-4 xl:py-8 mb-8">
+				<article class="max-width mx-auto">
+					<div class="about-grid">
+						<div class="prose lg:prose-2xl mx-auto">
+                            
+                            <h2 class="mb-2 !font-leadFont !text-2xl !mt-8 text-balance">Master AI music production – compose and automate creatively</h2>
+                            <p>Discover how you can create your own songs, jingles and social media tracks in no time with SUNO AI or Riffusion – no prior knowledge required, with smart prompt engineering and custom sound design.</p>
+                            
+                            <h2 class="!font-leadFont !text-2xl !mt-8 text-balance">Register for the course now and get started with music</h2>
+                            <a href="mailto:music-generation@maillard.dev?subject=Prompt%20Suno" class="mt-0 leading-1 no-underline inline-flex justify-center font-leadFont font-semibold text-fog-100 bg-servette hover:bg-black focus:ring-4 focus:ring-red-300 focus:outline-none rounded-sm px-5 py-2 transition duration-150 ease-out hover:ease-in">
+                                Secure your place now
+                            </a>
+					
+                       </div>
+					</div>
+				</article>
+            </section>
+            <section id="faq" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+
+					
+                    <h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">Frequently asked questions</h2>
+					<Faq
+                        faqs={[
+                            {
+                                question: "Who is the SUNO AI music course for?",
+                                answer: "This course is designed for anyone who wants to create AI-generated music without prior knowledge – ideal for musicians, content creators, social media managers, and marketing professionals.",
+                            },
+                            {
+                                question: "What requirements do I need for the SUNO AI course?",
+                                answer: "You don't need any experience in music production or AI. A computer with internet access is sufficient. A SUNO Pro account is recommended.",
+                            },
+                            {
+                                question: "What will I learn in the SUNO AI course?",
+                                answer: "You'll learn how to use SUNO AI to generate professional melodies, hooks, song structures, and various music styles (e.g. synth, lo-fi, cinematic) using text prompts, and how to export your tracks for social media and streaming platforms.",
+                            },
+                            {
+                                question: "Can I publish my AI-generated music on Spotify, YouTube & Co.?",
+                                answer: "Yes! The course guides you (optionally) step-by-step on how to upload your music to Spotify, YouTube, TikTok, and other platforms to build a strong online presence.",
+                            },
+                            {
+                                question: "How long does the SUNO AI music course take?",
+                                answer: "The course is flexible and can take between 3 and 8 hours depending on your needs. Custom packages are available for groups and companies.",
+                            },
+                            {
+                                question: "Is there a prompt library and examples?",
+                                answer: "Yes, you'll get access to a growing library of creative prompts that help you easily create your AI-generated music.",
+                            },
+                            {
+                                question: "Where does the course take place?",
+                                answer: "The course can take place on-site in Olten, online, or at your company. This flexible format allows for maximum planning – also ideal as a team event or training day.",
+                            },
+                        ]}
+                    />  
+
+				</article>
+
+			</section>
+
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+
+
+    import initLazyYoutube from '@/scripts/facade.js';
+    initLazyYoutube();
+</script>

@@ -1,18 +1,24 @@
 ---
+
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '@/consts';
-import { getCollection } from 'astro:content';
 import { Picture } from 'astro:assets';
-const blogEntries = (await getCollection('blog')).sort(
-	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+import { getCollection } from 'astro:content';
+const posts = await getCollection('blog', ({ data }) => data.lang === 'de');
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 	<head>
-		<BaseHead title="Insights" description={SITE_DESCRIPTION} />
+		<BaseHead title={t.serp.blogTitle} description={t.serp.blogDesc} />
 	</head>
 	<body class="flex flex-col bg-white text-gray-800">
 		<div class="js-header-desktop-shim absolute t-0"></div>
@@ -20,24 +26,21 @@ const blogEntries = (await getCollection('blog')).sort(
 		
 		<main class="flex-grow flex-shrink-0 relative">
 			<section class="py-4 xl:py-8 prose lg:prose-2xl max-width mx-auto">
-				<h1 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Empower your learning journey, discover insightful and engaging blog posts</h1>
+				<h1 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Vertiefe dein Wissen mit spannenden Blogbeitr&auml;gen</h1>
 				<p>
-					Want to expand your knowledge, reading my blog posts can be an enriching experience. I aim to deliver informative and engaging content that meets your needs and keeps you informed on the topics that matter to you.
-				</p>
-				<p>
-					The process of learning doesn't stop once you've reached a certain level of knowledge. It's a continuous journey of discovery and growth. My blog posts are a reflection of this belief. They are regularly updated with fresh content that covers a wide range of topics, ensuring that you always have something new to learn and discuss.
+					Willst du dein Wissen erweitern? Dann kann das Lesen meiner Blogbeitr&auml;ge im Bereich KI, Bilder und Videogenerationen, Webentwicklung und Marketing eine bereichernde Erfahrung sein. Ich m&ouml;chte informative und spannende Inhalte liefern, die deinen Bed&uuml;rfnissen entsprechen und dich &uuml;ber die Themen auf dem Laufenden halten, die dich interessieren.
 				</p>
 			</section>
 
 			<ul class="grid gap-5 md:gap-5 pt-8 pb-20 xl:pt-16 xl:pb-28 max-width mx-auto">
-				{blogEntries.reverse().map(blogPostEntry => (
+				{posts.reverse().map(post => (
 					<li>
-						<div class="grid md:grid-cols-2 gap-5 md:gap-10 lg:items-center mb-8">
-							{blogPostEntry.data.heroImage && <a href={`/blog/${blogPostEntry.slug}`}><Picture src={blogPostEntry.data.heroImage} widths={[320, 640, 1200]} aspectRatio="1200:600" width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  alt={blogPostEntry.data.title} /></a>}
+						<div class="fade-in grid md:grid-cols-2 gap-5 md:gap-10 lg:items-center mb-8">
+							{post.data.heroImage && <a href={`/blog/${post.slug}`}><Picture src={post.data.heroImage} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  alt={post.data.title} /></a>}
 							<div class="grid grid-cols-1 text-2xl">
-								<h2 class="!font-headingFont !text-3xl font-bold !mb-3">{blogPostEntry.data.title}</h2>
-								<p>{blogPostEntry.data.description}</p>
-								<a href={`/blog/${blogPostEntry.slug}`} class="mt-4 underline decoration-1 hover:no-underline">{blogPostEntry.data.linktext}</a>
+								<h2 class="!font-headingFont !text-3xl font-bold !mb-3">{post.data.title}</h2>
+								<p>{post.data.description}</p>
+								<a href={`/blog/${post.slug}`} class="mt-4 underline decoration-1 hover:no-underline">{post.data.linktext}</a>
 							</div>
 						</div>
 					</li>
@@ -49,7 +52,7 @@ const blogEntries = (await getCollection('blog')).sort(
 			</svg>
 		</main>
 
-		<Footer footerClass="bg-fog-100 flex justify-center py-10" />
+		<Footer footerClass="bg-fog-100 flex justify-center py-10 xl:pt-16" />
 	</body>
 </html>
 
@@ -60,3 +63,10 @@ const blogEntries = (await getCollection('blog')).sort(
 	}
 	
 </style>
+
+<script>
+    import { observeFadeIn } from '@/scripts/scroll-observer.js';
+    document.addEventListener('DOMContentLoaded', () => {
+        observeFadeIn('.fade-in');
+    });
+</script>

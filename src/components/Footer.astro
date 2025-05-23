@@ -1,6 +1,6 @@
 ---
 const today = new Date();
-const { footerClass, frontmatter } = Astro.props;
+const { footerClass } = Astro.props;
 import Linktree from '@/components/icons/Linktree.astro';
 import Insta from '@/components/icons/Insta.astro';
 import Codepen from '@/components/icons/Codepen.astro';
@@ -26,14 +26,18 @@ const pathMap: Record<string, string> = {
   '/en/ai-courses/music-generation': '/ki-kurse/music-generation',
 };
 
+// Zugriff auf das Frontmatter nur, wenn vorhanden (z.B. auf Blogpost-Seiten)
+const frontmatter = Astro.props?.post?.data;
+
 if (frontmatter?.slug_de && frontmatter?.slug_en) {
-	switchLangPath = isEnglish
-		? `/blog/${frontmatter.slug_de}`
-		: `/en/blog/${frontmatter.slug_en}`;
+  switchLangPath = isEnglish
+    ? `/blog/${frontmatter.slug_de}`
+    : `/en/blog/${frontmatter.slug_en}`;
 } else {
-	// Fallback für statische Seiten
-	switchLangPath = pathMap[pathname] ?? (
-		isEnglish ? pathname.replace(/^\/en/, '') || '/' : '/en' + pathname
+  // Fallback für statische Seiten
+	const cleanPath = pathname.replace(/\/$/, ''); // trailing slash entfernen
+	switchLangPath = pathMap[cleanPath] ?? (
+		isEnglish ? cleanPath.replace(/^\/en/, '') || '/' : '/en' + cleanPath
 	);
 }
 ---

@@ -3,7 +3,7 @@ title: "Landing Pages: Der Schlüssel zum Online-Erfolg – Warum du nicht ohne 
 linktext: "Der Weg zum Ziel"
 description: "User dazu inspirieren, aktiv zu werden."
 pubDate: "Sept 16 2024"
-heroImage: "/landingpage.jpg"
+heroImage: "/image/landingpage.jpg"
 lang: "de"
 slug_en: "landingpage-2024-09-26_en"
 slug_de: "landingpage-2024-09-26_de"

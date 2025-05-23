@@ -3,7 +3,7 @@ title: "Landing Pages: The key to online success - Why you can't do without them
 linktext: "The way to go"
 description: "Get visitors to take a specific action"
 pubDate: "Sept 16 2024"
-heroImage: "/landingpage.jpg"
+heroImage: "/image/landingpage.jpg"
 lang: "en"
 slug_de: "landingpage-2024-09-26_de"
 slug_en: "landingpage-2024-09-26_en"

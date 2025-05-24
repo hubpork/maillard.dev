@@ -1,30 +1,12 @@
 ---
-// Import the global.css file here so that it is included on
-// all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import '@/styles/global.css';
+import { getHrefLangUrls } from '@/components/utils/canonicalUtils';
 
-export interface Props {
-	title: string;
-	description: string;
-	image?: string;
-}
-
-// Importieren der Astro-Seiten-URL
-const { url } = Astro;
 const baseURL = new URL(Astro.site ?? 'https://www.maillard.dev');
+const { hrefLangDe, hrefLangEn, canonicalURL, hrefLangDefault } = getHrefLangUrls(Astro.url.pathname, baseURL);
 
-const lang = url.pathname.startsWith('/en') ? 'en' : 'de'; // Falls die Seite auf Englisch ist
-const cleanPath = url.pathname.replace(/^\/en/, '').replace(/^\/de/, ''); // Entfernen von '/en' und '/de'
-
-const canonicalURL = lang === 'de'
-  ? new URL(cleanPath, baseURL).toString()  // Für Deutsch, keine Sprachkennung
-  : new URL(`/en${cleanPath}`, baseURL).toString(); // Für Englisch mit '/en'
-
-// old canonicalURL
-//const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
-
-const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString();
 const { title, description, image } = Astro.props;
+const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString();
 ---
 <!-- Global Metadata -->
 <meta charset="utf-8" />
@@ -56,12 +38,11 @@ const { title, description, image } = Astro.props;
 <link rel="canonical" href={canonicalURL} />
 
 <!-- Alternativen Links für hreflang -->
-<link rel="alternate" href={new URL(`${cleanPath}`, baseURL).toString()} hreflang="de" />
-<link rel="alternate" href={new URL(`/en${cleanPath}`, baseURL).toString()} hreflang="en" />
+<link rel="alternate" href={hrefLangDe} hreflang="de" />
+<link rel="alternate" href={hrefLangEn} hreflang="en" />
 
 <!-- Fallback-Link für x-default -->
-<link rel="alternate" href={new URL(cleanPath, baseURL).toString()} hreflang="x-default" />
-
+<link rel="alternate" href={hrefLangDefault} hreflang="x-default" />
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>

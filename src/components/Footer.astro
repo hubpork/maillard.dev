@@ -6,6 +6,7 @@ import Insta from '@/components/icons/Insta.astro';
 import Codepen from '@/components/icons/Codepen.astro';
 import Linkedin from '@/components/icons/Linkedin.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_CODEPEN } from '@/consts';
+import { getSwitchLangPath } from '@/utils/langUtils';
 
 import de from '../i18n/de.json';
 import en from '../i18n/en.json';
@@ -13,33 +14,7 @@ import en from '../i18n/en.json';
 const { pathname } = Astro.url;
 const isEnglish = pathname.startsWith('/en');
 const t = isEnglish ? en : de;
-let switchLangPath = '';
-
-const pathMap: Record<string, string> = {
-  '/ki-kurse': '/en/ai-courses',
-  '/en/ai-courses': '/ki-kurse',
-  '/ki-kurse/ai-appetizers': '/en/ai-courses/ai-appetizers',
-  '/en/ai-courses/ai-appetizers': '/ki-kurse/ai-appetizers',
-  '/ki-kurse/prompt-engineering': '/en/ai-courses/prompt-engineering',
-  '/en/ai-courses/prompt-engineering': '/ki-kurse/prompt-engineering',
-  '/ki-kurse/music-generation': '/en/ai-courses/music-generation',
-  '/en/ai-courses/music-generation': '/ki-kurse/music-generation',
-};
-
-// Zugriff auf das Frontmatter nur, wenn vorhanden (z.B. auf Blogpost-Seiten)
-const frontmatter = Astro.props?.post?.data;
-
-if (frontmatter?.slug_de && frontmatter?.slug_en) {
-  switchLangPath = isEnglish
-    ? `/blog/${frontmatter.slug_de}`
-    : `/en/blog/${frontmatter.slug_en}`;
-} else {
-  // Fallback für statische Seiten
-	const cleanPath = pathname.replace(/\/$/, ''); // trailing slash entfernen
-	switchLangPath = pathMap[cleanPath] ?? (
-		isEnglish ? cleanPath.replace(/^\/en/, '') || '/' : '/en' + cleanPath
-	);
-}
+const switchLangPath = getSwitchLangPath(pathname);
 ---
 
 <footer class:list={[ footerClass ]}>

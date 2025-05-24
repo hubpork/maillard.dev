@@ -22,15 +22,17 @@ export function getHrefLangUrls(urlPathname: string, baseURL: URL) {
     canonicalURL = hrefLangDe;
     hrefLangDefault = hrefLangDe;
   } else {
-    let basePath = urlPathname.replace(/^\/en/, '').replace(/^\/de/, '').replace(/\/$/, '');
+    const isEnglish = urlPathname.startsWith('/en');
 
-    const dePath = urlPathname.startsWith('/en') ? pathMap[urlPathname] ?? basePath : basePath;
-    const enPath = urlPathname.startsWith('/en') ? basePath : pathMap[basePath] ?? `/en${basePath}`;
+    const dePath = isEnglish
+      ? pathMap[urlPathname] ?? urlPathname.replace(/^\/en/, '')
+      : urlPathname;
 
-    canonicalURL = urlPathname.startsWith('/en')
-      ? new URL(enPath, baseURL).toString()
-      : new URL(dePath, baseURL).toString();
+    const enPath = isEnglish
+      ? urlPathname
+      : pathMap[urlPathname] ?? `/en${urlPathname}`;
 
+    canonicalURL = new URL(urlPathname, baseURL).toString();
     hrefLangDe = new URL(dePath, baseURL).toString();
     hrefLangEn = new URL(enPath, baseURL).toString();
     hrefLangDefault = hrefLangDe;

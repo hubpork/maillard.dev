@@ -15,7 +15,7 @@ export default defineConfig({
   ],
   compressHTML: true,
   image: {
-    experimentalLayout: 'responsive',
+    experimentalLayout: 'constrained',
     service: {
       entrypoint: 'astro/assets/services/sharp'
     }

@@ -41,7 +41,7 @@ const { Content } = await post.render();
 		
 		<main class="flex-grow flex-shrink-0 relative" role="main">
 			<article class="pb-20 prose lg:prose-2xl prose-headings:font-headingFont mx-auto sm:px-6 px-6 mt-8 lg:prose-xl prose-a:servette prose-headings:leading-tighter prose-lg prose-md">
-				{heroImage && <Picture class="mb-5 lg:mb-10" src={heroImage} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="descriptive text" />}
+				{heroImage && <Picture class="mb-5 lg:mb-10" src={heroImage} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']} loading="eager" alt="descriptive text" />}
         <h1>{post.data.title}</h1>
         <Content />
         <!-- p><a href={otherLangHref}>{isEnglish ? "Deutsche Version" : "English version"}</a></!-->

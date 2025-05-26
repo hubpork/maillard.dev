@@ -35,7 +35,7 @@ const t = isEnglish ? en : de;
 		<main class="flex-grow flex-shrink-0" role="main">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
-					<Picture class="mb-6 lg:mb-14 hero" src={placeHolder} layout='responsive' width={1440} height={720} formats={['avif', 'webp']}  alt="about me" loading="eager" />
+					<Picture class="mb-6 lg:mb-14 hero" src={placeHolder} layout="full-width" width={1440} height={720} formats={['avif', 'webp']}  alt="about me" loading="eager" />
 					<div class="about-grid">
 						<div class="prose lg:prose-2xl">
 							<h1 class="!mb-7 !font-leadFont !text-3xl !lg:text-4xl !mt-0">Michel Maillard – frontend web developer, online marketing manager & AI expert</h1>
@@ -105,8 +105,7 @@ const t = isEnglish ? en : de;
 									title: 'HKV Aarau',
 									business: 'Online Marketing Manager',
 									time: 'Nov 2023 – June 2024',
-									description:
-									'Supporting clients in SEO and PPC. Developing and analysing social media strategies using KPI reports. Focused on content creation, community management, and website optimisation based on performance and trend insights.'
+									description:'Supporting clients in SEO and PPC. Developing and analysing social media strategies using KPI reports. Focused on content creation, community management, and website optimisation based on performance and trend insights.'
 								},
 								{
 									title: 'Search Engine Optimization (SEO)',
@@ -150,7 +149,7 @@ const t = isEnglish ? en : de;
 					<Clients
 						items={[
 							
-							{ name: 'Baur’s', url: 'https://www.baurs-zurich.ch' },
+							{ name: "Baur's", url: 'https://www.baurs-zurich.ch' },
 							{ name: 'Baur au Lac Vins', url: 'https://www.bauraulacvins.ch' },
 							{ name: 'Schubi Weine', url: 'https://www.schubiweine.ch' },
 							{ name: 'Flyerline', url: 'https://www.flyerline.ch' },

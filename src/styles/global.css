@@ -22,47 +22,6 @@
 	}
 }
 
-/* playfair-display-800 - latin */
-/*
-@font-face {
-	font-display: swap; 
-	font-family: 'logoFont';
-	font-style: normal;
-	font-weight: 400;
-	src: url('/gasoek-one-v3-latin-regular.woff2') format('woff2')
-}
-
-@font-face {
-	font-display: swap; 
-	font-family: 'headingFont';
-	font-style: normal;
-	font-weight: 800;
-	src: url('/playfair-display-v30-latin-800.woff2') format('woff2')
-}
-/*
-
-/* quicksand-400 - latin */
-/*
-@font-face {
-	font-display: swap; 
-	font-family: 'contentFont';
-	font-style: normal;
-	font-weight: 400;
-	src: url('/quicksand-v30-latin-regular.woff2') format('woff2')
-}
-*/
-
-/* quicksand-600 - latin */
-/*
-@font-face {
-	font-display: swap; 
-	font-family: 'leadFont';
-	font-style: normal;
-	font-weight: 700;
-	src: url('/quicksand-v30-latin-600.woff2') format('woff2')
-}
-*/
-
 .header-max-width  {
 	width: min(1536px, 90vw);
 }

@@ -13,7 +13,6 @@ import en from '@/i18n/en.json';
 const { pathname } = Astro.url;
 const isEnglish = pathname.startsWith('/en');
 const t = isEnglish ? en : de;
-
 ---
 
 <!DOCTYPE html>

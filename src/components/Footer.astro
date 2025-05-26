@@ -8,8 +8,8 @@ import Linkedin from '@/components/icons/Linkedin.astro';
 import { SITE_TITLE, SITE_DESCRIPTION, EMAIL, HANDLE_CODEPEN } from '@/consts';
 import { getSwitchLangPath } from '@/components/utils/langUtils';
 
-import de from '../i18n/de.json';
-import en from '../i18n/en.json';
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
 
 const { pathname } = Astro.url;
 const isEnglish = pathname.startsWith('/en');
@@ -40,7 +40,7 @@ const switchLangPath = getSwitchLangPath(pathname);
 					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
 				</p>
 
-				<div class="flex space-x-3 lg:text-3xl justify-center lg:justify-start">
+				<nav class="flex space-x-3 lg:text-3xl justify-center lg:justify-start" role="navigation">
 					<a
 					class="hover:opacity-70 py-2 px-3 rounded-lg"
 						title="Linktree"
@@ -79,7 +79,7 @@ const switchLangPath = getSwitchLangPath(pathname);
 					>
 						<Linkedin />
 					</a>
-				</div>
+				</nav>
 			</div>
 		</div>
 	</article>

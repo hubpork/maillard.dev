@@ -1,10 +1,10 @@
 ---
 import HeaderLink from './HeaderLink.astro';
-import { SITE_DESCRIPTION } from '../consts';
+import { SITE_DESCRIPTION } from '@/consts';
 const { headerClass, headerDotClass, headerFixClass, title } = Astro.props;
 
-import de from '../i18n/de.json';
-import en from '../i18n/en.json';
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
 
 const { pathname } = Astro.url;
 const isEnglish = pathname.startsWith('/en');

@@ -10,24 +10,26 @@ export function getHrefLangUrls(urlPathname: string, baseURL: URL) {
   const isBlogEn = urlPathname.startsWith('/en/blog/') && urlPathname.endsWith('_en');
 
   if (isBlogEn) {
+    // Slug extrahieren und _en am Ende entfernen
     const slug = urlPathname.replace('/en/blog/', '');
     const slugBase = slug.replace(/_en$/, '');
     hrefLangDe = new URL(`/blog/${slugBase}_de`, baseURL).toString();
     hrefLangEn = new URL(urlPathname, baseURL).toString();
-    canonicalURL = hrefLangEn;
-    hrefLangDefault = hrefLangDe;
+    canonicalURL = hrefLangEn;       // Canonical auf EN setzen
+    hrefLangDefault = hrefLangDe;   // Default auf DE
   } else if (isBlogDe) {
+    // Slug extrahieren und _de am Ende entfernen
     const slug = urlPathname.replace('/blog/', '');
     const slugBase = slug.replace(/_de$/, '');
     hrefLangEn = new URL(`/en/blog/${slugBase}_en`, baseURL).toString();
     hrefLangDe = new URL(urlPathname, baseURL).toString();
-    canonicalURL = hrefLangDe;
-    hrefLangDefault = hrefLangDe;
+    canonicalURL = hrefLangDe;       // Canonical auf DE setzen
+    hrefLangDefault = hrefLangDe;   // Default auf DE
   } else {
     const isEnglish = urlPathname.startsWith('/en');
 
     const dePath = isEnglish
-      ? pathMap[urlPathname] ?? urlPathname.replace(/^\/en/, '')
+      ? pathMap[urlPathname] ?? (urlPathname.replace(/^\/en/, '') || '/')
       : urlPathname;
 
     const enPath = isEnglish

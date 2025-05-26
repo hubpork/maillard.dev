@@ -45,7 +45,11 @@
         "home": "Startseite",
         "blog": "Artikel",
         "portrait": "Portrait",
-        "courses": "KI-Kurse"
+        "courses": "KI-Kurse",
+        "aiAppetizers": "AI Appetizers",
+        "aiEngineering": "KI Prompt-Engineering",
+        "aiMusic": "Sound trifft KI",
+        "moreCourses": "Künstliche Intelligenz lernen – weitere Kurse, die dich interessieren könnten"
     },
     "footer": {
         "language": "Sprache wechseln",

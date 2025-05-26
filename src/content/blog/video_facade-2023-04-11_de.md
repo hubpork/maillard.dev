@@ -2,7 +2,7 @@
 title: "YouTube Video-Fassade"
 linktext: "Lies mehr dazu"
 description: "Die Ladegeschwindigkeit von Websites mit eingebetteten YouTube-Videos verbessern"
-pubDate: "Apr 11 2023"
+pubDate: "2023-04-11T00:00:00Z"
 heroImage: "/image/youtube-unsplash.jpg"
 lang: "de"
 slug_en: "video_facade-2023-04-11_en"

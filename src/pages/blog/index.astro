@@ -32,14 +32,31 @@ const t = isEnglish ? en : de;
 			</section>
 
 			<ul class="grid gap-5 md:gap-5 pt-8 pb-20 xl:pt-16 xl:pb-28 max-width mx-auto">
-				{posts.reverse().map(post => (
+				{posts
+				.slice() // sicheres Kopieren, nicht mutierend
+				.sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+				.map(post => (
 					<li>
 						<div class="fade-in grid md:grid-cols-2 gap-5 md:gap-10 lg:items-center mb-8">
-							{post.data.heroImage && <a href={`/blog/${post.slug}`}><Picture src={post.data.heroImage} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp','jpg']}  alt={post.data.title} /></a>}
+							{post.data.heroImage && (
+							<a href={`/blog/${post.slug}`}>
+								<Picture
+								src={post.data.heroImage}
+								widths={[320, 640, 1200]}
+								width={1200}
+								height={600}
+								sizes="(max-width: 640px) 100vw, 960px"
+								formats={['avif', 'webp', 'jpg']}
+								alt={post.data.title}
+								/>
+							</a>
+							)}
 							<div class="grid grid-cols-1 text-2xl">
-								<h2 class="!font-headingFont !text-3xl font-bold !mb-3">{post.data.title}</h2>
-								<p>{post.data.description}</p>
-								<a href={`/blog/${post.slug}`} class="mt-4 underline decoration-1 hover:no-underline">{post.data.linktext}</a>
+							<h2 class="!font-headingFont !text-3xl font-bold !mb-3">{post.data.title}</h2>
+							<p>{post.data.description}</p>
+							<a href={`/blog/${post.slug}`} class="mt-4 underline decoration-1 hover:no-underline">
+								{post.data.linktext}
+							</a>
 							</div>
 						</div>
 					</li>

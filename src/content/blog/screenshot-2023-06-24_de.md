@@ -2,7 +2,7 @@
 title: "Hochauflösende Screenshots"
 linktext: "Die Anleitung"
 description: "Screenshots von ganzen Webseiten oder Teilen davon zu machen, ist echt praktisch."
-pubDate: "Jul 24 2023"
+pubDate: "2023-06-24T00:00:00Z"
 heroImage: "/image/screenshot-unsplash.jpg"
 lang: "de"
 slug_en: "screenshot-2023-06-24_en"

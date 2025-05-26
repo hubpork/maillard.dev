@@ -46,7 +46,11 @@
     "home": "Home",
     "blog": "Articles",
     "portrait": "Portrait",
-    "courses": "AI Courses"
+    "courses": "AI Courses",
+    "aiAppetizers": "AI Appetizers",
+    "aiEngineering": "KI Prompt-Engineering",
+    "aiMusic": "Sound meets AI",
+    "moreCourses": "Learn artificial intelligence – other courses that may interest you"
   },
   "footer": {
     "language": "Switch Language",

@@ -1,11 +1,13 @@
 ---
 import "@/styles/facade.css";
+import "@/styles/morelink.css";
 import { SITE_TITLE } from '@/consts';
 import BaseHead from '@/components/BaseHead.astro';
 import Header from '@/components/Header.astro';
 import Footer from '@/components/Footer.astro';
 import Course from '@/components/widgets/Course.astro';
 import Faq from '@/components/widgets/Faq.astro';
+import HeaderLink from '@/components/HeaderLink.astro';
 
 import de from '@/i18n/de.json';
 import en from '@/i18n/en.json';
@@ -155,6 +157,21 @@ import suno from '@/assets/images/suno-detail.png';
 
 			</section>
 
+            <section id="morelinks" class="pb-16 xl:pb-24 relative bg-gray-50">
+				<article class="max-width mx-auto">
+                    <h2 class="!mb-7 !mt-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl">{t.nav.moreCourses}</h2>
+                    <nav class="nav flex flex-col flex-wrap md:flex-row justify-start items-stretch md:items-start two-items gap-4 lg:gap-10" role="navigation">
+                        <HeaderLink class="flex-1 flexbox-item" href={isEnglish ? "/en/ai-courses/music-generation" : "/ki-kurse/music-generation"}>
+                            <p class="text-xl lg:text-2xl mb-3 !font-leadFont">{t.serp.apptizersTitle}</p>
+                            <p>{t.serp.apptizersDesc}</p>
+                        </HeaderLink>
+                        <HeaderLink class="flex-1 flexbox-item" href={isEnglish ? "/en/ai-courses/prompt-engineering" : "/ki-kurse/prompt-engineering"}>
+                            <p class="text-xl lg:text-2xl mb-3 !font-leadFont">{t.serp.engineeringTitle}</p>
+                            <p>{t.serp.engineeringDesc}</p>
+                        </HeaderLink>
+                    </nav>
+				</article>
+			</section>
 		</main>
 		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
 	</body>

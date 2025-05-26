@@ -2,7 +2,7 @@
 title: "YouTube Video Facade"
 linktext: "Read about this"
 description: "Improving page speed on websites that embed YouTube videos"
-pubDate: "Apr 11 2023"
+pubDate: "2023-04-11T00:00:00Z"
 heroImage: "/image/youtube-unsplash.jpg"
 lang: "en"
 slug_de: "video_facade-2023-04-11_de"

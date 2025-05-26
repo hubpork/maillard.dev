@@ -2,7 +2,7 @@
 title: "High-resolution Screenshots"
 linktext: "How-to"
 description: "Taking screenshots of all or parts of web pages is super useful."
-pubDate: "Jul 24 2023"
+pubDate: "2023-06-24T00:00:00Z"
 heroImage: "/image/screenshot-unsplash.jpg"
 lang: "en"
 slug_de: "screenshot-2023-06-24_de"

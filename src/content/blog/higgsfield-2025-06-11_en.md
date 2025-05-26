@@ -2,7 +2,7 @@
 title: "Meet Higgsfield: A new player on the scene"
 linktext: "Let's animate"
 description: "The new cinematic video generation model enables realistic clips."
-pubDate: "Jun 11 2025"
+pubDate: "2025-06-11T00:00:00Z"
 heroImage: "/image/higgsfield.jpg"
 lang: "en"
 slug_de: "higgsfield-2025-06-11_de"

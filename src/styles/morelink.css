@@ -1,0 +1,12 @@
+.two-items::before {
+    align-self: stretch;
+    content: '';
+    border: 1px solid var(--colors-fog-200);
+}
+.two-items .flexbox-item:first-child {
+    order: -1;
+}
+
+.flexbox-item:hover > p:first-child{
+    color: var(--colors-servette);
+}

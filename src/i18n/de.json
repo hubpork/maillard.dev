@@ -57,7 +57,10 @@
         "title": "Lass von dir hören – ob für ein Gespräch oder Projekt",
         "hello": "Sag Hallo",
         "based": "⟢ Ich bin AI-Synthographer und Web-Profi aus Olten. Ich finde es cool, Neues zu lernen und mein Wissen mit anderen zu teilen.",
-        "respond": "Ich freue mich über dein Feedback."
+        "respond": "Ich freue mich über dein Feedback.",
+        "impressumLink": "/impressum",
+        "dataLink": "/datenschutz",
+        "dataProtection": "Datenschutz"
     },
     "switchTo": "English"
 }

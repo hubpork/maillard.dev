@@ -7,4 +7,8 @@ export const pathMap: Record<string, string> = {
     '/en/ai-courses/prompt-engineering': '/ki-kurse/prompt-engineering',
     '/ki-kurse/music-generation': '/en/ai-courses/music-generation',
     '/en/ai-courses/music-generation': '/ki-kurse/music-generation',
+    '/datenschutz': '/en/data-protection',
+    '/en/data-protection': '/datenschutz',
+    '/impressum/': '/en/impressum',
+    '/en/impressum': '/impressum',
 };

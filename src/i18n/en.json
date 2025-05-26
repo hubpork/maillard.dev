@@ -58,7 +58,10 @@
     "title": "Whether for a chat or a project",
     "hello": "Say Hello",
     "based": "⟢ I'm an AI Synthographer and web professional from Olten. I enjoy learning new things and sharing my knowledge with others.",
-    "respond": "I value your feedback."
+    "respond": "I value your feedback.",
+    "impressumLink": "/en/impressum",
+    "dataLink": "/en/data-protection",
+    "dataProtection": "Data Protection"
   },
   "switchTo": "Deutsch"
 }

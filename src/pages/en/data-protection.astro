@@ -1,0 +1,97 @@
+---
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title="Maillard.dev - Data Protection" description="Data Protection" />
+	</head>
+	<body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" role="banner" />
+
+		<main class="flex-grow flex-shrink-0" role="main">
+			<section id="impressum" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative">
+				<article class="max-width mx-auto">
+					<div class="prose lg:prose-2xl mx-auto">
+						<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">Data protection</h1>
+                        <p>Last updated on: 26 May 2025</p><p>We attach great importance to the transparent handling of personal data. This privacy policy provides information about what personal data we collect, for what purpose and to whom we pass it on. To ensure a high level of transparency, this privacy policy is regularly reviewed and updated. </p><h2 class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !mt-0">1. What services we use</h2>
+						
+						
+						
+						<p></p><ul><li><span>LinkedIn Ads</span></li><li><span>MailChimp</span></li><li><span>Meta Business Ads</span></li><li><span>YouTube</span></li></ul><p></p><h2 class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !mt-0">2. Contact information</h2><p>If you have any questions or concerns about how we protect your data, you can contact us at any time by email at . The person responsible for data processing via this website is:</p><p><strong>Data protection officer:</strong><br />Michel Maillard<br />Nigglsibergstrasse 24<br />Starrkirch 4656<br />Switzerland</p>
+						
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !mt-0">3. General principles</h2>
+						
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">3.1 What data do we collect from you and from whom do we receive this data?</h3><p>First and foremost, we process personal data that you provide to us or that we collect when operating our website. Under certain circumstances, we may also receive personal data about you from third parties. This may include the following categories:</p><ul><li>Personal master data (name, address, date of birth, etc.);</li><li>Contact details (mobile phone number, email address, etc.);</li><li>Financial data (e.g. account details);</li><li>Online identifiers (e.g. cookie identifiers, IP addresses);</li><li>location and traffic data;</li><li>audio and image recordings;</li><li>sensitive data (e.g. biometric data or information about your health).</li></ul>
+						
+						
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">3.2 Under what conditions do we process your data?</h3><p>We treat your data confidentially and in accordance with the purposes set out in this privacy policy. We ensure that processing is transparent and proportionate. If, in exceptional cases, we are unable to comply with these principles, data processing may still be lawful because there is a legitimate reason for doing so. The following are possible justifications:</p><ul><li>Your consent;</li><li>the performance of a contract or pre-contractual measures;</li><li>our legitimate interests, provided that your interests do not outweigh these interests.</li></ul>
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0"></h3>3.3 How can you withdraw your consent?</h3><p>If you have given us consent to process your personal data for specific purposes, we will process your data within the scope of this consent, unless we have another justification. You can withdraw your consent at any time by sending an email to the address given in the legal notice. Data processing that has already taken place is not affected by this.
+						
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">3.4 In which cases may we disclose your data to third parties?</h3><h4>a. Principle</h4><p>We may need to use the services of third parties or affiliated companies and commission them to process your data (so-called processors). Categories of recipients are specifically:</p><ul><li>Accounting, trust and auditing companies;</li><li>consulting companies (legal advice, taxes, etc.);</li><li>IT service providers (web hosting, support, cloud services, website design, etc.);</li><li>payment service providers;</li><li>providers of tracking, conversion and advertising services.</li></ul>
+						
+						<p>We ensure that these third parties and our affiliated companies comply with data protection requirements and treat your personal data confidentially. Under certain circumstances, we may also be obliged to disclose your personal data to authorities.
+						<h4>b. Visiting our social media channels</h4><p>We may have embedded links to our social media channels on our website. These are visible to you (typically via corresponding icons). If you click on the icons, you will be redirected to our social media channels. In this case, the social media providers will know that you have accessed their platform from our website. The social media providers may use the data collected in this way for their own purposes. We would like to point out that we have no knowledge of the content of the data transmitted or its use by the operators.
+						<h4>c. Transfer abroad</h4><p>Under certain circumstances, your personal data may be transferred to companies abroad in the course of order processing. These companies are subject to the same data protection obligations as we are. The transfer may take place worldwide. If the level of data protection does not correspond to that in Switzerland, we will carry out a prior risk assessment and contractually ensure that the same level of protection as in Switzerland is guaranteed (e.g. by means of the new standard contractual clauses of the EU Commission or other measures required by law). If our risk assessment is negative, we will take additional technical measures to protect your data. You can access the standard contractual clauses of the EU Commission at the following link. https://commission.europa.eu/publications/standard-contractual-clauses-controllers-and-processors-eueea_de</p>
+						
+						
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">3.5 How long do we store your data?</h3><p>We only store personal data for as long as is necessary to fulfil the individual purposes for which the data was collected.Data that we store when you visit our website is retained for twelve months. An exception applies to analysis and tracking data, which may be retained for longer. We store contract data for longer because we are required to do so by law.In particular, we must retain business communications, concluded contracts and booking receipts for up to 10 years. If we no longer need such data from you to perform the services, the data will be blocked and we will only use it for accounting and tax purposes.</p>
+
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">3.6 How do we protect your data?</h3>
+						<p>We will store your data securely and take all reasonable measures to protect your data from loss, access, misuse or alteration. Our contractual partners and employees who have access to your data are obliged to comply with data protection regulations. In some cases, it will be necessary for us to pass on your enquiries to companies affiliated with us. In these cases, your data will also be treated confidentially. Within our website, we use the SSL (Secure Socket Layer) procedure in conjunction with the highest level of encryption supported by your browser.</p>
+						
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">3.7 What are your right</h3>
+						<h4>a. Right to information</h4><p>You can request information about the data we have stored about you at any time. Please send your request for information together with proof of identity to datenschutz@maillard.dev. You also have the right to receive your data in a common file format if we process your data automatically and if:</p><ul><li>you have given your consent to the processing of this data; or</li><li>you have disclosed data in connection with the conclusion or execution of a contract.</li></ul>
+
+						<p>We may restrict or refuse to provide information or data if this conflicts with our legal obligations, our legitimate interests or those of a third party. Your request will be processed within the statutory processing period of 30 days. However, we may extend this period due to a high volume of requests, for legal or technical reasons, or because we require further information from you. You will be informed of the extension in good time, at least in text form.</p>
+						
+						
+						<p>You have the right to request the deletion or correction of your data at any time. We may reject your request if we are required by law to retain your data for a longer period or in an unchanged form, or if there are grounds for refusing your request. Please note that exercising your rights may conflict with contractual agreements and may have corresponding effects on the performance of the contract (e.g. premature termination of the contract or additional costs).</p>
+                        <h4>c. Legal recourse</h4>
+                        <p>If you are affected by the processing of personal data, you have the right to enforce your rights in court or to file a complaint with the competent supervisory authority. The competent supervisory authority in Switzerland is the Federal Data Protection and Information Commissioner: https://www.edoeb.admin.ch</p>
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">3.8 Changes to the privacy policy</h3>
+                        <p>We may change this privacy policy at any time. The changes will be published on maillard.dev; you will not be notified separately.
+						<h2 class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !mt-0">4. Individual data processing operations
+                                                
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">4.1 Provision of the website and creation of log files</h3>
+                        <h4>What information do we receive and how do we use it?
+                        <p>When you visit maillard.dev, certain data is automatically stored on our servers or on servers of services and products that we use and/or have installed for system administration, statistical or security purposes or for tracking purposes. This includes:</p>
+						<ul><li>the name of your Internet service provider;</li><li>your IP address (under certain circumstances);</li><li>the version of your browser software;</li><li>the operating system of the computer used to access the URL;</li><li>the date and time of access;</li><li>the website from which you visit the URL;</li><li>the search terms you used to find the URL.</li></ul>
+						
+						
+						
+						<h4>Why are we allowed to process this data?</h4><p>This data cannot be assigned to a specific person and is not merged with other data sources. Log files are stored to guarantee the functionality of the website and to ensure the security of our information technology systems. This constitutes our legitimate interest.
+						<h4>How can you prevent data collection?</h4><p>The data is only stored for as long as is necessary to achieve the purpose for which it was collected. Accordingly, the data is deleted after the end of each session. The storage of log files is essential for the operation of the website, so you have no option to object to this.
+	 					
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">4.2 LinkedIn Ads</h3>
+						<p>We use advertising services provided by LinkedIn, a service of LinkedIn Ireland Unlimited Company, Wilton Plaza, Wilton Place, Dublin 2, Ireland (‘LinkedIn’) on our website. LinkedIn Ads allows us to place targeted advertisements based on the interests and behaviour of users. LinkedIn uses cookies and similar technologies to display advertisements based on your previous visits to our and other websites. This enables us to measure and optimise the effectiveness of our advertising measures. The information collected by LinkedIn Ads is anonymous to us, meaning that we do not receive any personal data about individual users. However, this data is stored and processed by LinkedIn, enabling it to be linked to the respective user profile and allowing LinkedIn to use the data for its own advertising purposes in accordance with the LinkedIn privacy policy.If you are a member of LinkedIn and are logged into your LinkedIn account while visiting our website, the data collected by LinkedIn Ads will be linked to your LinkedIn account. The use of LinkedIn Ads serves the purpose of analysing and optimising the effectiveness of our advertising measures.
+						Data processing is based on our legitimate interest in targeted advertising and the analysis of the impact and effectiveness of this advertising.</p>
+
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">4.3 MailChimp
+						<p>We use the MailChimp service provided by The Rocket Science Group, LLC, 675 Ponce de Leon Ave NE, Suite 5000, Atlanta, GA 30308, USA, to send newsletters and email notifications.When you subscribe to our newsletter, the data you provide and your email address will be transferred to MailChimp, stored and processed. This enables us to send you regular updates, offers and information. When you subscribe to the newsletter, your IP address and the date of registration will be stored. This storage serves solely as proof in the event that a third party misuses an email address and registers to receive the newsletter without the knowledge of the authorised person. MailChimp offers extensive analysis options on how the newsletters sent are opened and used. These analyses are group-based and are not used by us for individual evaluation. The data stored by MailChimp will be deleted as soon as you unsubscribe from our newsletter. This does not affect data stored by us for other purposes. MailChimp has its own privacy policy and practices, which may differ from those of our website. For more information about MailChimp's privacy policy, please visit: https://mailchimp.com/legal/privacy/. If you have any questions about the data collected by MailChimp or wish to exercise your rights in relation to this data, you should contact The Rocket Science Group, LLC directly.</p>
+						
+						
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">4.4 Meta Ads</h3>
+						<p>Our website uses Meta Ads, an online advertising service provided by Meta Platforms, Inc., 1601 Willow Road, Menlo Park, CA 94025, USA (formerly known as Facebook, Inc.). Meta Ads enables us to place targeted advertisements to draw users' attention to our products or services. When you visit our website, Meta Ads may place a cookie on your device that enables analysis of your use of the website. Meta can also use this cookie to track your usage behaviour across different websites and devices and to display personalised advertisements based on this information. The data collected by the cookie is transmitted to Meta and stored there. This data may be linked by Meta to your Meta account (formerly Facebook account) and used for its own advertising purposes. To object to the use of cookies on your computer in general, you can set your Internet browser so that no cookies can be stored on your computer in future or cookies that have already been stored are deleted. However, disabling cookies may result in some functions of our website no longer working properly. For more information on how Meta Ads handles user data, please refer to Meta's privacy policy: https://www.facebook.com/privacy/policy/. If you do not want Meta to use data for advertising purposes, you can adjust the relevant settings in your Meta account.</p>
+						
+						<h3 class="!mb-3 !lg:mb-4 !font-leadFont !text-2xl !mt-0">4.5 YouTube</h3>
+						<p>Our website includes videos from YouTube, a platform operated by Google LLC (1600 Amphitheatre Parkway, Mountain View, CA 94043, USA; Google). When you view the videos or click on the play button, data, including your IP address and information about the browser you are using, is transmitted to Google's servers and stored there. This data is used to provide the video, monitor performance and improve the user experience. If you are logged into your YouTube account, you enable YouTube to associate your browsing behaviour directly with your personal profile. You can prevent this by logging out of your YouTube account.</p>
+					</div>
+				</article>
+			</section>
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>

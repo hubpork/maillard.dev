@@ -1,0 +1,46 @@
+---
+import { SITE_TITLE } from '@/consts';
+import BaseHead from '@/components/BaseHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+
+import de from '@/i18n/de.json';
+import en from '@/i18n/en.json';
+
+const { pathname } = Astro.url;
+const isEnglish = pathname.startsWith('/en');
+const t = isEnglish ? en : de;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title="Maillard.dev - Impressum" description="Impressum" />
+	</head>
+	<body class="flex flex-col bg-fog-100">
+		<div class="js-header-desktop-shim absolute t-0"></div>
+		<Header title={SITE_TITLE} headerClass="header bg-fog-100 py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-fog-100" role="banner" />
+
+		<main class="flex-grow flex-shrink-0" role="main">
+			<section id="impressum" class="pt-8 xl:pt-16 pb-16 xl:pb-24 relative">
+				<article class="max-width mx-auto">
+					<div class="prose lg:prose-2xl mx-auto">
+						<h1 class="font-headingFont text-4xl lg:text-6xl !leading-tight !mb-3 text-balance">Impressum</h1>
+						<p class="text-balance">
+							<span class="!mb-3 !lg:mb-4 !font-leadFont !text-3xl !lg:text-4xl !mt-0">maillard.dev – KI-Kurse & Weblösungen</span><br />
+							Michel Maillard<br />
+							Nigglisbergstrasse 24<br />
+							4656 Starrkirch-Wil<br />
+							Schweiz
+						</p>
+						<p class="text-balance">
+							Tel: +41 79 328 54 51<br />
+							E-Mail: <a href="mailto:info@maillard.dev">info@maillard.dev</a>
+						</p>
+					</div>
+				</article>
+			</section>
+		</main>
+		<Footer footerClass="bg-white flex justify-center py-10 xl:pt-16" />
+	</body>
+</html>

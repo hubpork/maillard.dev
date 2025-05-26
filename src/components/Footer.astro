@@ -36,6 +36,8 @@ const switchLangPath = getSwitchLangPath(pathname);
 			</div>
 			<div class="column">
 				<p class="lg:text-xl">{t.footer.language}: <a href={switchLangPath} class="cursor-pointer no-underline text-servette hover:text-black focus:outline-none transition duration-150 ease-out hover:ease-in">{isEnglish ? "Deutsch" : "English"}</a></p>
+				<div class="lg:text-xl mt-4 flex gap-3"><div><a href={t.footer.impressumLink} class="cursor-pointer no-underline text-servette hover:text-black focus:outline-none transition duration-150 ease-out hover:ease-in">Impressum</a></div>/<div><a href={t.footer.dataLink} class="cursor-pointer no-underline text-servette hover:text-black focus:outline-none transition duration-150 ease-out hover:ease-in">{t.footer.dataProtection}</a></div></div>
+				
 				<p class="lg:text-xl !font-leadFont my-8 text-balance">
 					&copy; {today.getFullYear()}&nbsp;{SITE_TITLE} - {SITE_DESCRIPTION}
 				</p>

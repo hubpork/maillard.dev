@@ -18,6 +18,7 @@ const isEnglish = pathname.startsWith('/en');
 const t = isEnglish ? en : de;
 
 import patrickFrank from '@/assets/images/patrick_frank.jpg';
+import michaelRottman from '@/assets/images/michael_rottman.jpg';
 import automationen from '@/assets/images/automationen.png';
 import suno from '@/assets/images/suno.png';
 import strip from '@/assets/images/strip.png';
@@ -126,7 +127,7 @@ import strip from '@/assets/images/strip.png';
 			<section id="testimonials" class="pt-8 pb-20 xl:pt-16 xl:pb-28  bg-stone-800 relative text-white">
 				<article class="max-width mx-auto">
 					<div class="prose prose-xl max-w-[100%] lg:mx-auto">
-						<h2 class="!mb-0 !font-leadFont !font-normal !text-2xl !lg:text-3xl text-white">Testimonial</h2>
+						<h2 class="!mb-0 !font-leadFont !font-normal !text-2xl !lg:text-4xl text-white">Testimonial</h2>
 					</div>
 
 					<Testimonials
@@ -137,6 +138,13 @@ import strip from '@/assets/images/strip.png';
 								name: "Patrick Frank",
 								job: "Media Coach",
 								testimonialHolder: patrickFrank
+							},
+							{
+								link: "https://www.focusmedia.ch/team/",
+								sentence: 'Bei Michel wird aus „künstlicher Intelligenz“ echtes Brain Candy. Seine Mischung aus Know-how, Humor und Hands-on-Mentalität macht jeden AI-Kurs zu einem nachhaltigen Highlight. <br /><small class="text-sm md:text-base !font-leadFont !font-normal">Dieses Statement wurde durch liebevolles Human Promting mit AI generiert :-)</small>',
+								name: "Michael Rottmann",
+								job: "Art Director",
+								testimonialHolder: michaelRottman
 							}
 						]}
 				  />

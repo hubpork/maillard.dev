@@ -57,7 +57,7 @@ const {
                         <div class="flex flex-row relative">
                             {imgHolder && 
                             <figure class="wrapper">
-                                <Picture src={imgHolder} layout='responsive' width={800} height={800} formats={['avif', 'webp']}  alt={title} />
+                                <Picture src={imgHolder} layout='constrained' width={800} height={800} formats={['avif', 'webp']}  alt={title} />
                             </figure>}
                             {videoId && 
                                 <div class="wrapper">

@@ -14,7 +14,7 @@
 		"@astrojs/sitemap": "^3.3.0",
 		"@astrojs/svelte": "^7.0.10",
 		"@astrojs/tailwind": "^6.0.2",
-		"astro": "^5.8.0",
+		"astro": "^5.7.5",
 		"astro-i18n": "^2.2.4",
 		"content": "^4.0.6",
 		"sharp": "^0.34.1",

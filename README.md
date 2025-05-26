@@ -1,7 +1,7 @@
 # 👻 maillard.dev
 
 
-**maillard.dev** is a website using **[Astro 5.8](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/)**.
+**maillard.dev** is a website using **[Astro 5.7.5](https://astro.build/blog/astro-2/) + [Tailwind CSS](https://tailwindcss.com/)**.
 
 Features:
 - ✅ SEO-friendly with canonical URLs and OpenGraph data

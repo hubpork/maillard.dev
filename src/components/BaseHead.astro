@@ -8,6 +8,26 @@ const { hrefLangDe, hrefLangEn, canonicalURL, hrefLangDefault } = getHrefLangUrl
 
 const { title, description, image } = Astro.props;
 const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString();
+
+const schemaOrganization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Maillard.dev – KI-Kurse & Weblösungen",
+  "image": "https://www.maillard.dev/opengraph.jpg",
+  "url": "https://www.maillard.dev/",
+  "telephone": "+41 79 328 54 51",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Nigglisbergstrasse 24",
+    "addressLocality": "Starrkirch-Wil",
+    "postalCode": "4656",
+    "addressCountry": "CH"
+  },
+  "sameAs": [
+    "https://www.instagram.com/maillard_dev/",
+    "https://www.linkedin.com/in/michel-maillard/"
+  ]
+};
 ---
 <!-- Global Metadata -->
 <meta charset="utf-8" />
@@ -55,7 +75,7 @@ const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString()
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={image ? new URL(image, Astro.url).toString() : resolvedImageWithDomain} />
-
+<script type="application/ld+json" set:html={JSON.stringify(schemaOrganization)}></script>
 
 <script>
 	(() => {

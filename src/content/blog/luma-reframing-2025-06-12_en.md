@@ -2,11 +2,11 @@
 title: "🎥 Video reframing with Reframe by Luma – Practical experience from production"
 linktext: "Let's take a look"
 description: "This tool enables automated adjustment of image formats."
-pubDate: "Apr 12 2025"
+pubDate: "Jun 12 2025"
 heroImage: "/image/luma-reframing.jpg"
 lang: "en"
-slug_en: "luma-reframing-2025-04-12_en"
-slug_de: "luma-reframing-2025-04-12_de"
+slug_en: "luma-reframing-2025-06-12_en"
+slug_de: "luma-reframing-2025-06-12_de"
 ---
 
 ## Automated adjustment of image formats

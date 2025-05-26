@@ -6,7 +6,7 @@ pubDate: "Apr 11 2025"
 heroImage: "/image/higgsfield.jpg"
 lang: "de"
 slug_en: "higgsfield-2025-04-11_en"
-slug_de: "higgsfield-2025-04-1_de"
+slug_de: "higgsfield-2025-04-11_de"
 ---
 
 

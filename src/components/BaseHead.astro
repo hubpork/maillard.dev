@@ -1,4 +1,5 @@
 ---
+import { Font } from 'astro:assets';
 import '@/styles/global.css';
 import { getHrefLangUrls } from '@/components/utils/canonicalUtils';
 
@@ -21,9 +22,13 @@ const resolvedImageWithDomain = new URL("/opengraph.jpg", Astro.site).toString()
 <meta name="generator" content={Astro.generator} />
 
 <!-- Font preloads -->
-<link rel="preload" href="/gasoek-one-v3-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<Font cssVariable="--contentFont" preload />
+<Font cssVariable="--logoFont" preload />
+<Font cssVariable="--headingFont" preload />
+<Font cssVariable="--leadFont" preload />
+<!-- link rel="preload" href="/gasoek-one-v3-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/quicksand-v30-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/playfair-display-v30-latin-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/playfair-display-v30-latin-800.woff2" as="font" type="font/woff2" crossorigin -->
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />

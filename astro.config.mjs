@@ -21,6 +21,56 @@ export default defineConfig({
     }
   },
   experimental: {
-    responsiveImages: true
+    responsiveImages: true,
+    fonts: [
+      {
+        name: "contentFont",
+        cssVariable: "--contentFont",
+        provider: "local",
+        variants: [
+          {
+            src: [
+              "./src/assets/fonts/quicksand-v30-latin-regular.woff2",
+            ]
+          }
+        ]
+      },
+      {
+        name: "logoFont",
+        cssVariable: "--logoFont",
+        provider: "local",
+        variants: [
+          {
+            src: [
+              "./src/assets/fonts/gasoek-one-v3-latin-regular.woff2",
+            ]
+          }
+        ]
+      },
+      {
+        name: "headingFont",
+        cssVariable: "--headingFont",
+        provider: "local",
+        variants: [
+          {
+            src: [
+              "./src/assets/fonts/playfair-display-v30-latin-800.woff2",
+            ]
+          }
+        ]
+      },
+      {
+        name: "leadFont",
+        cssVariable: "--leadFont",
+        provider: "local",
+        variants: [
+          {
+            src: [
+              "./src/assets/fonts/quicksand-v30-latin-600.woff2",
+            ]
+          }
+        ]
+      }
+    ]
   }
 });

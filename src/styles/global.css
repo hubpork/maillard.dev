@@ -16,13 +16,14 @@
 	}
 	
 	html {
-		font-family: "contentFont", system-ui, sans-serif;
+		font-family: var(--contentFont), system-ui, sans-serif;
 		font-weight: 400;
 		height: 100%;
 	}
 }
 
 /* playfair-display-800 - latin */
+/*
 @font-face {
 	font-display: swap; 
 	font-family: 'logoFont';
@@ -38,8 +39,10 @@
 	font-weight: 800;
 	src: url('/playfair-display-v30-latin-800.woff2') format('woff2')
 }
+/*
 
 /* quicksand-400 - latin */
+/*
 @font-face {
 	font-display: swap; 
 	font-family: 'contentFont';
@@ -47,8 +50,10 @@
 	font-weight: 400;
 	src: url('/quicksand-v30-latin-regular.woff2') format('woff2')
 }
+*/
 
 /* quicksand-600 - latin */
+/*
 @font-face {
 	font-display: swap; 
 	font-family: 'leadFont';
@@ -56,6 +61,7 @@
 	font-weight: 700;
 	src: url('/quicksand-v30-latin-600.woff2') format('woff2')
 }
+*/
 
 .header-max-width  {
 	width: min(1536px, 90vw);
@@ -102,31 +108,3 @@
 .hero {
 	aspect-ratio: 1440/720;
 }
-
-/* Improve Page speed */
-/* https://css-tricks.com/almanac/properties/c/content-visibility/ */
-/*
-img {
-	content-visibility: auto;
-}
-*/
-
-/* @media (prefers-color-scheme: dark) {
-	#intro,
-	.bg-white {
-		color: white !important;
-		background-color: hsl(20, 14%, 4%) !important;
-	}
-
-	.prose, h1, h2, h3, :where(main, footer) .font-headingFont {
-		color: white !important;
-	}
-
-	body {
-		background-color: rgb(12, 10, 9) !important;
-	}
-
-	.fill-white {
-		fill: hsl(20, 14%, 4%) !important;
-	}
-} */

@@ -12,7 +12,7 @@ module.exports = {
 						'--tw-prose-body': theme('colors.zinc[950]'),
 						'--tw-prose-headings': theme('colors.zinc[950]'),
 						'--tw-prose-lead': theme('colors.zinc[950]'),
-					},
+					}
 				},
 			}),
 			colors: {
@@ -29,10 +29,10 @@ module.exports = {
 				}
 			},
 			fontFamily: {
-				'logoFont': ['"logoFont"', 'system-ui'],
-				'headingFont': ['"headingFont"', 'system-ui'],
-				'contentFont': ['"contentFont"', 'serif'],
-				'leadFont': ['"leadFont"', 'system-ui'],
+				'contentFont': ['var(--contentFont)'],
+				'logoFont': ['var(--logoFont)'],
+				'headingFont': ['var(--headingFont)'],
+				'leadFont': ['var(--leadFont)'],
 			},
 			lineHeight: {
 				'extra-tight': '1.075',

@@ -37,9 +37,9 @@ const { Content } = await post.render();
 	</head>
 	<body class="flex flex-col bg-white text-gray-800">
 		<div class="js-header-desktop-shim absolute t-0"></div>
-		<Header title={SITE_TITLE} headerClass="header bg-white py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" />
+		<Header title={SITE_TITLE} headerClass="header bg-white py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" role="banner" />
 		
-		<main class="flex-grow flex-shrink-0 relative">
+		<main class="flex-grow flex-shrink-0 relative" role="main">
 			<article class="pb-20 prose lg:prose-2xl prose-headings:font-headingFont mx-auto sm:px-6 px-6 mt-8 lg:prose-xl prose-a:servette prose-headings:leading-tighter prose-lg prose-md">
 				{heroImage && <Picture class="mb-5 lg:mb-10" src={heroImage} widths={[320, 640, 1200]} width={1200} height={600} sizes="(max-width: 640px) 100vw, 960px" formats={['avif', 'webp']}  alt="descriptive text" />}
         <h1>{post.data.title}</h1>

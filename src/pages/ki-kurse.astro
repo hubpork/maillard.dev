@@ -30,9 +30,9 @@ import strip from '@/assets/images/strip.png';
 	</head>
 	<body class="flex flex-col bg-white text-gray-800">
 		<div class="js-header-desktop-shim absolute t-0"></div>
-		<Header title={SITE_TITLE} headerClass="header bg-white py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" />
+		<Header title={SITE_TITLE} headerClass="header bg-white py-8 lg:py-10 lg:sticky top-0 transition-padding duration-150 ease-linear z-10" headerDotClass="text-servette" headerFixClass="bg-white" role="banner"/>
 	
-		<main class="flex-grow flex-shrink-0">
+		<main class="flex-grow flex-shrink-0" role="main">
 			<section id="intro" class="py-4 xl:py-8 mb-8">
 				<article class="max-width mx-auto">
 					<Picture class="mb-6 lg:mb-14 hero" src={placeHolder} layout='responsive' width={1440} height={720} formats={['avif', 'webp']}  alt="ki-kurse" loading="eager" />

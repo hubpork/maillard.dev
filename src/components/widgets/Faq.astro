@@ -25,9 +25,7 @@ const schemaJson = {
 ---
 
 <div class="faq">
-  <script type="application/ld+json">
-    {JSON.stringify(schemaJson)}
-  </script>
+  <script type="application/ld+json" set:html={JSON.stringify(schemaJson)}></script>
 
   <div>
     <hr class="border-fog-700" />

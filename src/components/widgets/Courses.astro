@@ -37,7 +37,7 @@ const {
                                         {link && (
                                         <a href={link} class="block absolute h-full w-full" rel="no-follow"><span class="sr-only">{linkText || "Kurs im Detail"}</span></a>
                                         )}
-                                        <Picture src={imgHolder} layout='responsive' width={800} height={800} formats={['avif', 'webp']}  alt={title} />
+                                        <Picture src={imgHolder} layout='constrained' width={800} height={800} formats={['avif', 'webp']}  alt={title} />
                                     </figure>
                                 }
                                 {videoId && 

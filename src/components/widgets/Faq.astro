@@ -36,7 +36,7 @@ const schemaJson = {
         <summary class="m-0 py-4 md:py-6 cursor-pointer font-leadFont text-xl md:text-2xl text-gray-800 group-open:text-servette transition-colors">
           {faq.question}
         </summary>
-        <p class="mt-0 pb-6 text-l md:text-xl">{faq.answer}</p>
+        <p class="mt-0 pb-6 text-l md:text-xl" set:html={faq.answer} />
       </details>
     ))}
   </div>

@@ -1,5 +1,5 @@
 ---
-title: "🎥 Videoreframing mit Reframe von Luma – Praxiserfahrung aus der Produktion"
+title: "Videoreframing mit Reframe von Luma – Praxiserfahrung aus der Produktion"
 linktext: "Lass uns das anschauen"
 description: "Dieses Tool ermöglicht eine automatisierte Anpassung von Bildformaten."
 pubDate: "2025-06-12T00:00:00Z"

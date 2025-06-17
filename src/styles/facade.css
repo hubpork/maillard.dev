@@ -68,14 +68,21 @@
 	left: 0;
 }
 
-.youtube__16,
-.youtube__16 iframe,
-.wrapper__16 {
+
+.wrapper__portrait {
 	aspect-ratio: 9/16 !important;
+	.youtube,
+	.youtube :is(img,iframe) {
+		aspect-ratio: 9/16 !important;
+	}
 }
 
-.youtube__16 img {
-	aspect-ratio: 9/16 !important;
+.wrapper__landscape {
+	aspect-ratio: 16/9 !important;
+	.youtube,
+	.youtube :is(img,iframe) {
+		aspect-ratio: 16/9 !important;
+	}
 }
 
 .fade-in {
